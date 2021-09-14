@@ -51,7 +51,6 @@
                 </div>
             </div>
         </nav>
-        <!-- hadeh -->
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <!-- Neraca saldo -->
