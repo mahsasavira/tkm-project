@@ -308,7 +308,7 @@
                                         <table class="table align-items-center mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No.</th>
+                                                    <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No. Perk</th>
                                                     <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Nama Perkiraan</th>
                                                     <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Jumlah</th>
 
@@ -339,7 +339,7 @@
                                                     <td>
                                                         <div class="d-flex flex-column justify-content-center">
                                                             <div class="form-group col-8">
-                                                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Jumlah">
+                                                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Rp.">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -410,7 +410,7 @@
                                         <table class="table align-items-center mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No.</th>
+                                                    <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No.Perk</th>
                                                     <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Nama Perkiraan</th>
                                                     <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Jumlah</th>
 
@@ -441,7 +441,7 @@
                                                     <td>
                                                         <div class="d-flex flex-column justify-content-center">
                                                             <div class="form-group col-8">
-                                                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Jumlah">
+                                                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Rp. ">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -465,15 +465,25 @@
                 </div>
             </div>
             <div class="col-md-0 mt-4">
-                <div class="col-md-1 mt-4">
+                <div class="col-md-2">
                     <div class="card">
-                        <div class="card-body pt-4 p-3">
+                        <div class="card-body pt-4 p-2">
                             <ul class="list-group">
-                                <div class="card-body px-0 pt-0 pb-2">
-                                    <div class="table-responsive p-0">
-                                        <button type="button" class="btn btn-success">Simpan</button>
-                                        <button type="button" class="btn btn-success">Batal</button>
-                                    </div>
+                                <div class="card-body px-1 pt-1 pb-0">
+                                    <center>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group col-4">
+                                                    <button type="button" class="btn btn-success">Simpan</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group col-4">
+                                                    <button type="button" class="btn btn-danger">Batal</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </center>
                                 </div>
                             </ul>
                         </div>
@@ -515,6 +525,7 @@
         </footer>
         </div>
     </main>
+
     <div class="fixed-plugin">
         <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
             <i class="fa fa-cog py-2"> </i>

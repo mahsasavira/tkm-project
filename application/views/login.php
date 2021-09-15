@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url() ?>assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="<?php echo base_url() ?>assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="<?php echo base_url() ?>assets/img/logo.png">
     <title>
-        Soft UI Dashboard by Creative Tim
+        PT. Tirta Kencana Mulia
     </title>
     <!--     Fonts and icons     -->
     <link href="<?php echo base_url() ?>https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -66,7 +66,7 @@
     </nav>
     <!-- End Navbar -->
     <section class="min-vh-100 mb-8">
-        <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('<?php echo base_url() ?>assets/img/curved-images/curved14.jpg');">
+        <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('<?php echo base_url() ?>assets/img/background.png');">
             <span class="mask bg-gradient-dark opacity-6"></span>
             <div class="container">
                 <div class="row justify-content-center">
