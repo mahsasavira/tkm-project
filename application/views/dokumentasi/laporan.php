@@ -60,7 +60,7 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <button type="button" class="btn btn-primary btn-sm">Laporan Neraca</button>
+                                        <a type="button" class="btn btn-primary btn-sm" href="<?php echo base_url() ?>laporan/laporan_neraca">Laporan Neraca</a>
                                         <!-- <p class="text-sm mb-0 text-capitalize font-weight-bold">Laporan Neraca</p> -->
                                         <h5 class="font-weight-bolder mb-0">
                                             $53,000
@@ -83,7 +83,7 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <button type="button" class="btn btn-primary btn-sm">Laporan Laba Rugi</button>
+                                        <a type="button" class="btn btn-primary btn-sm" href="<?php echo base_url() ?>laporan/laporan_laba_rugi">Laporan Laba Rugi</a>
                                         <!-- <p class="text-sm mb-0 text-capitalize font-weight-bold">Laporan Laba Rugi</p> -->
                                         <h5 class="font-weight-bolder mb-0">
                                             2,300
@@ -106,7 +106,7 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <button type="button" class="btn btn-primary btn-sm">Laporan Arus Kas</button>
+                                        <a type="button" class="btn btn-primary btn-sm" href="<?php echo base_url() ?>laporan/laporan_arus_kas">Laporan Arus Kas</a>
                                         <!-- <p class="text-sm mb-0 text-capitalize font-weight-bold">Laporan Arus Kas</p> -->
                                         <h5 class="font-weight-bolder mb-0">
                                             +3,462
@@ -124,7 +124,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-0 mt-3">
                 <div class="card">
                     <div class="card-header pb-0 px-3">
@@ -165,7 +164,27 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mt-4">
+
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card mb-4">
+                            <div class="card-header pb-0">
+                                <h6>Print Preview</h6>
+                            </div>
+                            <div class="card-body px-0 pt-0 pb-2">
+                                <div class="table-responsive p-0">
+                                    <table class="table align-items-center mb-0">
+                                        INI NANTI BUAT PRINT PREVIEW KALO MAU DI PRINT
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-lg-4 mt-4">
                 <div class="card h-100">
                     <div class="card-header pb-0 p-3">
                         <div class="row">
@@ -374,7 +393,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <footer class="footer pt-3  ">
                 <div class="container-fluid">
                     <div class="row align-items-center justify-content-lg-between">
@@ -410,7 +429,7 @@
         </div>
     </main>
 
-    <div class="fixed-plugin">
+    <!-- <div class="fixed-plugin">
         <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
             <i class="fa fa-cog py-2"> </i>
         </a>
@@ -424,13 +443,13 @@
                     <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
                         <i class="fa fa-close"></i>
                     </button>
-                </div>
-                <!-- End Toggle Button -->
-            </div>
+                </div> -->
+    <!-- End Toggle Button -->
+    <!-- </div>
             <hr class="horizontal dark my-1">
-            <div class="card-body pt-sm-3 pt-0">
-                <!-- Sidebar Backgrounds -->
-                <div>
+            <div class="card-body pt-sm-3 pt-0"> -->
+    <!-- Sidebar Backgrounds -->
+    <!-- <div>
                     <h6 class="mb-0">Sidebar Colors</h6>
                 </div>
                 <a href="javascript:void(0)" class="switch-trigger background-color">
@@ -442,9 +461,9 @@
                         <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
                         <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
                     </div>
-                </a>
-                <!-- Sidenav Type -->
-                <div class="mt-3">
+                </a> -->
+    <!-- Sidenav Type -->
+    <!-- <div class="mt-3">
                     <h6 class="mb-0">Sidenav Type</h6>
                     <p class="text-sm">Choose between 2 different sidenav types.</p>
                 </div>
@@ -452,9 +471,9 @@
                     <button class="btn bg-gradient-primary w-100 px-3 mb-2 active" data-class="bg-transparent" onclick="sidebarType(this)">Transparent</button>
                     <button class="btn bg-gradient-primary w-100 px-3 mb-2 ms-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
                 </div>
-                <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
-                <!-- Navbar Fixed -->
-                <div class="mt-3">
+                <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p> -->
+    <!-- Navbar Fixed -->
+    <!-- <div class="mt-3">
                     <h6 class="mb-0">Navbar Fixed</h6>
                 </div>
                 <div class="form-check form-switch ps-0">
@@ -476,7 +495,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--   Core JS Files   -->
     <script src="<?php echo base_url() ?>assets/js/core/popper.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/core/bootstrap.min.js"></script>
