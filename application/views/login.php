@@ -22,6 +22,7 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent mt-4">
         <div class="container">
@@ -66,6 +67,21 @@
     </nav>
     <!-- End Navbar -->
     <section class="min-vh-100 mb-8">
+
+        <?php
+        $errors = $this->session->flashdata('errors');
+        if (!empty($errors)) {
+        ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-danger text-center">
+                        <?php foreach ($errors as $key => $error) { ?>
+                            <?php echo "$error<br>"; ?>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
         <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('<?php echo base_url() ?>assets/img/background.png');">
             <span class="mask bg-gradient-dark opacity-6"></span>
             <div class="container">
@@ -78,7 +94,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="row mt-lg-n10 mt-md-n11 mt-n10">
+            <div class="row mt-lg-n10 mt-md-n8 mt-n8">
                 <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                     <div class="card z-index-0">
                         <div class="card-header text-center pt-4">
@@ -87,16 +103,16 @@
                         </div>
 
                         <div class="card-body">
-                            <form class="pt-3 mt-3" action="<?php echo base_url() ?>dashboard" method="post">
+                            <form class="pt-1 mt-0" action="<?php echo site_url('auth/aksi_login') ?>" method="post">
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Username" aria-label="Email" aria-describedby="email-addon">
+                                    <input type="text" name="username" class="form-control" placeholder="Username" aria-label="text" aria-describedby="teks-addon">
                                 </div>
                                 <div class="mb-3">
-                                    <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                                    <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
                                 </div>
 
                                 <div class="text-center">
-                                    <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign In</button>
+                                    <button type="submit" name="login" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign In</button>
                                 </div>
                                 <!-- <p class="text-sm mt-3 mb-0">Dont have an account? <a href="javascript:;" class="text-dark font-weight-bolder">Sign up</a></p> -->
                             </form>
