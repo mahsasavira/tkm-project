@@ -52,6 +52,212 @@
             </div>
         </nav>
         <!-- End Navbar -->
+        <div class="container-fluid">
+            <div class="page-header min-height-250 border-radius-xl mt-4" style="background-image: url('../assets/img/background.png'); background-position-y: 50%;">
+                <span class="mask bg-gradient-primary opacity-6"></span>
+            </div>
+            <div class="card card-body blur shadow-blur mx-4 mt-n10 overflow-hidden">
+                <div class="row gx-4">
+                    <div class="row">
+                        <div class="col-md-6 mt-4">
+                            <div class="card">
+                                <div class="col-md-6 mt-4 pb-0 px-3">
+                                    <div class="form-group col-5">
+                                        <label for="example-date-input" class="form-control-label">Tanggal : </label>
+                                        <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
+                                    </div>
+                                </div>
+                                <div class="card-header pb-0 px-3">
+                                    <h6 class="mb-2">AKTIVA</h6>
+                                </div>
+                                <div class="card-body pt-4 p-3">
+                                    <ul class="list-group">
+                                        <div class="card-body px-0 pt-0 pb-2">
+                                            <div class="table-responsive p-0">
+                                                <table class="table align-items-center mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No. Perk</th>
+                                                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Nama Perkiraan</th>
+                                                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Jumlah</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex px-3 py-1">
+                                                                    <div class="d-flex flex-column justify-content-center">
+                                                                        <h6 class="mb-0 text-sm">1.</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+
+                                                            <td>
+                                                                <div class="form-group col-10">
+                                                                    <select class="form-control" id="exampleFormControlSelect1">
+                                                                        <option>Apakah</option>
+                                                                        <option>duapakah</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                                        <option>5</option>
+                                                                    </select>
+                                                                </div>
+                                                            </td>
+
+                                                            <td>
+                                                                <div class="d-flex flex-column justify-content-center">
+                                                                    <div class="form-group col-8">
+                                                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Rp.">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                    Edit
+                                                                </a>
+                                                                <br>
+                                                                <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                    Hapus
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-0 mt-4">
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body pt-4 p-2">
+                                            <ul class="list-group">
+                                                <div class="card-body px-1 pt-1 pb-0">
+                                                    <center>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="form-group col-4">
+                                                                    <button type="button" class="btn btn-success">Simpan</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-5">
+                                                                <div class="form-group col-4">
+                                                                    <button type="button" class="btn btn-danger">Batal</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </center>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="card">
+                                <div class="col-md-6 mt-4 pb-0 px-3">
+                                    <div class="form-group col-5">
+                                        <label for="example-date-input" class="form-control-label">Tanggal : </label>
+                                        <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
+                                    </div>
+                                </div>
+                                <div class="card-header pb-0 px-3">
+                                    <h6 class="mb-2">PASIVA</h6>
+                                </div>
+                                <div class="card-body pt-4 p-3">
+                                    <ul class="list-group">
+                                        <div class="card-body px-0 pt-0 pb-2">
+                                            <div class="table-responsive p-0">
+                                                <table class="table align-items-center mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No.Perk</th>
+                                                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Nama Perkiraan</th>
+                                                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Jumlah</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex px-3 py-1">
+                                                                    <div class="d-flex flex-column justify-content-center">
+                                                                        <h6 class="mb-0 text-sm">1.</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+
+                                                            <td>
+                                                                <div class="form-group col-10">
+                                                                    <select class="form-control" id="exampleFormControlSelect1">
+                                                                        <option>Apakah</option>
+                                                                        <option>duapakah</option>
+                                                                        <option>3pakah</option>
+                                                                        <option>pakah</option>
+                                                                        <option>5</option>
+                                                                    </select>
+                                                                </div>
+                                                            </td>
+
+                                                            <td>
+                                                                <div class="d-flex flex-column justify-content-center">
+                                                                    <div class="form-group col-8">
+                                                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Rp. ">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                    Edit
+                                                                </a>
+                                                                <br>
+                                                                <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                    Hapus
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-0 mt-4">
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body pt-4 p-2">
+                                            <ul class="list-group">
+                                                <div class="card-body px-1 pt-1 pb-0">
+                                                    <center>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="form-group col-4">
+                                                                    <button type="button" class="btn btn-success">Simpan</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-5">
+                                                                <div class="form-group col-4">
+                                                                    <button type="button" class="btn btn-danger">Batal</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </center>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid py-4">
             <!-- Neraca saldo -->
             <!-- <div class="row">
@@ -251,53 +457,15 @@
                 </div>
             </div> -->
             <!-- End -->
-            <div class="row">
-                <div class="col-md-0 mt-4">
-                    <div class="card">
-                        <div class="card-header pb-0 px-3">
-                            <div class="p-4">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group col-4">
-                                                <label for="example-date-input" class="form-control-label">Tanggal</label>
-                                                <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="form-group col-4">
-                                                <label for="example-datetime-local-input" class="form-control-label">Waktu/Tanggal</label>
-                                                <input class="form-control" type="datetime-local" value="2021-11-23T10:30:00" id="example-datetime-local-input">
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <div class="form-group col-4">
-                                                    <label for="example-month-input" class="form-control-label">Bulan</label>
-                                                    <input class="form-control" type="month" value="2021-11" id="example-month-input">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <div class="form-group col-4">
-                                                    <label for="example-week-input" class="form-control-label">Minggu</label>
-                                                    <input class="form-control" type="week" value="2021-W23" id="example-week-input">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- <div class="row">
                 <div class="col-md-6 mt-4">
                     <div class="card">
+                        <div class="col-md-6 mt-4 pb-0 px-3">
+                            <div class="form-group col-5">
+                                <label for="example-date-input" class="form-control-label">Tanggal : </label>
+                                <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
+                            </div>
+                        </div>
                         <div class="card-header pb-0 px-3">
                             <h6 class="mb-2">AKTIVA</h6>
                         </div>
@@ -357,49 +525,44 @@
                                         </table>
                                     </div>
                                 </div>
-
-                                <!-- <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-3 text-sm">Oliver Liam</h6>
-                                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Viking Burrito</span></span>
-                                        <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">oliver@burrito.com</span></span>
-                                        <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                                    </div>
-                                    <div class="ms-auto text-end">
-                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-3 text-sm">Lucas Harper</h6>
-                                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Stone Tech Zone</span></span>
-                                        <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">lucas@stone-tech.com</span></span>
-                                        <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                                    </div>
-                                    <div class="ms-auto text-end">
-                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-3 text-sm">Ethan James</h6>
-                                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Fiber Notion</span></span>
-                                        <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">ethan@fiber.com</span></span>
-                                        <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                                    </div>
-                                    <div class="ms-auto text-end">
-                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    </div>
-                                </li> -->
                             </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-0 mt-4">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body pt-4 p-2">
+                                    <ul class="list-group">
+                                        <div class="card-body px-1 pt-1 pb-0">
+                                            <center>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group col-4">
+                                                            <button type="button" class="btn btn-success">Simpan</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group col-4">
+                                                            <button type="button" class="btn btn-danger">Batal</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </center>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mt-4">
                     <div class="card">
+                        <div class="col-md-6 mt-4 pb-0 px-3">
+                            <div class="form-group col-5">
+                                <label for="example-date-input" class="form-control-label">Tanggal : </label>
+                                <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
+                            </div>
+                        </div>
                         <div class="card-header pb-0 px-3">
                             <h6 class="mb-2">PASIVA</h6>
                         </div>
@@ -457,39 +620,40 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+
                                     </div>
                                 </div>
                             </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-0 mt-4">
-                <div class="col-md-2">
-                    <div class="card">
-                        <div class="card-body pt-4 p-2">
-                            <ul class="list-group">
-                                <div class="card-body px-1 pt-1 pb-0">
-                                    <center>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group col-4">
-                                                    <button type="button" class="btn btn-success">Simpan</button>
+                    <div class="col-md-0 mt-4">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body pt-4 p-2">
+                                    <ul class="list-group">
+                                        <div class="card-body px-1 pt-1 pb-0">
+                                            <center>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group col-4">
+                                                            <button type="button" class="btn btn-success">Simpan</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group col-4">
+                                                            <button type="button" class="btn btn-danger">Batal</button>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <div class="form-group col-4">
-                                                    <button type="button" class="btn btn-danger">Batal</button>
-                                                </div>
-                                            </div>
+                                            </center>
                                         </div>
-                                    </center>
+                                    </ul>
                                 </div>
-                            </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <footer class="footer pt-3  ">
             <div class="container-fluid">
