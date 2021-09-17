@@ -71,8 +71,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 text-center mx-auto">
-                        <h1 class="text-white mb-2 mt-5">Welcome!</h1>
-                        <p class="text-lead text-white">Use these awesome forms to login or create new account in your project for free.</p>
+                        <h1 class="text-white mb-2 mt-5">Selamat Datang!</h1>
+                        <p class="text-lead text-white">Silahkan masukkan username dan password anda.</p>
                     </div>
                 </div>
             </div>
@@ -82,16 +82,14 @@
                 <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                     <div class="card z-index-0">
                         <div class="card-header text-center pt-4">
-                            <h5>SIGN IN</h5>
+                            <img width="50" height="50" src="<?php echo base_url() ?>assets/img/logo.png">
+                            <h5 class="mt-3">PT. Tirta Kencana Mulia</h5>
                         </div>
 
                         <div class="card-body">
-                            <form class="pt-3" action="<?php echo base_url() ?>dashboard" method="post">
+                            <form class="pt-3 mt-3" action="<?php echo base_url() ?>dashboard" method="post">
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="email-addon">
-                                </div>
-                                <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                    <input type="email" class="form-control" placeholder="Username" aria-label="Email" aria-describedby="email-addon">
                                 </div>
                                 <div class="mb-3">
                                     <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
@@ -100,7 +98,7 @@
                                 <div class="text-center">
                                     <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign In</button>
                                 </div>
-                                <p class="text-sm mt-3 mb-0">Dont have an account? <a href="javascript:;" class="text-dark font-weight-bolder">Sign up</a></p>
+                                <!-- <p class="text-sm mt-3 mb-0">Dont have an account? <a href="javascript:;" class="text-dark font-weight-bolder">Sign up</a></p> -->
                             </form>
                         </div>
                     </div>
