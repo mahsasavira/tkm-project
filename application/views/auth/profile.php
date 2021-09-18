@@ -70,7 +70,7 @@
                                 Alec Thompson
                             </h5>
                             <p class="mb-0 font-weight-bold text-sm">
-                                MOSO EKm3o4itp4y45uip56iop76o
+                                mahsa
                             </p>
                         </div>
                     </div>
