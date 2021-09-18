@@ -221,39 +221,35 @@
                                                             </tr>
                                                         <?php } ?>
                                                     </tbody>
-
                                                 </table>
+                                                <div class="col-md-0 mt-4">
+                                                    <div class="col-md-8">
+                                                        <ul class="list-group">
+                                                            <div class="card-body px-1 pt-1 pb-0">
+                                                                <center>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group col-4">
+                                                                                <button type="button" class="btn btn-success">Simpan</button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-5">
+                                                                            <div class="form-group col-4">
+                                                                                <button type="button" class="btn btn-danger">Batal</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </center>
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-0 mt-4">
-                                <div class="col-md-8">
-                                    <div class="card">
-                                        <div class="card-body pt-4 p-2">
-                                            <ul class="list-group">
-                                                <div class="card-body px-1 pt-1 pb-0">
-                                                    <center>
-                                                        <div class="row">
-                                                            <div class="col-md-4">
-                                                                <div class="form-group col-4">
-                                                                    <button type="button" class="btn btn-success">Simpan</button>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-5">
-                                                                <div class="form-group col-4">
-                                                                    <button type="button" class="btn btn-danger">Batal</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </center>
-                                                </div>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -708,10 +704,10 @@
                 </div> -->
     <!-- End Toggle Button -->
     </div>
-    <hr class="horizontal dark my-1">
-    <div class="card-body pt-sm-3 pt-0"> -->
-        <!-- Sidebar Backgrounds -->
-        <div>
+    <!-- <hr class="horizontal dark my-1">
+    <div class="card-body pt-sm-3 pt-0"> --> -->
+    <!-- Sidebar Backgrounds -->
+    <!-- <div>
             <h6 class="mb-0">Sidebar Colors</h6>
         </div>
         <a href="javascript:void(0)" class="switch-trigger background-color">
@@ -724,8 +720,8 @@
                 <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
             </div>
         </a> -->
-        <!-- Sidenav Type -->
-        <div class="mt-3">
+    <!-- Sidenav Type -->
+    <!-- <div class="mt-3">
             <h6 class="mb-0">Sidenav Type</h6>
             <p class="text-sm">Choose between 2 different sidenav types.</p>
         </div>
