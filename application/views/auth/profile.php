@@ -70,7 +70,7 @@
                                 Alec Thompson
                             </h5>
                             <p class="mb-0 font-weight-bold text-sm">
-                                mahsa
+                                mahsa savira
                             </p>
                         </div>
                     </div>
