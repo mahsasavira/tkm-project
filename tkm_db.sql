@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2021 at 08:16 AM
+-- Generation Time: Sep 18, 2021 at 02:55 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -31,22 +31,41 @@ SET time_zone = "+00:00";
 CREATE TABLE `aktiva` (
   `ID_AKTIVA` int(11) NOT NULL,
   `JENIS_AKTIVA` varchar(50) NOT NULL,
-  `NILAI` float NOT NULL
+  `NILAI` float NOT NULL,
+  `tanggal_masuk` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `aktiva`
 --
 
-INSERT INTO `aktiva` (`ID_AKTIVA`, `JENIS_AKTIVA`, `NILAI`) VALUES
-(1110, 'KAS KECIL', 0),
-(1120, 'KAS PADA BANK', 0),
-(1130, 'PIUTANG OPERASIONAL', 0),
-(1140, 'PIUTANG DAYA MAKARA', 0),
-(1150, 'PIUTANG PROYEK', 0),
-(1160, 'PIUTANG TVUI', 0),
-(1170, 'JAMINAN BANK', 0),
-(1180, 'PIUTANG SOLAR CAR', 0);
+INSERT INTO `aktiva` (`ID_AKTIVA`, `JENIS_AKTIVA`, `NILAI`, `tanggal_masuk`) VALUES
+(1110, 'KAS KECIL', 0, '0000-00-00'),
+(1120, 'KAS PADA BANK', 0, '0000-00-00'),
+(1130, 'PIUTANG OPERASIONAL', 0, '0000-00-00'),
+(1140, 'PIUTANG DAYA MAKARA', 0, '0000-00-00'),
+(1150, 'PIUTANG PROYEK', 0, '0000-00-00'),
+(1160, 'PIUTANG TVUI', 0, '0000-00-00'),
+(1170, 'JAMINAN BANK', 0, '0000-00-00'),
+(1180, 'PIUTANG SOLAR CAR', 0, '0000-00-00'),
+(1210, 'PERLENGKAPAN KANTOR', 0, '0000-00-00'),
+(1310, 'KOMPUTER', 0, '0000-00-00'),
+(1315, 'AKUM. PENY. KOMPPUTER', 0, '0000-00-00'),
+(1320, 'FAX', 0, '0000-00-00'),
+(1325, 'AKUM. PENY. FAX', 0, '0000-00-00'),
+(1330, 'AC', 0, '0000-00-00'),
+(1335, 'AKUM. PENY. AC', 0, '0000-00-00'),
+(1340, 'FURNITURE', 0, '0000-00-00'),
+(1345, 'AKUM. PENY. FURNITURE', 0, '0000-00-00'),
+(1350, 'NOTEBOOK', 0, '0000-00-00'),
+(1355, 'AKUM. PENY.  NOTEBOOK', 0, '0000-00-00'),
+(1360, 'KAMERA DIGITAL', 0, '0000-00-00'),
+(1365, 'AKUM. PENY. KAMERA DIGITAL', 0, '0000-00-00'),
+(1370, 'PRINTER', 0, '0000-00-00'),
+(1375, 'AKUM. PENY. PRINTER', 0, '0000-00-00'),
+(1380, 'VIDEO KAMERA', 0, '0000-00-00'),
+(1385, 'AKUM. PENY. VIDEO KAMERA', 0, '0000-00-00'),
+(5555, 'TOTAL AKTIVA', 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -71,16 +90,31 @@ CREATE TABLE `arus_kas` (
 CREATE TABLE `beban` (
   `ID_BEBAN` int(11) NOT NULL,
   `JENIS_BEBAN` varchar(30) NOT NULL,
-  `NILAI` float NOT NULL
+  `NILAI` float NOT NULL,
+  `tanggal_masuk` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `beban`
 --
 
-INSERT INTO `beban` (`ID_BEBAN`, `JENIS_BEBAN`, `NILAI`) VALUES
-(5100, 'BEBAN PROYEK', 0),
-(5110, 'BEBAN GAJI', 0);
+INSERT INTO `beban` (`ID_BEBAN`, `JENIS_BEBAN`, `NILAI`, `tanggal_masuk`) VALUES
+(5100, 'BEBAN PROYEK', 0, '0000-00-00'),
+(5110, 'BEBAN GAJI', 0, '0000-00-00'),
+(5115, 'TUNJANGAN HARI RAYA', 0, '0000-00-00'),
+(5120, 'BEBAN OPERASIONAL', 0, '0000-00-00'),
+(5125, 'BEBAN SETORAN KE UI', 0, '0000-00-00'),
+(5130, 'BEBAN BONUS', 0, '0000-00-00'),
+(5140, 'BEBAN PERLENGKAPAN KANTOR', 0, '0000-00-00'),
+(5150, 'BEBAN PENYUSUTAN', 0, '0000-00-00'),
+(5160, 'BEBAN PENGELOLAAN REK.', 0, '0000-00-00'),
+(5170, 'BEBAN BUKU CEK', 0, '0000-00-00'),
+(5180, 'BEBAN PAJAK', 0, '0000-00-00'),
+(5190, 'BEBAN LAIN-LAIN', 0, '0000-00-00'),
+(5200, 'RUGI SELISIH KURS', 0, '0000-00-00'),
+(5300, 'RUGI PENJUALAN ASET', 0, '0000-00-00'),
+(8888, 'TOTAL BEBAN', 0, '0000-00-00'),
+(9999, 'LABA BERSIH', 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -119,16 +153,24 @@ CREATE TABLE `neraca` (
 CREATE TABLE `pasiva` (
   `ID_PASIVA` int(11) NOT NULL,
   `JENIS_PASIVA` varchar(50) NOT NULL,
-  `NILAI` float NOT NULL
+  `NILAI` float NOT NULL,
+  `tanggal_masuk` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pasiva`
 --
 
-INSERT INTO `pasiva` (`ID_PASIVA`, `JENIS_PASIVA`, `NILAI`) VALUES
-(2110, 'HUTANG OPERASIONAL', 0),
-(2120, 'HUTANG GAJI', 0);
+INSERT INTO `pasiva` (`ID_PASIVA`, `JENIS_PASIVA`, `NILAI`, `tanggal_masuk`) VALUES
+(2110, 'HUTANG OPERASIONAL', 0, '0000-00-00'),
+(2120, 'HUTANG GAJI', 0, '0000-00-00'),
+(2130, 'HUTANG PROYEK', 0, '0000-00-00'),
+(2140, 'HUTANG PADA MIPA', 0, '0000-00-00'),
+(2150, 'HUTANG BONUS', 0, '0000-00-00'),
+(2160, 'HUTANG PADA RTV UI', 0, '0000-00-00'),
+(6000, 'TOTAL KEWAJIBAN', 0, '0000-00-00'),
+(7000, 'TOTAL MODAL', 0, '0000-00-00'),
+(8000, 'TOTAL PASIVA', 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -139,16 +181,21 @@ INSERT INTO `pasiva` (`ID_PASIVA`, `JENIS_PASIVA`, `NILAI`) VALUES
 CREATE TABLE `pendapatan` (
   `ID_PENDAPATAN` int(11) NOT NULL,
   `JENIS_PENDAPATAN` varchar(30) NOT NULL,
-  `NILAI` float NOT NULL
+  `NILAI` float NOT NULL,
+  `tanggal_masuk` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pendapatan`
 --
 
-INSERT INTO `pendapatan` (`ID_PENDAPATAN`, `JENIS_PENDAPATAN`, `NILAI`) VALUES
-(4100, 'PENDAPATAN PROYEK', 0),
-(4110, 'PENDAPATAN GIRO', 0);
+INSERT INTO `pendapatan` (`ID_PENDAPATAN`, `JENIS_PENDAPATAN`, `NILAI`, `tanggal_masuk`) VALUES
+(4100, 'PENDAPATAN PROYEK', 0, '0000-00-00'),
+(4110, 'PENDAPATAN GIRO', 0, '0000-00-00'),
+(4120, 'BONUS', 0, '0000-00-00'),
+(4130, 'PENDAPATAN LAIN-LAIN', 0, '0000-00-00'),
+(4140, 'LABA SELISIH KURS', 0, '0000-00-00'),
+(9000, 'TOTAL PENDAPATAN', 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
