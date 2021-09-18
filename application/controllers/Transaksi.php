@@ -40,4 +40,15 @@ class Transaksi extends CI_Controller
         $this->m_neraca->input_data($data, 'aktiva');
         redirect('neraca');
     }
+
+    function tambah_labarugi($id)
+    {
+
+        $nilai = $this->input->post('nilai');
+        $data = array(
+            'nilai' => $nilai
+        );
+        $this->m_labarugi->input_labarugi($data, 'pendapatan');
+        redirect('/transaksi/labarugi');
+    }
 }

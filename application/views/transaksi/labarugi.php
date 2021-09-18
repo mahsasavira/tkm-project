@@ -9,7 +9,7 @@
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
                         <li class="breadcrumb-item text-sm text-white active" aria-current="page">Laba Rugi</li>
                     </ol>
-                    <h6 class="font-weight-bolder text-white mb-0">Laba Rugi</h6>
+                    <!-- <h6 class="font-weight-bolder text-white mb-0">Laba Rugi</h6> -->
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -68,23 +68,62 @@
                             <h6 class="mb-2 mt-5">LABA RUGI</h6>
                         </div>
                         <div class="card-body pt-4 p-3">
-                            <ul class="list-group">
-                                <div class="card-body px-0 pt-0 pb-2">
-                                    <div class="table-responsive p-0">
-                                        <table class="table align-items-center mb-0">
-                                            <tbody>
+                            <form action="<?php echo site_url('transaksi/tambah_labarugi') ?>" method="post">
+                                <ul class="list-group">
+                                    <div class="card-body px-0 pt-0 pb-2">
+                                        <div class="table-responsive p-0">
+                                            <table class="table align-items-center mb-0">
+                                                <tbody>
+                                                    <tr>
+                                                        <h6 href="javascript:;" class="text-secondary font-weight-bold text-s" data-toggle="tooltip" data-original-title="pendapatan">
+                                                            Pendapatan
+                                                        </h6>
+                                                    <tr>
+                                                        <?php
+                                                        foreach ($id_pend as $id) { ?>
+                                                            <td>
+                                                                <div class="d-flex px-3 py-1">
+                                                                    <div class="d-flex flex-column justify-content-center">
+                                                                        <h6 class="mb-0 text-sm">
+                                                                            <?= $id->jenis_pendapatan ?>
+                                                                        </h6>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex flex-column justify-content-center">
+                                                                    <div class="form-group col-8" method="post">
+                                                                        <input type="number" name="nilai" class="form-control" id="exampleFormControlInput1" placeholder="Rp.">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                    Edit
+                                                                </a>
+                                                                <br>
+                                                                <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                    Hapus
+                                                                </a>
+                                                            </td>
+                                                    </tr>
+                                                <?php } ?>
+                                                </tr>
+
                                                 <tr>
-                                                    <h6 href="javascript:;" class="text-secondary font-weight-bold text-s" data-toggle="tooltip" data-original-title="pendapatan">
-                                                        Pendapatan
-                                                    </h6>
+                                                    <td>
+                                                        <h6 href="javascript:;" class="text-secondary font-weight-bold text-s mt-5" data-toggle="tooltip" data-original-title="pendapatan">
+                                                            Beban
+                                                        </h6>
+                                                    </td>
                                                 <tr>
                                                     <?php
-                                                    foreach ($id_pend as $id) { ?>
+                                                    foreach ($id_beban as $id) { ?>
                                                         <td>
                                                             <div class="d-flex px-3 py-1">
                                                                 <div class="d-flex flex-column justify-content-center">
                                                                     <h6 class="mb-0 text-sm">
-                                                                        <?= $id->jenis_pendapatan ?>
+                                                                        <?= $id->jenis_beban ?>
                                                                     </h6>
                                                                 </div>
                                                             </div>
@@ -92,7 +131,7 @@
                                                         <td>
                                                             <div class="d-flex flex-column justify-content-center">
                                                                 <div class="form-group col-8">
-                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Rp.">
+                                                                    <input type="number" name="nilai2" class="form-control" id="exampleFormControlInput1" placeholder="Rp.">
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -107,73 +146,38 @@
                                                         </td>
                                                 </tr>
                                             <?php } ?>
-                                            </tr>
 
-                                            <tr>
-                                                <td>
-                                                    <h6 href="javascript:;" class="text-secondary font-weight-bold text-s mt-5" data-toggle="tooltip" data-original-title="pendapatan">
-                                                        Beban
-                                                    </h6>
-                                                </td>
-                                            <tr>
-                                                <?php
-                                                foreach ($id_beban as $id) { ?>
-                                                    <td>
-                                                        <div class="d-flex px-3 py-1">
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">
-                                                                    <?= $id->jenis_beban ?>
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <div class="form-group col-8">
-                                                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Rp.">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                        <br>
-                                                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
                                             </tr>
-                                        <?php } ?>
-                                        </tr>
-                                            </tbody>
-                                        </table>
-                                        <div class="col-md-0 mt-4">
-                                            <div class="col-md-3">
-                                                <ul class="list-group">
-                                                    <div class="card-body px-1 pt-1 pb-0">
-                                                        <center>
-                                                            <div class="row">
-                                                                <div class="col-md-4">
-                                                                    <div class="form-group col-4">
-                                                                        <button type="button" class="btn btn-success">Simpan</button>
+                                                </tbody>
+                                            </table>
+                                            <div class="col-md-0 mt-4">
+                                                <div class="col-md-3">
+                                                    <ul class="list-group">
+                                                        <div class="card-body px-1 pt-1 pb-0">
+                                                            <center>
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group col-4">
+                                                                            <button type="submit" class="btn btn-success">Simpan</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5">
+                                                                        <div class="form-group col-4">
+                                                                            <button type="button" class="btn btn-danger">Batal</button>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-5">
-                                                                    <div class="form-group col-4">
-                                                                        <button type="button" class="btn btn-danger">Batal</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </center>
-                                                    </div>
-                                                </ul>
+                                                            </center>
+                                                        </div>
+                                                    </ul>
+                                                </div>
                                             </div>
+
+
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
+                                    <!-- <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                                     <div class="d-flex flex-column">
                                         <h6 class="mb-3 text-sm">Oliver Liam</h6>
                                         <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Viking Burrito</span></span>
@@ -209,8 +213,10 @@
                                         <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                     </div>
                                 </li> -->
-                            </ul>
+                                </ul>
+                            </form>
                         </div>
+
                     </div>
                 </div>
             </div>
