@@ -58,54 +58,14 @@
                 <span class="mask bg-gradient-primary opacity-6"></span>
             </div> -->
             <div class="row">
-                <div class="col-md-0 MT-0">
-                    <div class="card">
-                        <div class="card-header pb-0 px-3">
-                            <div class="p-4">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group col-4">
-                                                <label for="example-date-input" class="form-control-label">Tanggal</label>
-                                                <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="form-group col-4">
-                                                <label for="example-datetime-local-input" class="form-control-label">Waktu/Tanggal</label>
-                                                <input class="form-control" type="datetime-local" value="2021-11-23T10:30:00" id="example-datetime-local-input">
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <div class="form-group col-4">
-                                                    <label for="example-month-input" class="form-control-label">Bulan</label>
-                                                    <input class="form-control" type="month" value="2021-11" id="example-month-input">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <div class="form-group col-4">
-                                                    <label for="example-week-input" class="form-control-label">Minggu</label>
-                                                    <input class="form-control" type="week" value="2021-W23" id="example-week-input">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-md-8 mt-4">
                     <div class="card">
                         <div class="card-header pb-0 px-3">
-                            <h6 class="mb-2">LABA RUGI</h6>
+                            <div class="form-group col-5">
+                                <label for="example-date-input" class="form-control-label">Tanggal : </label>
+                                <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
+                            </div>
+                            <h6 class="mb-2 mt-5">LABA RUGI</h6>
                         </div>
                         <div class="card-body pt-4 p-3">
                             <ul class="list-group">
@@ -151,7 +111,7 @@
 
                                             <tr>
                                                 <td>
-                                                    <h6 href="javascript:;" class="text-secondary font-weight-bold text-s" data-toggle="tooltip" data-original-title="pendapatan">
+                                                    <h6 href="javascript:;" class="text-secondary font-weight-bold text-s mt-5" data-toggle="tooltip" data-original-title="pendapatan">
                                                         Beban
                                                     </h6>
                                                 </td>
@@ -186,9 +146,30 @@
                                             </tr>
                                         <?php } ?>
                                         </tr>
-
                                             </tbody>
                                         </table>
+                                        <div class="col-md-0 mt-4">
+                                            <div class="col-md-3">
+                                                <ul class="list-group">
+                                                    <div class="card-body px-1 pt-1 pb-0">
+                                                        <center>
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group col-4">
+                                                                        <button type="button" class="btn btn-success">Simpan</button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group col-4">
+                                                                        <button type="button" class="btn btn-danger">Batal</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </center>
+                                                    </div>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -228,32 +209,6 @@
                                         <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                     </div>
                                 </li> -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-0 mt-4">
-                <div class="col-md-2">
-                    <div class="card">
-                        <div class="card-body pt-4 p-2">
-                            <ul class="list-group">
-                                <div class="card-body px-1 pt-1 pb-0">
-                                    <center>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group col-4">
-                                                    <button type="button" class="btn btn-success">Simpan</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <div class="form-group col-4">
-                                                    <button type="button" class="btn btn-danger">Batal</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </center>
-                                </div>
                             </ul>
                         </div>
                     </div>

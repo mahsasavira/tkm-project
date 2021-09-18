@@ -19,4 +19,10 @@ class m_neraca extends CI_Model
         $query = $this->db->query('SELECT id_pasiva,jenis_pasiva FROM pasiva');
         return $query->result();
     }
+
+    //tambah aktiva
+    public function tambah_akt()
+    {
+        $query = $this->db->get_where('nilai');
+    }
 }
