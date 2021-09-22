@@ -41,14 +41,21 @@ class Transaksi extends CI_Controller
         redirect('neraca');
     }
 
-    function tambah_labarugi($id)
+    function tambah_labarugi()
     {
-
-        $nilai = $this->input->post('nilai');
+        $pendapatan_proyek = $this->input->post('pendapatan_proyek');
+        $pendapatan_giro = $this->input->post('pendapatan_giro');
+        $bonus = $this->input->post('bonus');
+        $pendapatan_lain = $this->input->post('pendapatan_lain');
+        $laba_selisih = $this->input->post('laba_selisih');
         $data = array(
-            'nilai' => $nilai
+            'id_pendapatan' => $this->input->post('id_pendapatan'),
+            'jenis_pendapatan' => $this->input->post('pendapatan_proyek')
+
         );
-        $this->m_labarugi->input_labarugi($data, 'pendapatan');
-        redirect('/transaksi/labarugi');
+
+        $ost = $this->m_labarugi->tambah_labarugi($data);
+        var_dump($pendapatan_proyek, $pendapatan_giro, $bonus, $pendapatan_lain, $laba_selisih);
+        // redirect('/transaksi/labarugi');
     }
 }

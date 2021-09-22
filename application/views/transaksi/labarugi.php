@@ -9,7 +9,7 @@
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
                         <li class="breadcrumb-item text-sm text-white active" aria-current="page">Laba Rugi</li>
                     </ol>
-                    <!-- <h6 class="font-weight-bolder text-white mb-0">Laba Rugi</h6> -->
+                    <h6 class="font-weight-bolder text-white mb-0">Laba Rugi</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -66,7 +66,7 @@
                             <h6 class="mb-2 mt-5">LABA RUGI</h6>
                         </div>
                         <div class="card-body pt-4 p-3">
-                            <form action="<?php echo site_url('transaksi/tambah_labarugi') ?>" method="post">
+                            <form action="" method="post">
                                 <ul class="list-group">
                                     <div class="card-body px-0 pt-0 pb-2">
                                         <div class="table-responsive p-0">
@@ -79,31 +79,113 @@
                                                     <tr>
                                                         <?php
                                                         foreach ($id_pend as $id) { ?>
-                                                            <td>
-                                                                <div class="d-flex px-3 py-1">
-                                                                    <div class="d-flex flex-column justify-content-center">
-                                                                        <h6 class="mb-0 text-sm">
-                                                                            <?= $id->jenis_pendapatan ?>
-                                                                        </h6>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex px-0 py-1">
                                                                 <div class="d-flex flex-column justify-content-center">
-                                                                    <div class="form-group col-8" method="post">
-                                                                        <input type="number" name="nilai" class="form-control" id="exampleFormControlInput1" placeholder="Rp.">
-                                                                    </div>
+                                                                    <h6 class="mb-0 text-sm">
+                                                                        Pendapatan Proyek
+                                                                    </h6>
                                                                 </div>
-                                                            </td>
-                                                            <td class="align-middle">
-                                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                    Edit
-                                                                </a>
-                                                                <br>
-                                                                <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                    Hapus
-                                                                </a>
-                                                            </td>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex flex-column justify-content-center">
+                                                                <div class="form-group col-8" method="post">
+                                                                    <input type="number" name="nilai" class="form-control" value="<?= $id->pendapatan_proyek ?>" placeholder="Rp.">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="align-middle">
+                                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                Edit
+                                                            </a>
+                                                            <br>
+                                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                Hapus
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex px-0 py-1">
+                                                                <div class="d-flex flex-column justify-content-center">
+                                                                    <h6 class="mb-0 text-sm">
+                                                                        Pendapatan Giro
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex flex-column justify-content-center">
+                                                                <div class="form-group col-8" method="post">
+                                                                    <input type="number" name="nilai" class="form-control" value="<?= $id->pendapatan_giro ?>" placeholder="Rp.">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="align-middle">
+                                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                Edit
+                                                            </a>
+                                                            <br>
+                                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                Hapus
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex px-0 py-1">
+                                                                <div class="d-flex flex-column justify-content-center">
+                                                                    <h6 class="mb-0 text-sm">
+                                                                        Pendapatan Lain-Lain
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex flex-column justify-content-center">
+                                                                <div class="form-group col-8" method="post">
+                                                                    <input type="number" name="nilai" class="form-control" value="<?= $id->pendapatan_lainlain ?>" placeholder="Rp.">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="align-middle">
+                                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                Edit
+                                                            </a>
+                                                            <br>
+                                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                Hapus
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex px-0 py-1">
+                                                                <div class="d-flex flex-column justify-content-center">
+                                                                    <h6 class="mb-0 text-sm">
+                                                                        Laba Selisih Kurs
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex flex-column justify-content-center">
+                                                                <div class="form-group col-8" method="post">
+                                                                    <input type="number" name="nilai" class="form-control" value="<?= $id->laba_selisih_kurs ?>" placeholder="Rp.">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="align-middle">
+                                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                Edit
+                                                            </a>
+                                                            <br>
+                                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                Hapus
+                                                            </a>
+                                                        </td>
                                                     </tr>
                                                 <?php } ?>
                                                 </tr>
@@ -117,101 +199,64 @@
                                                 <tr>
                                                     <?php
                                                     foreach ($id_beban as $id) { ?>
-                                                        <td>
-                                                            <div class="d-flex px-3 py-1">
-                                                                <div class="d-flex flex-column justify-content-center">
-                                                                    <h6 class="mb-0 text-sm">
-                                                                        <?= $id->jenis_beban ?>
-                                                                    </h6>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex px-0 py-1">
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <div class="form-group col-8">
-                                                                    <input type="number" name="nilai2" class="form-control" id="exampleFormControlInput1" placeholder="Rp.">
-                                                                </div>
+                                                                <h6 class="mb-0 text-sm">
+                                                                    Beban Proyek
+                                                                </h6>
                                                             </div>
-                                                        </td>
-                                                        <td class="align-middle">
-                                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Edit
-                                                            </a>
-                                                            <br>
-                                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Hapus
-                                                            </a>
-                                                        </td>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <div class="form-group col-8" method="post">
+                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_proyek ?>" placeholder="Rp.">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                            Edit
+                                                        </a>
+                                                        <br>
+                                                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                            Hapus
+                                                        </a>
+                                                    </td>
                                                 </tr>
+
                                             <?php } ?>
 
                                             </tr>
                                                 </tbody>
                                             </table>
-                                            <div class="col-md-0 mt-4">
-                                                <div class="col-md-3">
-                                                    <ul class="list-group">
-                                                        <div class="card-body px-1 pt-1 pb-0">
-                                                            <center>
-                                                                <div class="row">
-                                                                    <div class="col-md-4">
-                                                                        <div class="form-group col-4">
-                                                                            <button type="submit" class="btn btn-success">Simpan</button>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-5">
-                                                                        <div class="form-group col-4">
-                                                                            <button type="button" class="btn btn-danger">Batal</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </center>
-                                                        </div>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-
                                         </div>
                                     </div>
-
-                                    <!-- <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-3 text-sm">Oliver Liam</h6>
-                                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Viking Burrito</span></span>
-                                        <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">oliver@burrito.com</span></span>
-                                        <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                                    </div>
-                                    <div class="ms-auto text-end">
-                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-3 text-sm">Lucas Harper</h6>
-                                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Stone Tech Zone</span></span>
-                                        <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">lucas@stone-tech.com</span></span>
-                                        <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                                    </div>
-                                    <div class="ms-auto text-end">
-                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-3 text-sm">Ethan James</h6>
-                                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Fiber Notion</span></span>
-                                        <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">ethan@fiber.com</span></span>
-                                        <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                                    </div>
-                                    <div class="ms-auto text-end">
-                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    </div>
-                                </li> -->
                                 </ul>
+                                <div class="col-md-0 mt-4">
+                                    <div class="col-md-3">
+                                        <ul class="list-group">
+                                            <div class="card-body px-1 pt-1 pb-0">
+                                                <center>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group col-4">
+                                                                <button type="submit" class="btn btn-success">Simpan</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group col-4">
+                                                                <button type="button" class="btn btn-danger">Batal</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </center>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
                             </form>
                         </div>
 
@@ -252,323 +297,8 @@
             </div>
         </footer>
         </div>
-        <!-- <div class="container-fluid py-4">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-header pb-0 p-3">
-                            <div class="row">
-                                <div class="col-6 d-flex align-items-center">
-                                    <h6 class="mb-0">Invoices</h6>
-                                </div>
-                                <div class="col-6 text-end">
-                                    <button class="btn btn-outline-primary btn-sm mb-0">View All</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body p-3 pb-0">
-                            <ul class="list-group">
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-1 text-dark font-weight-bold text-sm">March, 01, 2020</h6>
-                                        <span class="text-xs">#MS-415646</span>
-                                    </div>
-                                    <div class="d-flex align-items-center text-sm">
-                                        $180
-                                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="text-dark mb-1 font-weight-bold text-sm">February, 10, 2021</h6>
-                                        <span class="text-xs">#RV-126749</span>
-                                    </div>
-                                    <div class="d-flex align-items-center text-sm">
-                                        $250
-                                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="text-dark mb-1 font-weight-bold text-sm">April, 05, 2020</h6>
-                                        <span class="text-xs">#FB-212562</span>
-                                    </div>
-                                    <div class="d-flex align-items-center text-sm">
-                                        $560
-                                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="text-dark mb-1 font-weight-bold text-sm">June, 25, 2019</h6>
-                                        <span class="text-xs">#QW-103578</span>
-                                    </div>
-                                    <div class="d-flex align-items-center text-sm">
-                                        $120
-                                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="text-dark mb-1 font-weight-bold text-sm">March, 01, 2019</h6>
-                                        <span class="text-xs">#AR-803481</span>
-                                    </div>
-                                    <div class="d-flex align-items-center text-sm">
-                                        $300
-                                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-7 mt-4">
-                    <div class="card">
-                        <div class="card-header pb-0 px-3">
-                            <h6 class="mb-0">Billing Information</h6>
-                        </div>
-                        <div class="card-body pt-4 p-3">
-                            <ul class="list-group">
-                                <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-3 text-sm">Oliver Liam</h6>
-                                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Viking Burrito</span></span>
-                                        <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">oliver@burrito.com</span></span>
-                                        <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                                    </div>
-                                    <div class="ms-auto text-end">
-                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-3 text-sm">Lucas Harper</h6>
-                                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Stone Tech Zone</span></span>
-                                        <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">lucas@stone-tech.com</span></span>
-                                        <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                                    </div>
-                                    <div class="ms-auto text-end">
-                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-3 text-sm">Ethan James</h6>
-                                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Fiber Notion</span></span>
-                                        <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">ethan@fiber.com</span></span>
-                                        <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                                    </div>
-                                    <div class="ms-auto text-end">
-                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-md-5 mt-4">
-                    <div class="card h-100 mb-4">
-                        <div class="card-header pb-0 px-3">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h6 class="mb-0">Your Transaction's</h6>
-                                </div>
-                                <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                    <i class="far fa-calendar-alt me-2"></i>
-                                    <small>23 - 30 March 2020</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body pt-4 p-3">
-                            <h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3">Newest</h6>
-                            <ul class="list-group">
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex align-items-center">
-                                        <button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-down"></i></button>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Netflix</h6>
-                                            <span class="text-xs">27 March 2020, at 12:30 PM</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center text-danger text-gradient text-sm font-weight-bold">
-                                        - $ 2,500
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex align-items-center">
-                                        <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Apple</h6>
-                                            <span class="text-xs">27 March 2020, at 04:30 AM</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
-                                        + $ 2,000
-                                    </div>
-                                </li>
-                            </ul>
-                            <h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">Yesterday</h6>
-                            <ul class="list-group">
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex align-items-center">
-                                        <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Stripe</h6>
-                                            <span class="text-xs">26 March 2020, at 13:45 PM</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
-                                        + $ 750
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex align-items-center">
-                                        <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">HubSpot</h6>
-                                            <span class="text-xs">26 March 2020, at 12:30 PM</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
-                                        + $ 1,000
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex align-items-center">
-                                        <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Creative Tim</h6>
-                                            <span class="text-xs">26 March 2020, at 08:30 AM</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
-                                        + $ 2,500
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex align-items-center">
-                                        <button class="btn btn-icon-only btn-rounded btn-outline-dark mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-exclamation"></i></button>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Webflow</h6>
-                                            <span class="text-xs">26 March 2020, at 05:00 AM</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center text-dark text-sm font-weight-bold">
-                                        Pending
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> -->
-        <!-- </div>
-        <footer class="footer pt-3  ">
-            <div class="container-fluid">
-                <div class="row align-items-center justify-content-lg-between">
-                    <div class="col-lg-6 mb-lg-0 mb-4">
-                        <div class="copyright text-center text-sm text-muted text-lg-start">
-                            © <script>
-                                document.write(new Date().getFullYear())
-                            </script>,
-                            made with <i class="fa fa-heart"></i> by
-                            <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                            for a better web.
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        </div> -->
     </main>
 
-    <!-- <div class="fixed-plugin">
-        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-            <i class="fa fa-cog py-2"> </i>
-        </a>
-        <div class="card shadow-lg ">
-            <div class="card-header pb-0 pt-3 ">
-                <div class="float-start">
-                    <h5 class="mt-3 mb-0">Soft UI Configurator</h5>
-                    <p>See our dashboard options.</p>
-                </div>
-                <div class="float-end mt-4">
-                    <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
-                        <i class="fa fa-close"></i>
-                    </button>
-                </div> -->
-    <!-- End Toggle Button -->
-    <!-- </div>
-            <hr class="horizontal dark my-1">
-            <div class="card-body pt-sm-3 pt-0"> -->
-    <!-- Sidebar Backgrounds -->
-    <!-- <div>
-                    <h6 class="mb-0">Sidebar Colors</h6>
-                </div>
-                <a href="javascript:void(0)" class="switch-trigger background-color">
-                    <div class="badge-colors my-2 text-start">
-                        <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
-                        <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
-                        <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
-                        <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
-                        <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
-                        <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
-                    </div>
-                </a> -->
-    <!-- Sidenav Type -->
-    <!-- <div class="mt-3">
-                    <h6 class="mb-0">Sidenav Type</h6>
-                    <p class="text-sm">Choose between 2 different sidenav types.</p>
-                </div>
-                <div class="d-flex">
-                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 active" data-class="bg-transparent" onclick="sidebarType(this)">Transparent</button>
-                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 ms-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
-                </div>
-                <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p> -->
-    <!-- Navbar Fixed -->
-    <!-- <div class="mt-3">
-                    <h6 class="mb-0">Navbar Fixed</h6>
-                </div>
-                <div class="form-check form-switch ps-0">
-                    <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
-                </div>
-                <hr class="horizontal dark my-sm-4">
-                <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro">Free
-                    Download</a>
-                <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard">View documentation</a>
-                <div class="w-100 text-center">
-                    <a class="github-button" href="https://github.com/creativetimofficial/soft-ui-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/soft-ui-dashboard on GitHub">Star</a>
-                    <h6 class="mt-3">Thank you for sharing!</h6>
-                    <a href="https://twitter.com/intent/tweet?text=Check%20Soft%20UI%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-                        <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-                    </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/soft-ui-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-                        <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <!--   Core JS Files   -->
     <script src="<?php echo base_url() ?>assets/js/core/popper.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/core/bootstrap.min.js"></script>
