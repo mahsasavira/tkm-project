@@ -29,12 +29,12 @@ class Transaksi extends CI_Controller
         $this->load->view('transaksi/labarugi');
     }
 
-    // public function add_aktiva()
-    // {
-    //     $this->load->view('template/header');
-    //     $this->load->view('template/sidebar');
-    //     $this->load->view('transaksi/tambah_akt');
-
+    public function tambah_aktiva()
+    {
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/tambah_aktiva');
+    }
     // $kas_kecil = $this->input->post('kas_kecil');
     // $kas_pada_bank = $this->input->post('kas_pada_bank');
     // $data = array(
