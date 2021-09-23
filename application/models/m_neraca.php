@@ -25,8 +25,8 @@ class M_neraca extends CI_Model
     }
 
     // tambah aktiva
-    public function tambah_aktiva()
+    public function add_aktiva($data)
     {
-        return $this->db->get('aktiva');
+        return $this->db->insert('aktiva', $data);
     }
 }
