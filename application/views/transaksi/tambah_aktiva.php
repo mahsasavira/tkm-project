@@ -64,7 +64,7 @@
                                 <div class="card-header pb-0 px-3 text-center">
                                     <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Tambah Aktiva</h5>
                                 </div>
-                                <form action="" method="POST" enctype="multipart/form-data">
+                                <form action="" method="POST">
                                     <div class="card-body pt-4 p-3">
                                         <ul class="list-group">
                                             <div class="card-body px-0 pt-0 pb-2">

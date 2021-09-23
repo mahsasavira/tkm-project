@@ -21,7 +21,7 @@
                     </div>
                     <div class="navbar-nav  justify-content-end">
                         <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                            <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+                            <a href="<?= site_url('auth/logout') ?>" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fas fa-sign-out-alt"></i>
                                 <span class="d-sm-inline d-none">Keluar</span>
                             </a>
@@ -784,7 +784,7 @@
                                         <div class="card-body px-0 pt-0 pb-2">
                                             <div class="table-responsive p-0">
                                                 <div class=" col-12 mb-3">
-                                                    <a type="button" href="<?php echo base_url() ?>tambah_aktiva" class="btn btn-primary btn-sm">
+                                                    <a type="button" href="<?php echo base_url() ?>transaksi/tambah_aktiva" class="btn btn-primary btn-sm">
                                                         Tambah Pasiva
                                                     </a>
 
