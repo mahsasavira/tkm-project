@@ -17,7 +17,7 @@ class M_labarugi extends CI_Model
     //menampilkan pasiva
     public function tampil_beban()
     {
-        $query = $this->db->query('SELECT id_beban,beban_proyek,beban_gaji,tunjangan_hari_raya,beban_operasional,
+        $query = $this->db->query('SELECT id_beban,tanggal_masuk,beban_proyek,beban_gaji,tunjangan_hari_raya,beban_operasional,
         beban_setoran_ui,beban_penyusutan,beban_bonus,beban_perlengkapan_kantor,beban_pengelolaan_rek,beban_buku_cek,beban_pajak,
         rugi_penjualan_aset,beban_lainlain,rugi_selisih_kurs FROM beban');
         return $query->result();

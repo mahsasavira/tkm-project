@@ -1,15 +1,15 @@
 <body class="g-sidenav-show  bg-gray-100">
-
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
         <!-- Navbar -->
         <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" style="background-image: url('../assets/img/background.png'); background-position-y: 50%;" id="navbarBlur" navbar-scroll="true">
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="<?= 'labarugi' ?>">Laba Rugi</a></li>
+
                         <li class="breadcrumb-item text-sm text-white active" aria-current="page">Laba Rugi</li>
                     </ol>
-                    <h6 class="font-weight-bolder text-white mb-0">Laba Rugi</h6>
+                    <!-- <h6 class="font-weight-bolder text-white mb-0">Laba Rugi</h6> -->
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -51,205 +51,45 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <div class="container-fluid py-4">
+        <div class="container-fluid">
             <!-- <div class="page-header min-height-250 border-radius-xl mt-4" style="background-image: url('../assets/img/background.png'); background-position-y: 50%;">
                 <span class="mask bg-gradient-primary opacity-6"></span>
             </div> -->
-            <div class="row">
-                <div class="col-md-8 mt-4">
-                    <div class="card">
-                        <div class="card-header pb-0 px-3">
-                            <div class="form-group col-5">
-                                <label for="example-date-input" class="form-control-label">Tanggal : </label>
-                                <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
-                            </div>
+            <!-- <div class="row"> -->
+            <div class="col-md-8 mt-4">
+                <div class="card">
+                    <div class="card-header pb-0 px-3">
+                        <div class="form-group col-5 mb-3">
+                            <label for="example-date-input" class="form-control-label">Tanggal : </label>
+                            <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
                         </div>
-                        <div class="card-body pt-4 p-3">
-                            <form action="" method="post">
-                                <ul class="list-group">
-                                    <div class="card-body px-0 pt-0 pb-2">
-                                        <div class="table-responsive p-0">
-                                            <table class="table align-items-center mb-0">
-                                                <tbody>
-                                                    <tr>
-                                                        <h6 href="javascript:;" class="text-secondary font-weight-bold text-s" data-toggle="tooltip" data-original-title="pendapatan">
-                                                            Pendapatan
-                                                        </h6>
-                                                    <tr>
-                                                        <?php
-                                                        foreach ($id_pend as $id) { ?>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="d-flex px-0 py-1">
-                                                                <div class="d-flex flex-column justify-content-center">
-                                                                    <h6 class="mb-0 text-sm">
-                                                                        Pendapatan Proyek
-                                                                    </h6>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <div class="form-group col-8" method="post">
-                                                                    <input type="number" name="nilai" class="form-control" value="<?= $id->pendapatan_proyek ?>" placeholder="Rp.">
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="align-middle">
-                                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Edit
-                                                            </a>
-                                                            <br>
-                                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Hapus
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="d-flex px-0 py-1">
-                                                                <div class="d-flex flex-column justify-content-center">
-                                                                    <h6 class="mb-0 text-sm">
-                                                                        Pendapatan Giro
-                                                                    </h6>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <div class="form-group col-8" method="post">
-                                                                    <input type="number" name="nilai" class="form-control" value="<?= $id->pendapatan_giro ?>" placeholder="Rp.">
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="align-middle">
-                                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Edit
-                                                            </a>
-                                                            <br>
-                                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Hapus
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="d-flex px-0 py-1">
-                                                                <div class="d-flex flex-column justify-content-center">
-                                                                    <h6 class="mb-0 text-sm">
-                                                                        Bonus
-                                                                    </h6>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <div class="form-group col-8" method="post">
-                                                                    <input type="number" name="nilai" class="form-control" value="<?= $id->bonus ?>" placeholder="Rp.">
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="align-middle">
-                                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Edit
-                                                            </a>
-                                                            <br>
-                                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Hapus
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="d-flex px-0 py-1">
-                                                                <div class="d-flex flex-column justify-content-center">
-                                                                    <h6 class="mb-0 text-sm">
-                                                                        Pendapatan Lain-Lain
-                                                                    </h6>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <div class="form-group col-8" method="post">
-                                                                    <input type="number" name="nilai" class="form-control" value="<?= $id->pendapatan_lainlain ?>" placeholder="Rp.">
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="align-middle">
-                                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Edit
-                                                            </a>
-                                                            <br>
-                                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Hapus
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="d-flex px-0 py-1">
-                                                                <div class="d-flex flex-column justify-content-center">
-                                                                    <h6 class="mb-0 text-sm">
-                                                                        Laba Selisih Kurs
-                                                                    </h6>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <div class="form-group col-8" method="post">
-                                                                    <input type="number" name="nilai" class="form-control" value="<?= $id->laba_selisih_kurs ?>" placeholder="Rp.">
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="align-middle">
-                                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Edit
-                                                            </a>
-                                                            <br>
-                                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                                Hapus
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="d-flex px-0 py-1">
-                                                                <div class="d-flex flex-column justify-content-center">
-                                                                    <h6 class="mb-0 text-s">
-                                                                        TOTAL PENDAPATAN
-                                                                    </h6>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <div class="form-group col-8" method="post">
-                                                                    <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->laba_selisih_kurs ?>" placeholder="Rp."> -->
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
-                                                </tr>
+                        <div class=" col-12 mt-3">
+                            <a type="button" href="<?php echo base_url() ?>transaksi/tambah_pendapatan" class="btn btn-primary btn-sm">
+                                Tambah Pendapatan & Beban
+                            </a>
+                        </div>
+                    </div>
 
-                                                <!-- BEBAN -->
+                    <div class="card-body pt-4 p-3">
+                        <form action="" method="post">
+                            <ul class="list-group">
+                                <div class="card-body px-0 pt-0 pb-2">
+                                    <div class="table-responsive p-0">
+                                        <table class="table align-items-center mb-0">
+                                            <tbody>
                                                 <tr>
-                                                    <td>
-                                                        <h6 href="javascript:;" class="text-secondary font-weight-bold text-s mt-5" data-toggle="tooltip" data-original-title="pendapatan">
-                                                            Beban
-                                                        </h6>
-                                                    </td>
+                                                    <h6 href="javascript:;" class="text-secondary font-weight-bold text-s" data-toggle="tooltip" data-original-title="pendapatan">
+                                                        Pendapatan
+                                                    </h6>
                                                 <tr>
                                                     <?php
-                                                    foreach ($id_beban as $id) { ?>
+                                                    foreach ($id_pend as $id) { ?>
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex px-0 py-1">
                                                             <div class="d-flex flex-column justify-content-center">
                                                                 <h6 class="mb-0 text-sm">
-                                                                    Beban Proyek
+                                                                    Pendapatan Proyek
                                                                 </h6>
                                                             </div>
                                                         </div>
@@ -257,7 +97,10 @@
                                                     <td>
                                                         <div class="d-flex flex-column justify-content-center">
                                                             <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_proyek ?>" placeholder="Rp.">
+                                                                <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                    Rp. <?= $id->pendapatan_proyek ?>
+                                                                </div>
+                                                                <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->pendapatan_proyek ?>" placeholder="Rp."> -->
                                                             </div>
                                                         </div>
                                                     </td>
@@ -276,7 +119,7 @@
                                                         <div class="d-flex px-0 py-1">
                                                             <div class="d-flex flex-column justify-content-center">
                                                                 <h6 class="mb-0 text-sm">
-                                                                    Beban Gaji
+                                                                    Pendapatan Giro
                                                                 </h6>
                                                             </div>
                                                         </div>
@@ -284,7 +127,10 @@
                                                     <td>
                                                         <div class="d-flex flex-column justify-content-center">
                                                             <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_gaji ?>" placeholder="Rp.">
+                                                                <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                    Rp. <?= $id->pendapatan_giro ?>
+                                                                </div>
+                                                                <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->pendapatan_giro ?>" placeholder="Rp."> -->
                                                             </div>
                                                         </div>
                                                     </td>
@@ -303,7 +149,7 @@
                                                         <div class="d-flex px-0 py-1">
                                                             <div class="d-flex flex-column justify-content-center">
                                                                 <h6 class="mb-0 text-sm">
-                                                                    Tunjangan Hari Raya
+                                                                    Bonus
                                                                 </h6>
                                                             </div>
                                                         </div>
@@ -311,7 +157,10 @@
                                                     <td>
                                                         <div class="d-flex flex-column justify-content-center">
                                                             <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->tunjangan_hari_raya ?>" placeholder="Rp.">
+                                                                <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                    Rp. <?= $id->bonus ?>
+                                                                </div>
+                                                                <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->bonus ?>" placeholder="Rp."> -->
                                                             </div>
                                                         </div>
                                                     </td>
@@ -330,7 +179,7 @@
                                                         <div class="d-flex px-0 py-1">
                                                             <div class="d-flex flex-column justify-content-center">
                                                                 <h6 class="mb-0 text-sm">
-                                                                    Beban Operasional
+                                                                    Pendapatan Lain-Lain
                                                                 </h6>
                                                             </div>
                                                         </div>
@@ -338,7 +187,10 @@
                                                     <td>
                                                         <div class="d-flex flex-column justify-content-center">
                                                             <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_operasional ?>" placeholder="Rp.">
+                                                                <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                    Rp. <?= $id->pendapatan_lainlain ?>
+                                                                </div>
+                                                                <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->pendapatan_lainlain ?>" placeholder="Rp."> -->
                                                             </div>
                                                         </div>
                                                     </td>
@@ -357,7 +209,7 @@
                                                         <div class="d-flex px-0 py-1">
                                                             <div class="d-flex flex-column justify-content-center">
                                                                 <h6 class="mb-0 text-sm">
-                                                                    Beban Setoran UI
+                                                                    Laba Selisih Kurs
                                                                 </h6>
                                                             </div>
                                                         </div>
@@ -365,7 +217,10 @@
                                                     <td>
                                                         <div class="d-flex flex-column justify-content-center">
                                                             <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_setoran_ui ?>" placeholder="Rp.">
+                                                                <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                    Rp. <?= $id->laba_selisih_kurs ?>
+                                                                </div>
+                                                                <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->laba_selisih_kurs ?>" placeholder="Rp."> -->
                                                             </div>
                                                         </div>
                                                     </td>
@@ -377,267 +232,6 @@
                                                         <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                                             Hapus
                                                         </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-0 py-1">
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">
-                                                                    Beban Bonus
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_bonus ?>" placeholder="Rp.">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                        <br>
-                                                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-0 py-1">
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">
-                                                                    Beban Perlengkapan Kantor
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_perlengkapan_kantor ?>" placeholder="Rp.">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                        <br>
-                                                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-0 py-1">
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">
-                                                                    Beban Penyusutan
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_penyusutan ?>" placeholder="Rp.">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                        <br>
-                                                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-0 py-1">
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">
-                                                                    Beban Pengelolaan Rek.
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_pengelolaan_rek ?>" placeholder="Rp.">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                        <br>
-                                                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-0 py-1">
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">
-                                                                    Beban Buku Cek
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_buku_cek ?>" placeholder="Rp.">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                        <br>
-                                                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-0 py-1">
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">
-                                                                    Beban Pajak
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_pajak ?>" placeholder="Rp.">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                        <br>
-                                                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-0 py-1">
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">
-                                                                    Beban Lain-Lain
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->beban_lainlain ?>" placeholder="Rp.">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                        <br>
-                                                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-0 py-1">
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">
-                                                                    Rugi Selisih Kurs
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->rugi_selisih_kurs ?>" placeholder="Rp.">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                        <br>
-                                                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-0 py-1">
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">
-                                                                    Rugi Penjualan Aset
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <div class="form-group col-8" method="post">
-                                                                <input type="number" name="nilai" class="form-control" value="<?= $id->rugi_penjualan_aset ?>" placeholder="Rp.">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                        <br>
-                                                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-0 py-1">
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">
-                                                                    Total Beban
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <div class="form-group col-8" method="post">
-                                                                <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->rugi_selisih_kurs ?>" placeholder="Rp."> -->
-                                                            </div>
-                                                        </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -645,7 +239,7 @@
                                                         <div class="d-flex px-0 py-1">
                                                             <div class="d-flex flex-column justify-content-center">
                                                                 <h6 class="mb-0 text-s">
-                                                                    LABA BERSIH
+                                                                    TOTAL PENDAPATAN
                                                                 </h6>
                                                             </div>
                                                         </div>
@@ -653,46 +247,524 @@
                                                     <td>
                                                         <div class="d-flex flex-column justify-content-center">
                                                             <div class="form-group col-8" method="post">
-                                                                <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->rugi_selisih_kurs ?>" placeholder="Rp."> -->
+                                                                <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                    Rp.
+                                                                </div>
+                                                                <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->laba_selisih_kurs ?>" placeholder="Rp."> -->
                                                             </div>
                                                         </div>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
                                             </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </ul>
-                                <div class="col-md-0 mt-4">
-                                    <div class="col-md-3">
-                                        <ul class="list-group">
-                                            <div class="card-body px-1 pt-1 pb-0">
-                                                <center>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="form-group col-4">
-                                                                <button type="submit" class="btn btn-success">Simpan</button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-5">
-                                                            <div class="form-group col-4">
-                                                                <button type="button" class="btn btn-danger">Batal</button>
-                                                            </div>
+
+                                            <!-- BEBAN -->
+                                            <tr>
+                                                <td>
+                                                    <h6 href="javascript:;" class="text-secondary font-weight-bold text-s mt-5" data-toggle="tooltip" data-original-title="pendapatan">
+                                                        Beban
+                                                    </h6>
+                                                </td>
+                                            <tr>
+                                                <?php
+                                                foreach ($id_beban as $id) { ?>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Beban Proyek
+                                                            </h6>
                                                         </div>
                                                     </div>
-                                                </center>
-                                            </div>
-                                        </ul>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->beban_proyek ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->beban_proyek ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Beban Gaji
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->beban_gaji ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->beban_gaji ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Tunjangan Hari Raya
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->tunjangan_hari_raya ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->tunjangan_hari_raya ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Beban Operasional
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->beban_operasional ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->beban_operasional ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Beban Setoran UI
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->beban_setoran_ui ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->beban_setoran_ui ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Beban Bonus
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->beban_bonus ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->beban_bonus ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Beban Perlengkapan Kantor
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->beban_perlengkapan_kantor ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->beban_perlengkapan_kantor ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Beban Penyusutan
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->beban_penyusutan ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->beban_penyusutan ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Beban Pengelolaan Rek.
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->beban_pengelolaan_rek ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->beban_pengelolaan_rek ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Beban Buku Cek
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->beban_buku_cek ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->beban_buku_cek ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Beban Pajak
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->beban_pajak ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->beban_pajak ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Beban Lain-Lain
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->beban_lainlain ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->beban_lainlain ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Rugi Selisih Kurs
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->rugi_selisih_kurs ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->rugi_selisih_kurs ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Rugi Penjualan Aset
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp. <?= $id->rugi_penjualan_aset ?>
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->rugi_penjualan_aset ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                    <br>
+                                                    <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">
+                                                                Total Beban
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp.
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->rugi_selisih_kurs ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-0 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-s">
+                                                                LABA BERSIH
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <div class="form-group col-8" method="post">
+                                                            <div class="text-dark text-sm font-weight-bolder opacity-8">
+                                                                Rp.
+                                                            </div>
+                                                            <!-- <input type="number" name="nilai" class="form-control" value="<?= $id->rugi_selisih_kurs ?>" placeholder="Rp."> -->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                        </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-
+                            </ul>
+                            <div class="col-md-0 mt-4">
+                                <div class="col-md-3">
+                                    <ul class="list-group">
+                                        <div class="card-body px-1 pt-1 pb-0">
+                                            <center>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group col-4">
+                                                            <button type="submit" class="btn btn-success">Simpan</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group col-4">
+                                                            <button type="button" class="btn btn-danger">Batal</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </center>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
                     </div>
+
                 </div>
             </div>
+            <!-- </div> -->
         </div>
         <footer class="footer pt-3  ">
             <div class="container-fluid">

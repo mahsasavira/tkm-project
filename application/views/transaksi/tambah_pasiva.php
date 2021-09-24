@@ -6,9 +6,9 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="<?= 'neraca' ?>">Neraca</a></li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Tambah Aktiva</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Tambah Pasiva</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Tambah Aktiva</h6>
+                    <h6 class="font-weight-bolder mb-0">Tambah Pasiva</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -62,7 +62,7 @@
                         <div class="col-md-12 mt-4">
                             <div class="card">
                                 <div class="card-header pb-0 px-3 text-center">
-                                    <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Tambah Aktiva</h5>
+                                    <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Tambah Pasiva</h5>
                                 </div>
                                 <form action="" method="POST">
                                     <div class="card-body pt-4 p-3">
@@ -82,99 +82,36 @@
                                     <div class="card-body p-3">
                                         <div class="table-responsive p-0">
                                             <div class="col-12 px-3">
-                                                <div class="row">
-                                                    <div class="form-group col-5">
-                                                        <label>Kas Kecil</label>
-                                                        <input type="number" name="kas_kecil" value="<?= set_value('kas_kecil') ?>" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Kas Pada Bank</label>
-                                                        <input type="number" name="kas_pada_bank" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Operasional</label>
-                                                        <input type="number" name="piutang_operasional" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Daya Makara</label>
-                                                        <input type="number" name="piutang_daya_makara" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Proyek</label>
-                                                        <input type="number" name="piutang_proyek" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang TVUI</label>
-                                                        <input type="number" name="piutang_tvui" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Solar Car</label>
-                                                        <input type="number" name="piutang_solar_car" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Komputer</label>
-                                                        <input type="number" name="komputer" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Komputer</label>
-                                                        <input type="number" name="akum_peny_komputer" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Fax</label>
-                                                        <input type="number" name="fax" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Fax</label>
-                                                        <input type="number" name="akum_peny_fax" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>AC</label>
-                                                        <input type="number" name="ac" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-AC</label>
-                                                        <input type="number" name="akum_peny_ac" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Furniture</label>
-                                                        <input type="number" name="furniture" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Furniture</label>
-                                                        <input type="number" name="akum_peny_furniture" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Notebook</label>
-                                                        <input type="number" name="notebook" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Notebook</label>
-                                                        <input type="number" name="akum_peny_notebook" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Kamera Digital</label>
-                                                        <input type="number" name="kamera_digital" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Kamera Digital</label>
-                                                        <input type="number" name="akum_peny_kamera" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Printer</label>
-                                                        <input type="number" name="printer" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Printer</label>
-                                                        <input type="number" name="akum_peny_printer" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Kamera Video</label>
-                                                        <input type="number" name="video_kamera" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Kamera Video</label>
-                                                        <input type="number" name="akum_peny_video" value="" class="form-control" required>
-                                                    </div>
+                                                <div class="form-group col-5 text-m text-uppercase text-dark">
+                                                    <label>Kewajiban</label>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Hutang Operasional</label>
+                                                    <input type="number" name="hutang_operasional" value="" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Hutang Gaji</label>
+                                                    <input type="number" name="hutang_gaji" value="" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Hutang Proyek</label>
+                                                    <input type="number" name="hutang_proyek" value="" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Hutang Pada RTV</label>
+                                                    <input type="number" name="hutang_pada_rtv" value="" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Total</label>
+                                                    <input type="number" name="total" value="" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Total Pasiva</label>
+                                                    <input type="number" name="total_pasiva" value="" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Total Modal</label>
+                                                    <input type="number" name="total_modal" value="" class="form-control" required>
                                                 </div>
                                             </div>
                                         </div>

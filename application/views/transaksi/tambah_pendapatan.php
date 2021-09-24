@@ -5,10 +5,10 @@
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="<?= 'neraca' ?>">Neraca</a></li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Tambah Aktiva</li>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="<?= 'labarugi' ?>">Laba Rugi</a></li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Pendapatan & Beban</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Tambah Aktiva</h6>
+                    <h6 class="font-weight-bolder mb-0">Pendapatan & Beban</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -59,10 +59,10 @@
             <div class="card card-body blur shadow-blur mx-4 mt-n10 overflow-hidden">
                 <div class="row gx-4">
                     <div class="row">
-                        <div class="col-md-12 mt-4">
+                        <div class="col-md-5 mt-4">
                             <div class="card">
                                 <div class="card-header pb-0 px-3 text-center">
-                                    <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Tambah Aktiva</h5>
+                                    <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Tambah Pendapatan</h5>
                                 </div>
                                 <form action="" method="POST">
                                     <div class="card-body pt-4 p-3">
@@ -70,7 +70,7 @@
                                             <div class="card-body px-0 pt-0 pb-2">
                                                 <div class="table-responsive p-0">
                                                     <div class="col-md-6 mt-4 pb-0 px-3">
-                                                        <div class="form-group col-5">
+                                                        <div class="form-group col-10">
                                                             <label for="example-date-input" class="form-control-label">Tanggal : </label>
                                                             <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
                                                         </div>
@@ -82,117 +82,44 @@
                                     <div class="card-body p-3">
                                         <div class="table-responsive p-0">
                                             <div class="col-12 px-3">
-                                                <div class="row">
-                                                    <div class="form-group col-5">
-                                                        <label>Kas Kecil</label>
-                                                        <input type="number" name="kas_kecil" value="<?= set_value('kas_kecil') ?>" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Kas Pada Bank</label>
-                                                        <input type="number" name="kas_pada_bank" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Operasional</label>
-                                                        <input type="number" name="piutang_operasional" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Daya Makara</label>
-                                                        <input type="number" name="piutang_daya_makara" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Proyek</label>
-                                                        <input type="number" name="piutang_proyek" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang TVUI</label>
-                                                        <input type="number" name="piutang_tvui" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Solar Car</label>
-                                                        <input type="number" name="piutang_solar_car" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Komputer</label>
-                                                        <input type="number" name="komputer" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Komputer</label>
-                                                        <input type="number" name="akum_peny_komputer" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Fax</label>
-                                                        <input type="number" name="fax" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Fax</label>
-                                                        <input type="number" name="akum_peny_fax" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>AC</label>
-                                                        <input type="number" name="ac" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-AC</label>
-                                                        <input type="number" name="akum_peny_ac" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Furniture</label>
-                                                        <input type="number" name="furniture" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Furniture</label>
-                                                        <input type="number" name="akum_peny_furniture" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Notebook</label>
-                                                        <input type="number" name="notebook" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Notebook</label>
-                                                        <input type="number" name="akum_peny_notebook" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Kamera Digital</label>
-                                                        <input type="number" name="kamera_digital" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Kamera Digital</label>
-                                                        <input type="number" name="akum_peny_kamera" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Printer</label>
-                                                        <input type="number" name="printer" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Printer</label>
-                                                        <input type="number" name="akum_peny_printer" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Kamera Video</label>
-                                                        <input type="number" name="video_kamera" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Kamera Video</label>
-                                                        <input type="number" name="akum_peny_video" value="" class="form-control" required>
-                                                    </div>
+                                                <div class="form-group col-5">
+                                                    <label>Pendapatan Proyek</label>
+                                                    <input type="number" name="pendapatan_proyek" value="" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Pendapatan Giro</label>
+                                                    <input type="number" name="pendapatan_giro" value="" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Bonus</label>
+                                                    <input type="number" name="bonus" value="" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Pendapatan Lain-Lain</label>
+                                                    <input type="number" name="pendapatan_lainlain" value="" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Laba Selisih Kurs</label>
+                                                    <input type="number" name="laba_selisih_kurs" value="" class="form-control" required>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
 
                                     <div class="col-md-0 mt-4">
-                                        <div class="col-md-2">
+                                        <div>
                                             <ul class="list-group">
                                                 <div class="card-body px-3 pt-1 pb-0">
                                                     <center>
                                                         <div class="row">
-                                                            <div class="col-md-4">
-                                                                <div class="form-group col-6">
+                                                            <div class="col-2">
+                                                                <div class="form-group col-2">
                                                                     <button type="submit" href="#" class="btn btn-success">Simpan</button>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group col-4">
+                                                            <div class="col-3">
+                                                                <div class="form-group col-5">
                                                                     <button type="reset" class="btn btn-danger">Batal</button>
                                                                 </div>
                                                             </div>
@@ -205,42 +132,159 @@
                                 </form>
                             </div>
                         </div>
-
-
-
-                        <footer class="footer pt-3  ">
-                            <div class="container-fluid">
-                                <div class="row align-items-center justify-content-lg-between">
-                                    <div class="col-lg-6 mb-lg-0 mb-4">
-                                        <div class="copyright text-center text-sm text-muted text-lg-start">
-                                            © <script>
-                                                document.write(new Date().getFullYear())
-                                            </script>,
-                                            made with <i class="fa fa-heart"></i> by
-                                            <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                                            for a better web.
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                            <li class="nav-item">
-                                                <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="https://creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                                            </li>
+                        <div class="col-md-7 mt-4">
+                            <div class="card">
+                                <div class="card-header pb-0 px-3 text-center">
+                                    <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Tambah Beban</h5>
+                                </div>
+                                <form action="" method="POST">
+                                    <div class="card-body pt-4 p-3">
+                                        <ul class="list-group">
+                                            <div class="card-body px-0 pt-0 pb-2">
+                                                <div class="table-responsive p-0">
+                                                    <div class="col-md-6 mt-4 pb-0 px-3">
+                                                        <div class="form-group col-10">
+                                                            <label for="example-date-input" class="form-control-label">Tanggal : </label>
+                                                            <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </ul>
                                     </div>
-                                </div>
+
+                                    <div class="card-body p-3">
+                                        <div class="table-responsive p-0">
+                                            <div class="col-12 px-3">
+                                                <div class="row">
+                                                    <div class="form-group col-5">
+                                                        <label>Pendapatan Proyek</label>
+                                                        <input type="number" name="pendapatan_proyek" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Pendapatan Giro</label>
+                                                        <input type="number" name="pendapatan_giro" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Bonus</label>
+                                                        <input type="number" name="bonus" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Pendapatan Lain-Lain</label>
+                                                        <input type="number" name="pendapatan_lainlain" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Laba Selisih Kurs</label>
+                                                        <input type="number" name="laba_selisih_kurs" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Pendapatan Proyek</label>
+                                                        <input type="number" name="pendapatan_proyek" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Pendapatan Giro</label>
+                                                        <input type="number" name="pendapatan_giro" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Bonus</label>
+                                                        <input type="number" name="bonus" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Pendapatan Lain-Lain</label>
+                                                        <input type="number" name="pendapatan_lainlain" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Laba Selisih Kurs</label>
+                                                        <input type="number" name="laba_selisih_kurs" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Pendapatan Proyek</label>
+                                                        <input type="number" name="pendapatan_proyek" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Pendapatan Giro</label>
+                                                        <input type="number" name="pendapatan_giro" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Bonus</label>
+                                                        <input type="number" name="bonus" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Pendapatan Lain-Lain</label>
+                                                        <input type="number" name="pendapatan_lainlain" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Laba Selisih Kurs</label>
+                                                        <input type="number" name="laba_selisih_kurs" value="" class="form-control" required>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-0 mt-4">
+                                            <div>
+                                                <ul class="list-group">
+                                                    <div class="card-body px-3 pt-1 pb-0">
+                                                        <center>
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    <div class="form-group col-2">
+                                                                        <button type="submit" href="#" class="btn btn-success">Simpan</button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group col-5">
+                                                                        <button type="reset" class="btn btn-danger">Batal</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </center>
+                                                    </div>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
                             </div>
-                        </footer>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer pt-3  ">
+            <div class="container-fluid">
+                <div class="row align-items-center justify-content-lg-between">
+                    <div class="col-lg-6 mb-lg-0 mb-4">
+                        <div class="copyright text-center text-sm text-muted text-lg-start">
+                            © <script>
+                                document.write(new Date().getFullYear())
+                            </script>,
+                            made with <i class="fa fa-heart"></i> by
+                            <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                            for a better web.
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
 
 
