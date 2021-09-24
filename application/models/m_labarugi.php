@@ -9,7 +9,7 @@ class M_labarugi extends CI_Model
     //menampilkan pendapatan
     public function tampil_pendapatan()
     {
-        $query = $this->db->query('SELECT id_pendapatan,pendapatan_proyek,pendapatan_giro,bonus,
+        $query = $this->db->query('SELECT id_pendapatan,tanggal_masuk,pendapatan_proyek,pendapatan_giro,bonus,
         pendapatan_lainlain,laba_selisih_kurs FROM pendapatan');
         return $query->result();
     }
@@ -34,5 +34,17 @@ class M_labarugi extends CI_Model
         $this->db->where('id_pendapatan', $data['id_pendapatan']);
         $this->db->update('pendapatan');
         // $query = $this->db->query('UPDATE pendapatan set nilai=' . $nilai . 'where id_pendapatan=' . $data['id_pendapatan']);
+    }
+
+    public function hapus_pendapatan($id)
+    {
+        $this->db->where('id_pendapatan', $id);
+        $this->db->delete('pendapatan');
+    }
+
+    public function hapus_beban($id)
+    {
+        $this->db->where('id_beban', $id);
+        $this->db->delete('beban');
     }
 }
