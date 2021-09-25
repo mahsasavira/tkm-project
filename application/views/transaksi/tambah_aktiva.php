@@ -85,7 +85,7 @@
                                                 <div class="row">
                                                     <div class="form-group col-5">
                                                         <label>Kas Kecil</label>
-                                                        <input type="number" name="kas_kecil" value="<?= set_value('kas_kecil') ?>" class="form-control" required>
+                                                        <input type="number" name="kas_kecil" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Kas Pada Bank</label>
@@ -203,7 +203,6 @@
                                             </div>
                                         </div>
                                     </form>
-
                                 </form>
                             </div>
                         </div>

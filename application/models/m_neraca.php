@@ -99,6 +99,24 @@ class M_neraca extends CI_Model
         return $query->row();
     }
 
+    public function tambah_pasiva()
+    {
+        $tanggal_masuk = $this->input->post('tanggal_masuk');
+        $hutang_operasional = $this->post('hutang_operasional');
+        $hutang_gaji = $this->input->post('hutang_gaji');
+        $hutang_proyek = $this->post('hutang_proyek');
+        $hutang_pada_rtv = $this->input->post('hutang_pada_rtv');
+
+        $data = array(
+            'tanggal_masuk' => $tanggal_masuk,
+            'hutang_operasional' => $hutang_operasional,
+            'hutang_gaji' => $hutang_gaji,
+            'hutang_proyek' => $hutang_proyek,
+            'hutang_pada_rtv' => $hutang_pada_rtv,
+        );
+        return $this->db->insert('pasiva', $data);
+    }
+
     public function hapus_pasiva($id)
     {
         $this->db->where('id_pasiva', $id);
