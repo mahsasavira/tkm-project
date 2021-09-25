@@ -125,6 +125,15 @@ class Transaksi extends CI_Controller
         redirect('transaksi/labarugi');
     }
 
+    public function tambah_beban()
+    {
+        $data['id_beban'] = $this->m_labarugi->tambah_beban();
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/tambah_beban', $data);
+        $this->load->view('transaksi/tambah_beban');
+    }
+
     public function hapus_beban()
     {
         $id = $this->input->post('id_beban');

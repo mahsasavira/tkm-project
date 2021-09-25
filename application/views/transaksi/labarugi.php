@@ -60,12 +60,12 @@
                 <div class="card">
                     <div class="card-header pb-0 px-3">
                         <div class="card-header pb-0 px-3 text-center">
-                            <h5 class="mb-2 text-center text-dark text-l font-weight-bolder opacity-8">PENDAPATAN & BEBAN</h5>
+                            <h5 class="mb-2 text-center text-dark text-l font-weight-bolder opacity-8">PENDAPATAN</h5>
                         </div>
                         <div class="table-responsive p-0">
                             <div class=" col-12 mb-5 mt-3">
                                 <a type="button" href="<?php echo base_url() ?>transaksi/tambah_pendapatan" class="btn btn-primary btn-sm">
-                                    Tambah Pendapatan & Beban
+                                    Tambah Pendapatan
                                 </a>
                             </div>
                             <!-- PENDAPATAN -->
@@ -112,7 +112,42 @@
                                     <?php } ?>
                                 </tbody>
                             </table>
-
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination mb-4 mt-2 justify-content-end">
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:;" aria-label="Previous">
+                                            <i class="fa fa-angle-left"></i>
+                                            <span aria-hidden="True"> &laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="javascript:;">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:;" aria-label="Next">
+                                            <i class="fa fa-angle-right"></i>
+                                            <span aria-hidden="True"> &raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-12 mt-4">
+                <div class="card">
+                    <div class="card-header pb-0 px-3">
+                        <div class="card-header pb-0 px-3 text-center">
+                            <h5 class="mb-2 text-center text-dark text-l font-weight-bolder opacity-8">BEBAN</h5>
+                        </div>
+                        <div class="table-responsive p-0">
+                            <div class=" col-12 mb-5 mt-3">
+                                <a type="button" href="<?php echo base_url() ?>transaksi/tambah_beban" class="btn btn-primary btn-sm">
+                                    Tambah Beban
+                                </a>
+                            </div>
                             <!-- BEBAN -->
                             <div>
                                 <h6 class="mr-5 text-dark text-l font-weight-bolder opacity-8">BEBAN</h6>
@@ -176,8 +211,27 @@
                                         <?php } ?>
                                     </tbody>
                             </table>
-                        </div>
 
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination mb-4 mt-4 justify-content-end">
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:;" aria-label="Previous">
+                                        <i class="fa fa-angle-left"></i>
+                                        <span aria-hidden="True"> &laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="javascript:;">1</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:;" aria-label="Next">
+                                        <i class="fa fa-angle-right"></i>
+                                        <span aria-hidden="True"> &raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>

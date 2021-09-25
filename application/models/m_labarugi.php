@@ -30,7 +30,7 @@ class M_labarugi extends CI_Model
         $pendapatan_giro = $this->input->post('pendapatan_giro');
         $bonus = $this->input->post('bonus');
         $pendapatan_lainlain = $this->input->post('pendapatan_lainlain');
-        $laba_selisih_kurs = $this->input->post('laba_selisiih_kurs');
+        $laba_selisih_kurs = $this->input->post('laba_selisih_kurs');
 
         $data = array(
             'tanggal_masuk' => $tanggal_masuk,
@@ -59,23 +59,31 @@ class M_labarugi extends CI_Model
         $beban_setoran_ui = $this->input->post('beban_setoran_ui');
         $beban_penyusutan = $this->input->post('beban_penyusutan');
         $beban_bonus = $this->input->post('beban_bonus');
-
-
-        $pendapatan_proyek = $this->input->post('pendapatan_proyek');
-        $pendapatan_giro = $this->input->post('pendapatan_giro');
-        $bonus = $this->input->post('bonus');
-        $pendapatan_lainlain = $this->input->post('pendapatan_lainlain');
-        $laba_selisih_kurs = $this->input->post('laba_selisiih_kurs');
+        $beban_perlengkapan_kantor = $this->input->post('beban_perlengkapan_kantor');
+        $beban_pengelolaan_rek = $this->input->post('beban_pengelolaan_rek');
+        $beban_buku_cek = $this->input->post('beban_buku_cek');
+        $beban_pajak = $this->input->post('beban_pajak');
+        $beban_lainlain = $this->input->post('beban_lainlain');
+        $rugi_penjualan_aset = $this->input->post('rugi_penjualan_aset');
+        $rugi_selisih_kurs = $this->input->post('rugi_selisih_kurs');
 
         $data = array(
             'tanggal_masuk' => $tanggal_masuk,
-            'pendapatan_proyek' => $pendapatan_proyek,
-            'pendapatan_giro' => $pendapatan_giro,
-            'bonus' => $bonus,
-            'pendapatan_lainlain' => $pendapatan_lainlain,
-            'laba_selisih_kurs' => $laba_selisih_kurs,
+            'beban_proyek' => $beban_proyek,
+            'tunjangan_hari_raya' => $tunjangan_hari_raya,
+            'beban_operasional' => $beban_operasional,
+            'beban_setoran_ui' => $beban_setoran_ui,
+            'beban_penyusutan' => $beban_penyusutan,
+            'beban_bonus' => $beban_bonus,
+            'beban_perlengkapan_kantor' => $beban_perlengkapan_kantor,
+            'beban_pengelolaan_rek' => $beban_pengelolaan_rek,
+            'beban_buku_cek' => $beban_buku_cek,
+            'beban_pajak' => $beban_pajak,
+            'beban_lainlain' => $beban_lainlain,
+            'rugi_penjualan_aset' => $rugi_penjualan_aset,
+            'rugi_selisih_kurs' => $rugi_selisih_kurs,
         );
-        return $this->db->insert('pasiva', $data);
+        return $this->db->insert('beban', $data);
     }
 
     public function hapus_beban($id)

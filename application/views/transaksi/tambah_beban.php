@@ -6,9 +6,9 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="<?= 'labarugi' ?>">Laba Rugi</a></li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Pendapatan</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Beban</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Pendapatan</h6>
+                    <h6 class="font-weight-bolder mb-0">Beban</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -59,84 +59,8 @@
             <div class="card card-body blur shadow-blur mx-4 mt-n10 overflow-hidden">
                 <div class="row gx-4">
                     <div class="row">
-                        <div class="col-md-5 mt-4">
-                            <!-- PENDAPATAN -->
-                            <div class="card justify-align-center">
-                                <div class="card-header pb-0 px-3 text-center">
-                                    <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Tambah Pendapatan</h5>
-                                </div>
-                                <form action="" method="POST">
-                                    <div class="card-body pt-4 p-3">
-                                        <ul class="list-group">
-                                            <div class="card-body px-0 pt-0 pb-2">
-                                                <div class="table-responsive p-0">
-                                                    <div class="col-md-6 mt-4 pb-0 px-3">
-                                                        <div class="form-group col-10">
-                                                            <label for="example-date-input" class="form-control-label">Tanggal : </label>
-                                                            <input class="form-control" type="date" name="tanggal_masuk" value="<?= set_value('tanggal_masuk') ?>" id="example-date-input" required>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </ul>
-                                    </div>
-                                    <div class="card-body p-3">
-                                        <div class="table-responsive p-0">
-                                            <div class="col-12 px-3">
-                                                <div class="form-group col-5">
-                                                    <label>Pendapatan Proyek</label>
-                                                    <input type="number" name="pendapatan_proyek" value="" class="form-control" required>
-                                                </div>
-                                                <div class="form-group col-5">
-                                                    <label>Pendapatan Giro</label>
-                                                    <input type="number" name="pendapatan_giro" value="" class="form-control" required>
-                                                </div>
-                                                <div class="form-group col-5">
-                                                    <label>Bonus</label>
-                                                    <input type="number" name="bonus" value="" class="form-control" required>
-                                                </div>
-                                                <div class="form-group col-5">
-                                                    <label>Pendapatan Lain-Lain</label>
-                                                    <input type="number" name="pendapatan_lainlain" value="" class="form-control" required>
-                                                </div>
-                                                <div class="form-group col-5">
-                                                    <label>Laba Selisih Kurs</label>
-                                                    <input type="number" name="laba_selisih_kurs" value="" class="form-control" required>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <form action="" method="post">
-                                        <div class="col-md-0 mt-4">
-                                            <div>
-                                                <ul class="list-group">
-                                                    <div class="card-body px-3 pt-1 pb-0">
-                                                        <center>
-                                                            <div class="row">
-                                                                <div class="col-2">
-                                                                    <div class="form-group col-2">
-                                                                        <button type="submit" href="#" class="btn btn-success">Simpan</button>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-3">
-                                                                    <div class="form-group col-5">
-                                                                        <button type="reset" class="btn btn-danger">Batal</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </center>
-                                                    </div>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </form>
-                            </div>
-                        </div>
-
                         <!-- BEBAN -->
-                        <!-- <div class="col-md-7 mt-4">
+                        <div class="col-md-7 mt-4">
                             <div class="card">
                                 <div class="card-header pb-0 px-3 text-center">
                                     <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Tambah Beban</h5>
@@ -251,7 +175,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
