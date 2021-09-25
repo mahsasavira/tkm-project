@@ -99,7 +99,7 @@ class Transaksi extends CI_Controller
         $this->load->view('template/sidebar');
         $this->load->view('transaksi/tambah_pasiva', $data);
         $this->load->view('transaksi/tambah_pasiva');
-        redirect('transaksi/neraca');
+        // redirect('transaksi/neraca');
     }
 
     public function hapus_pasiva()
@@ -111,8 +111,10 @@ class Transaksi extends CI_Controller
 
     public function tambah_pendapatan()
     {
+        $data['id_pend'] = $this->m_labarugi->tambah_pendapatan();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
+        $this->load->view('transaksi/tambah_pendapatan', $data);
         $this->load->view('transaksi/tambah_pendapatan');
     }
 
@@ -128,23 +130,5 @@ class Transaksi extends CI_Controller
         $id = $this->input->post('id_beban');
         $pasiva = $this->m_labarugi->hapus_beban($id);
         redirect('transaksi/labarugi');
-    }
-
-    function tambah_labarugi()
-    {
-        $pendapatan_proyek = $this->input->post('pendapatan_proyek');
-        $pendapatan_giro = $this->input->post('pendapatan_giro');
-        $bonus = $this->input->post('bonus');
-        $pendapatan_lain = $this->input->post('pendapatan_lain');
-        $laba_selisih = $this->input->post('laba_selisih');
-        $data = array(
-            'id_pendapatan' => $this->input->post('id_pendapatan'),
-            'jenis_pendapatan' => $this->input->post('pendapatan_proyek')
-
-        );
-
-        $ost = $this->m_labarugi->tambah_labarugi($data);
-        var_dump($pendapatan_proyek, $pendapatan_giro, $bonus, $pendapatan_lain, $laba_selisih);
-        // redirect('/transaksi/labarugi');
     }
 }

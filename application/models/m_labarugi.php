@@ -23,17 +23,24 @@ class M_labarugi extends CI_Model
         return $query->result();
     }
 
-
-
-    public function tambah_labarugi($data)
+    public function tambah_pendapatan()
     {
-        // $data['nilai'] = $post['nilai'];
-        // $this->db->where('nilai', $data);
-        $nilai = $data['nilai'];
-        $this->db->set('nilai', $nilai);
-        $this->db->where('id_pendapatan', $data['id_pendapatan']);
-        $this->db->update('pendapatan');
-        // $query = $this->db->query('UPDATE pendapatan set nilai=' . $nilai . 'where id_pendapatan=' . $data['id_pendapatan']);
+        $tanggal_masuk = $this->input->post('tanggal_masuk');
+        $pendapatan_proyek = $this->input->post('pendapatan_proyek');
+        $pendapatan_giro = $this->input->post('pendapatan_giro');
+        $bonus = $this->input->post('bonus');
+        $pendapatan_lainlain = $this->input->post('pendapatan_lainlain');
+        $laba_selisih_kurs = $this->input->post('laba_selisiih_kurs');
+
+        $data = array(
+            'tanggal_masuk' => $tanggal_masuk,
+            'pendapatan_proyek' => $pendapatan_proyek,
+            'pendapatan_giro' => $pendapatan_giro,
+            'bonus' => $bonus,
+            'pendapatan_lainlain' => $pendapatan_lainlain,
+            'laba_selisih_kurs' => $laba_selisih_kurs,
+        );
+        return $this->db->insert('pasiva', $data);
     }
 
     public function hapus_pendapatan($id)
@@ -41,6 +48,26 @@ class M_labarugi extends CI_Model
         $this->db->where('id_pendapatan', $id);
         $this->db->delete('pendapatan');
     }
+
+    // public function tambah_beban()
+    // {
+    //     $tanggal_masuk = $this->input->post('tanggal_masuk');
+    //     $pendapatan_proyek = $this->input->post('pendapatan_proyek');
+    //     $pendapatan_giro = $this->input->post('pendapatan_giro');
+    //     $bonus = $this->input->post('bonus');
+    //     $pendapatan_lainlain = $this->input->post('pendapatan_lainlain');
+    //     $laba_selisih_kurs = $this->input->post('laba_selisiih_kurs');
+
+    //     $data = array(
+    //         'tanggal_masuk' => $tanggal_masuk,
+    //         'pendapatan_proyek' => $pendapatan_proyek,
+    //         'pendapatan_giro' => $pendapatan_giro,
+    //         'bonus' => $bonus,
+    //         'pendapatan_lainlain' => $pendapatan_lainlain,
+    //         'laba_selisih_kurs' => $laba_selisih_kurs,
+    //     );
+    //     return $this->db->insert('pasiva', $data);
+    // }
 
     public function hapus_beban($id)
     {

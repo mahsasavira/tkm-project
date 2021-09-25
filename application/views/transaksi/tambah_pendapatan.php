@@ -60,6 +60,7 @@
                 <div class="row gx-4">
                     <div class="row">
                         <div class="col-md-5 mt-4">
+                            <!-- PENDAPATAN -->
                             <div class="card">
                                 <div class="card-header pb-0 px-3 text-center">
                                     <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Tambah Pendapatan</h5>
@@ -72,7 +73,7 @@
                                                     <div class="col-md-6 mt-4 pb-0 px-3">
                                                         <div class="form-group col-10">
                                                             <label for="example-date-input" class="form-control-label">Tanggal : </label>
-                                                            <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
+                                                            <input class="form-control" type="date" name="tanggal_masuk" value="<?= set_value('tanggal_masuk') ?>" id="example-date-input" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -106,32 +107,35 @@
 
                                         </div>
                                     </div>
-
-                                    <div class="col-md-0 mt-4">
-                                        <div>
-                                            <ul class="list-group">
-                                                <div class="card-body px-3 pt-1 pb-0">
-                                                    <center>
-                                                        <div class="row">
-                                                            <div class="col-2">
-                                                                <div class="form-group col-2">
-                                                                    <button type="submit" href="#" class="btn btn-success">Simpan</button>
+                                    <form action="" method="post">
+                                        <div class="col-md-0 mt-4">
+                                            <div>
+                                                <ul class="list-group">
+                                                    <div class="card-body px-3 pt-1 pb-0">
+                                                        <center>
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    <div class="form-group col-2">
+                                                                        <button type="submit" href="#" class="btn btn-success">Simpan</button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="form-group col-5">
+                                                                        <button type="reset" class="btn btn-danger">Batal</button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-3">
-                                                                <div class="form-group col-5">
-                                                                    <button type="reset" class="btn btn-danger">Batal</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </center>
-                                                </div>
-                                            </ul>
+                                                        </center>
+                                                    </div>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </form>
                             </div>
                         </div>
+
+                        <!-- BEBAN -->
                         <div class="col-md-7 mt-4">
                             <div class="card">
                                 <div class="card-header pb-0 px-3 text-center">
@@ -145,7 +149,7 @@
                                                     <div class="col-md-6 mt-4 pb-0 px-3">
                                                         <div class="form-group col-10">
                                                             <label for="example-date-input" class="form-control-label">Tanggal : </label>
-                                                            <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
+                                                            <input class="form-control" type="date" name="tanggal_masuk" value="<?= set_value('tanggal_masuk') ?>" id="example-date-input" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -158,94 +162,93 @@
                                             <div class="col-12 px-3">
                                                 <div class="row">
                                                     <div class="form-group col-5">
-                                                        <label>Pendapatan Proyek</label>
-                                                        <input type="number" name="pendapatan_proyek" value="" class="form-control" required>
+                                                        <label>Beban Proyek</label>
+                                                        <input type="number" name="beban_proyek" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
-                                                        <label>Pendapatan Giro</label>
-                                                        <input type="number" name="pendapatan_giro" value="" class="form-control" required>
+                                                        <label>Beban Gaji</label>
+                                                        <input type="number" name="beban_gaji" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
-                                                        <label>Bonus</label>
-                                                        <input type="number" name="bonus" value="" class="form-control" required>
+                                                        <label>Tunjangan Hari Raya</label>
+                                                        <input type="number" name="tunjangan_hari_raya" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
-                                                        <label>Pendapatan Lain-Lain</label>
-                                                        <input type="number" name="pendapatan_lainlain" value="" class="form-control" required>
+                                                        <label>Beban Operasional</label>
+                                                        <input type="number" name="beban_operasional" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
-                                                        <label>Laba Selisih Kurs</label>
-                                                        <input type="number" name="laba_selisih_kurs" value="" class="form-control" required>
+                                                        <label>Beban Setoran UI</label>
+                                                        <input type="number" name="beban_setoran_ui" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
-                                                        <label>Pendapatan Proyek</label>
-                                                        <input type="number" name="pendapatan_proyek" value="" class="form-control" required>
+                                                        <label>Beban Penyusutan</label>
+                                                        <input type="number" name="beban_penyusutan" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
-                                                        <label>Pendapatan Giro</label>
-                                                        <input type="number" name="pendapatan_giro" value="" class="form-control" required>
+                                                        <label>Beban Bonus</label>
+                                                        <input type="number" name="beban_bonus" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
-                                                        <label>Bonus</label>
-                                                        <input type="number" name="bonus" value="" class="form-control" required>
+                                                        <label>Beban Perlengkapan Kantor</label>
+                                                        <input type="number" name="beban_perlengkapan_kantor" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
-                                                        <label>Pendapatan Lain-Lain</label>
-                                                        <input type="number" name="pendapatan_lainlain" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Laba Selisih Kurs</label>
-                                                        <input type="number" name="laba_selisih_kurs" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Pendapatan Proyek</label>
-                                                        <input type="number" name="pendapatan_proyek" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Pendapatan Giro</label>
-                                                        <input type="number" name="pendapatan_giro" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Bonus</label>
-                                                        <input type="number" name="bonus" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Pendapatan Lain-Lain</label>
-                                                        <input type="number" name="pendapatan_lainlain" value="" class="form-control" required>
+                                                        <label>Beban Pengelolaan Rek.</label>
+                                                        <input type="number" name="beban_pengelolaan_rek" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Laba Selisih Kurs</label>
                                                         <input type="number" name="laba_selisih_kurs" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Beban Buku Cek</label>
+                                                        <input type="number" name="beban_buku_cek" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Beban Pajak</label>
+                                                        <input type="number" name="beban_pajak" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Beban Lain-Lain</label>
+                                                        <input type="number" name="beban_lainlain" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Rugi Penjualan Aset</label>
+                                                        <input type="number" name="rugi_penjualan_aset" value="" class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group col-5">
+                                                        <label>Rugi Selisih Kurs</label>
+                                                        <input type="number" name="rugi_selisih_kurs" value="" class="form-control" required>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
-
-                                        <div class="col-md-0 mt-4">
-                                            <div>
-                                                <ul class="list-group">
-                                                    <div class="card-body px-3 pt-1 pb-0">
-                                                        <center>
-                                                            <div class="row">
-                                                                <div class="col-2">
-                                                                    <div class="form-group col-2">
-                                                                        <button type="submit" href="#" class="btn btn-success">Simpan</button>
+                                        <form action="" method="post">
+                                            <div class="col-md-0 mt-4">
+                                                <div>
+                                                    <ul class="list-group">
+                                                        <div class="card-body px-3 pt-1 pb-0">
+                                                            <center>
+                                                                <div class="row">
+                                                                    <div class="col-2">
+                                                                        <div class="form-group col-2">
+                                                                            <button type="submit" href="#" class="btn btn-success">Simpan</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-1">
+                                                                        <div class="form-group col-5">
+                                                                            <button type="reset" class="btn btn-danger">Batal</button>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-1">
-                                                                    <div class="form-group col-5">
-                                                                        <button type="reset" class="btn btn-danger">Batal</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </center>
-                                                    </div>
-                                                </ul>
+                                                            </center>
+                                                        </div>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
-
                                 </form>
                             </div>
                         </div>

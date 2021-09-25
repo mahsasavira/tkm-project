@@ -102,9 +102,9 @@ class M_neraca extends CI_Model
     public function tambah_pasiva()
     {
         $tanggal_masuk = $this->input->post('tanggal_masuk');
-        $hutang_operasional = $this->post('hutang_operasional');
+        $hutang_operasional = $this->input->post('hutang_operasional');
         $hutang_gaji = $this->input->post('hutang_gaji');
-        $hutang_proyek = $this->post('hutang_proyek');
+        $hutang_proyek = $this->input->post('hutang_proyek');
         $hutang_pada_rtv = $this->input->post('hutang_pada_rtv');
 
         $data = array(
