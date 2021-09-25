@@ -72,7 +72,7 @@
                                                     <div class="col-md-6 mt-4 pb-0 px-3">
                                                         <div class="form-group col-5">
                                                             <label for="example-date-input" class="form-control-label">Tanggal : </label>
-                                                            <input class="form-control" type="date" value="2021-11-23" id="example-date-input">
+                                                            <input class="form-control" type="date" name="tanggal_masuk" value="<?= set_value('tanggal_masuk') ?>" id="example-date-input">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -179,7 +179,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <form action="<?php echo base_url('transaksi/tambah_aktiva') ?>" method="post">
+                                    <form action="" method="post">
                                         <div class="col-md-0 mt-4">
                                             <div class="col-md-2">
                                                 <ul class="list-group">

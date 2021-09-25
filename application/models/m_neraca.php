@@ -27,6 +27,7 @@ class M_neraca extends CI_Model
     // tambah aktiva
     public function tambah_aktiva()
     {
+        $tanggal_masuk = $this->input->post('tanggal_masuk');
         $kas_kecil = $this->input->post('kas_kecil');
         $kas_pada_bank = $this->input->post('kas_pada_bank');
         $piutang_operasional = $this->input->post('piutang_operasional');
@@ -50,6 +51,7 @@ class M_neraca extends CI_Model
         $akum_peny_video = $this->input->post('akum_peny_video');
 
         $data = array(
+            'tanggal_masuk' => $tanggal_masuk,
             'kas_kecil' => $kas_kecil,
             'kas_pada_bank' => $kas_pada_bank,
             'piutang_operasional' => $piutang_operasional,
