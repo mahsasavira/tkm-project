@@ -40,7 +40,7 @@ class M_labarugi extends CI_Model
             'pendapatan_lainlain' => $pendapatan_lainlain,
             'laba_selisih_kurs' => $laba_selisih_kurs,
         );
-        return $this->db->insert('pasiva', $data);
+        return $this->db->insert('pendapatan', $data);
     }
 
     public function hapus_pendapatan($id)
@@ -49,25 +49,34 @@ class M_labarugi extends CI_Model
         $this->db->delete('pendapatan');
     }
 
-    // public function tambah_beban()
-    // {
-    //     $tanggal_masuk = $this->input->post('tanggal_masuk');
-    //     $pendapatan_proyek = $this->input->post('pendapatan_proyek');
-    //     $pendapatan_giro = $this->input->post('pendapatan_giro');
-    //     $bonus = $this->input->post('bonus');
-    //     $pendapatan_lainlain = $this->input->post('pendapatan_lainlain');
-    //     $laba_selisih_kurs = $this->input->post('laba_selisiih_kurs');
+    public function tambah_beban()
+    {
+        $tanggal_masuk = $this->input->post('tanggal_masuk');
+        $beban_proyek = $this->input->post('beban_proyek');
+        $beban_gaji = $this->input->post('beban_gaji');
+        $tunjangan_hari_raya = $this->input->post('tunjangan_hari_raya');
+        $beban_operasional = $this->input->post('beban_operasional');
+        $beban_setoran_ui = $this->input->post('beban_setoran_ui');
+        $beban_penyusutan = $this->input->post('beban_penyusutan');
+        $beban_bonus = $this->input->post('beban_bonus');
 
-    //     $data = array(
-    //         'tanggal_masuk' => $tanggal_masuk,
-    //         'pendapatan_proyek' => $pendapatan_proyek,
-    //         'pendapatan_giro' => $pendapatan_giro,
-    //         'bonus' => $bonus,
-    //         'pendapatan_lainlain' => $pendapatan_lainlain,
-    //         'laba_selisih_kurs' => $laba_selisih_kurs,
-    //     );
-    //     return $this->db->insert('pasiva', $data);
-    // }
+
+        $pendapatan_proyek = $this->input->post('pendapatan_proyek');
+        $pendapatan_giro = $this->input->post('pendapatan_giro');
+        $bonus = $this->input->post('bonus');
+        $pendapatan_lainlain = $this->input->post('pendapatan_lainlain');
+        $laba_selisih_kurs = $this->input->post('laba_selisiih_kurs');
+
+        $data = array(
+            'tanggal_masuk' => $tanggal_masuk,
+            'pendapatan_proyek' => $pendapatan_proyek,
+            'pendapatan_giro' => $pendapatan_giro,
+            'bonus' => $bonus,
+            'pendapatan_lainlain' => $pendapatan_lainlain,
+            'laba_selisih_kurs' => $laba_selisih_kurs,
+        );
+        return $this->db->insert('pasiva', $data);
+    }
 
     public function hapus_beban($id)
     {
