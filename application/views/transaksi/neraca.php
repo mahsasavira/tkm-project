@@ -136,7 +136,7 @@
                                                                 <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp.</td>
                                                                 <td class=" text-center" width="160px">
                                                                     <form action="<?= site_url('transaksi/hapus_aktiva/') ?>" method="post">
-                                                                        <a href="<?= site_url('transaksi/edit_aktiva/' . $row->id_aktiva) ?>" class="btn btn-primary btn-xs">
+                                                                        <a href="<?= site_url('transaksi/edit_aktiva/' . $id->id_aktiva) ?>" class="btn btn-primary btn-xs">
                                                                             <i class="fa fa-pencil"></i> Edit
                                                                         </a>
                                                                         <input type="hidden" name="id_aktiva" value="<?= $id->id_aktiva ?>">
