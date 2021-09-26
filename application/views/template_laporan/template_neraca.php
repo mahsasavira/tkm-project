@@ -46,17 +46,17 @@
                 <tr>
                     <th colspan="1">Kas Kecil </th>
                     <td colspan="1">...</td>
-                    <td colspan="1">(nilai kas kecil)</td>
+                    <td colspan="1"><?php echo $id_akt[0]->kas_kecil ?></td>
                 </tr>
                 <tr>
                     <th colspan="1"> Kas Pada Bank</th>
                     <td colspan="1">...</td>
-                    <td colspan="1">(nilai kas pada bank)</td>
+                    <td colspan="1"><?php echo $id_akt[0]->kas_pada_bank ?></td>
                 </tr>
                 <tr>
                     <th colspan="1">Piutang Operasional</th>
                     <td colspan="1">...</td>
-                    <td colspan="1">(nilai piutang operasional)</td>
+                    <td colspan="1"><?php echo $id_akt[0]->piutang_operasional ?></td>
                 </tr>
                 <tr>
                     <th colspan="1">Piutang Daya Makara</th>
