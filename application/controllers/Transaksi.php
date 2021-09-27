@@ -46,24 +46,24 @@ class Transaksi extends CI_Controller
         redirect('transaksi/neraca');
     }
 
-    public function edit_aktiva($id)
+    public function edit_aktiva($id_aktiva)
     {
         //input , alias, kondisi
-        $queryedit = $this->m_neraca->get_data_aktiva($id);
+        $queryedit = $this->m_neraca->get_data_aktiva($id_aktiva);
         $DATA = array('queryeditakt' => $queryedit);
         echo "<pre>";
         print_r($queryedit);
         echo "</pre>";
-        $this->form_validation->set_rules('id_aktiva', 'ID Aktiva');
-        $this->form_validation->set_rules('tanggal_masuk', 'Tanggal');
-        $this->form_validation->set_rules('kas_kecil', 'Kas Kecil');
-        $this->form_validation->set_rules('kas_pada_bank', 'Kas Pada Bank', 'required');
+        // $this->form_validation->set_rules('id_aktiva', 'ID Aktiva');
+        // $this->form_validation->set_rules('tanggal_masuk', 'Tanggal');
+        // $this->form_validation->set_rules('kas_kecil', 'Kas Kecil');
+        // $this->form_validation->set_rules('kas_pada_bank', 'Kas Pada Bank', 'required');
 
-        $this->form_validation->set_message('required', '%s masih kosong, silahkan isi data!');
-        $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
+        // $this->form_validation->set_message('required', '%s masih kosong, silahkan isi data!');
+        // $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
 
-        // $this->load->view('template/header');
-        // $this->load->view('template/sidebar');
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
         $this->load->view('transaksi/edit_aktiva', $DATA);
         // redirect('transaksi/neraca');
 
