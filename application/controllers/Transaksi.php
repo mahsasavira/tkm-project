@@ -49,22 +49,28 @@ class Transaksi extends CI_Controller
     public function edit_aktiva($id_aktiva)
     {
         //input , alias, kondisi
-        $queryedit = $this->m_neraca->get_data_aktiva($id_aktiva);
-        $DATA = array('queryeditakt' => $queryedit);
+
+        $where = array('id' => $id_aktiva);
+        $data['neraca'] = $this->m_neraca->edit_aktiva($where, 'aktiva')->result_array();
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/edit_aktiva', $data);
+        // $queryedit = $this->m_neraca->get_data_aktiva($id_aktiva);
+        // $DATA = array('queryeditakt' => $queryedit);
         // echo "<pre>";
         // print_r($queryedit);
         // echo "</pre>";
-        $this->form_validation->set_rules('id_aktiva', 'Id Aktiva', 'required|is_unique[aktiva.id_aktiva]');
-        $this->form_validation->set_rules('tanggal_masuk', 'Tanggal', 'required|is_unique[aktiva.tanggal_masuk]');
-        $this->form_validation->set_rules('kas_kecil', 'Kas Kecil', 'required|is_unique[aktiva.kas_kecil]');
-        $this->form_validation->set_rules('kas_pada_bank', 'Kas Pada Bank', 'required|is_unique[aktiva.kas_pada_bank]');
+        // $this->form_validation->set_rules('id_aktiva', 'Id Aktiva', 'required|is_unique[aktiva.id_aktiva]');
+        // $this->form_validation->set_rules('tanggal_masuk', 'Tanggal', 'required|is_unique[aktiva.tanggal_masuk]');
+        // $this->form_validation->set_rules('kas_kecil', 'Kas Kecil', 'required|is_unique[aktiva.kas_kecil]');
+        // $this->form_validation->set_rules('kas_pada_bank', 'Kas Pada Bank', 'required|is_unique[aktiva.kas_pada_bank]');
 
         // $this->form_validation->set_message('required', '%s masih kosong, silahkan isi data!');
         // $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
 
-        $this->load->view('template/header');
-        $this->load->view('template/sidebar');
-        $this->load->view('transaksi/edit_aktiva', $DATA);
+        // $this->load->view('template/header');
+        // $this->load->view('template/sidebar');
+        // $this->load->view('transaksi/edit_aktiva', $DATA);
         // redirect('transaksi/neraca');
 
         // if ($this->form_validation->run() == FALSE) {
@@ -90,6 +96,65 @@ class Transaksi extends CI_Controller
         //     }
         //     echo "<script> window.location='" . site_url('gejala') . "';</script>";
         // }
+    }
+
+    function update()
+    {
+        $id_aktiva = $this->input->post('id_aktiva');
+        $kas_kecil = $this->input->post('kas_kecil');
+        $kas_pada_bank = $this->input->post('kas_pada_bank');
+        $piutang_operasional = $this->input->post('piutang_operasional');
+        $piutang_daya_makara = $this->input->post('piutang_daya_makara');
+        $piutang_proyek = $this->input->post('piutang_proyek');
+        $piutang_tvui = $this->input->post('piutang_tvui');
+        $piutang_solar_car = $this->input->post('piutang_solar_car');
+        $komputer = $this->input->post('komputer');
+        $akum_peny_komputer = $this->input->post('akum_peny_komputer');
+        $fax = $this->input->post('fax');
+        $akum_peny_fax  = $this->input->post('akum_peny_fax');
+        $ac = $this->input->post('ac');
+        $akum_peny_ac = $this->input->post('akum_peny_ac');
+        $furniture  = $this->input->post('furniture');
+        $notebook  = $this->input->post('notebook');
+        $akum_peny_notebook = $this->input->post('akum_peny_notebook');
+        $kamera_digital = $this->input->post('kamera_digital');
+        $akum_peny_kamera  = $this->input->post('akum_peny_kamera');
+        $akum_peny_printer = $this->input->post('akum_peny_printer');
+        $video_kamera = $this->input->post('video_kamera');
+        $akum_peny_video  = $this->input->post('akum_peny_video');
+
+
+
+        $data = array(
+            'kas_kecil' => $kas_kecil,
+            'kas_pada_bank' => $kas_pada_bank,
+            'piutang_operasional' => $piutang_operasional,
+            'piutang_daya_makara' => $piutang_daya_makara,
+            'piutang_proyek' => $piutang_proyek,
+            'piutang_tvui' => $piutang_tvui,
+            'piutang_solar_car' => $piutang_solar_car,
+            'komputer' => $komputer,
+            'akum_peny_komputer' => $akum_peny_komputer,
+            'fax' => $fax,
+            'akum_peny_fax' => $akum_peny_fax,
+            'ac' => $ac,
+            'akum_peny_ac' => $akum_peny_ac,
+            'furniture' => $furniture,
+            'notebook' => $notebook,
+            'akum_peny_notebook' => $akum_peny_notebook,
+            'kamera_digital' => $kamera_digital,
+            'akum_peny_kamera' => $akum_peny_kamera,
+            'akum_peny_printer' => $akum_peny_printer,
+            'video_kamera' => $video_kamera,
+            'pekerjaan' => $akum_peny_video
+        );
+
+        $where = array(
+            'id_aktiva' => $id_aktiva
+        );
+
+        $this->m_neraca->update_data($where, $data, 'aktiva');
+        redirect('neraca');
     }
 
     public function tambah_pasiva()

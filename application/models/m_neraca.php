@@ -83,13 +83,20 @@ class M_neraca extends CI_Model
         $this->db->delete('aktiva');
     }
 
-    public function edit_aktiva($id)
+    public function edit_aktiva($where, $table)
     {
-        $params['id_aktiva'] = $id['id_aktiva'];
-        $params['kas_kecil'] = $id['kas_kecil'];
-        $params['kas_pada_bank'] = $id['kas_pada_bank'];
-        $this->db->where('id_aktiva', $id['id_aktiva']);
-        $this->db->update('aktiva', $params);
+        return $this->db->get_where($table, $where);
+        // $params['id_aktiva'] = $id['id_aktiva'];
+        // $params['kas_kecil'] = $id['kas_kecil'];
+        // $params['kas_pada_bank'] = $id['kas_pada_bank'];
+        // $this->db->where('id_aktiva', $id['id_aktiva']);
+        // $this->db->update('aktiva', $params);
+    }
+
+    function update_data($where, $data, $table)
+    {
+        $this->db->where($where);
+        $this->db->update($table, $data);
     }
 
     public function get_data_aktiva($id_aktiva)

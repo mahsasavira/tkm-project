@@ -81,105 +81,112 @@
                                     </div>
                                     <div class="card-body p-3">
                                         <div class="table-responsive p-0">
-                                            <div class="col-12 px-3">
-                                                <div class="row">
-                                                    <div class="form-group col-5">
-                                                        <label>Kas Kecil</label>
-                                                        <input type="number" name="kas_kecil" value="<?= $this->input->post('kas_kecil') ?? $queryeditakt->KAS_KECIL ?>" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Kas Pada Bank</label>
-                                                        <input type="number" name="kas_pada_bank" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Operasional</label>
-                                                        <input type="number" name="piutang_operasional" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Daya Makara</label>
-                                                        <input type="number" name="piutang_daya_makara" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Proyek</label>
-                                                        <input type="number" name="piutang_proyek" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang TVUI</label>
-                                                        <input type="number" name="piutang_tvui" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Piutang Solar Car</label>
-                                                        <input type="number" name="piutang_solar_car" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Komputer</label>
-                                                        <input type="number" name="komputer" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Komputer</label>
-                                                        <input type="number" name="akum_peny_komputer" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Fax</label>
-                                                        <input type="number" name="fax" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Fax</label>
-                                                        <input type="number" name="akum_peny_fax" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>AC</label>
-                                                        <input type="number" name="ac" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-AC</label>
-                                                        <input type="number" name="akum_peny_ac" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Furniture</label>
-                                                        <input type="number" name="furniture" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Furniture</label>
-                                                        <input type="number" name="akum_peny_furniture" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Notebook</label>
-                                                        <input type="number" name="notebook" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Notebook</label>
-                                                        <input type="number" name="akum_peny_notebook" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Kamera Digital</label>
-                                                        <input type="number" name="kamera_digital" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Kamera Digital</label>
-                                                        <input type="number" name="akum_peny_kamera" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Printer</label>
-                                                        <input type="number" name="printer" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Printer</label>
-                                                        <input type="number" name="akum_peny_printer" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Kamera Video</label>
-                                                        <input type="number" name="video_kamera" value="" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-5">
-                                                        <label>Akum.Peny.-Kamera Video</label>
-                                                        <input type="number" name="akum_peny_video" value="" class="form-control">
+                                            <?php foreach ($neraca as $ner) { ?>
+
+                                                <div class="col-12 px-3">
+                                                    <div class="row">
+                                                        <div class="form-group col-5">
+                                                            <input type="hidden" name="kas_kecil" value="<?php echo $ner->id_aktiva ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Kas Kecil</label>
+                                                            <input type="number" name="kas_kecil" value="<?php echo $ner->kas_kecil ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Kas Pada Bank</label>
+                                                            <input type="number" name="kas_pada_bank" value="<?php echo $ner->kas_pada_bank ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Piutang Operasional</label>
+                                                            <input type="number" name="piutang_operasional" value="<?php echo $ner->piutang_operasional ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Piutang Daya Makara</label>
+                                                            <input type="number" name="piutang_daya_makara" value="<?php echo $ner->$piutang_daya_makara ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Piutang Proyek</label>
+                                                            <input type="number" name="piutang_proyek" value="<?php echo $ner->piutang_proyek ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Piutang TVUI</label>
+                                                            <input type="number" name="piutang_tvui" value="<?php echo $ner->piutang_tvui ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Piutang Solar Car</label>
+                                                            <input type="number" name="piutang_solar_car" value="<?php echo $ner->piutang_solar_car ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Komputer</label>
+                                                            <input type="number" name="komputer" value="<?php echo $ner->komputer ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Akum.Peny.-Komputer</label>
+                                                            <input type="number" name="akum_peny_komputer" value="<?php echo $ner->akum_peny_komputer ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Fax</label>
+                                                            <input type="number" name="fax" value="<?php echo $ner->fax ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Akum.Peny.-Fax</label>
+                                                            <input type="number" name="akum_peny_fax" value="<?php echo $ner->akum_peny_fax ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>AC</label>
+                                                            <input type="number" name="ac" value="<?php echo $ner->ac ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Akum.Peny.-AC</label>
+                                                            <input type="number" name="akum_peny_ac" value="<?php echo $ner->akum_peny_ac ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Furniture</label>
+                                                            <input type="number" name="furniture" value="<?php echo $ner->furniture ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Akum.Peny.-Furniture</label>
+                                                            <input type="number" name="akum_peny_furniture" value="<?php echo $ner->akum_peny_furniture ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Notebook</label>
+                                                            <input type="number" name="notebook" value="<?php echo $ner->notebook ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Akum.Peny.-Notebook</label>
+                                                            <input type="number" name="akum_peny_notebook" value="<?php echo $ner->akum_peny_notebook ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Kamera Digital</label>
+                                                            <input type="number" name="kamera_digital" value="<?php echo $ner->kamera_digital ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Akum.Peny.-Kamera Digital</label>
+                                                            <input type="number" name="akum_peny_kamera" value="<?php echo $ner->akum_peny_kamera ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Printer</label>
+                                                            <input type="number" name="printer" value="<?php echo $ner->printer ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Akum.Peny.-Printer</label>
+                                                            <input type="number" name="akum_peny_printer" value="<?php echo $ner->akum_peny_printer ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Kamera Video</label>
+                                                            <input type="number" name="video_kamera" value="<?php echo $ner->video_kamera ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-5">
+                                                            <label>Akum.Peny.-Kamera Video</label>
+                                                            <input type="number" name="akum_peny_video" value="<?php echo $ner->akum_peny_video ?>" class="form-control">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                         </div>
+
+                                    <?php } ?>
                                     </div>
-                                    <form action="" method="post">
+                                    <form action="<?php echo base_url() . 'transaksi/update'; ?>" method="post">
                                         <div class="col-md-0 mt-4">
                                             <div class="col-md-2">
                                                 <ul class="list-group">
