@@ -37,6 +37,8 @@ class M_neraca extends CI_Model
         $piutang_solar_car = $this->input->post('piutang_solar_car');
         $komputer = $this->input->post('komputer');
         $akum_peny_komputer = $this->input->post('akum_peny_komputer');
+        $ac = $this->input->post('ac');
+        $akum_peny_ac = $this->input->post('akum_peny_ac');
         $fax = $this->input->post('fax');
         $akum_peny_fax = $this->input->post('akum_peny_fax');
         $furniture = $this->input->post('furniture');
@@ -61,6 +63,8 @@ class M_neraca extends CI_Model
             'piutang_solar_car' => $piutang_solar_car,
             'komputer' => $komputer,
             'akum_peny_komputer' => $akum_peny_komputer,
+            'ac' => $ac,
+            'akum_peny_ac' => $akum_peny_ac,
             'fax' => $fax,
             'akum_peny_fax' => $akum_peny_fax,
             'furniture' => $furniture,
@@ -85,6 +89,7 @@ class M_neraca extends CI_Model
 
     public function edit_aktiva($where, $table)
     {
+        // <<<<<<< Updated upstream
         return $this->db->get_where($table, $where);
         // $params['id_aktiva'] = $id['id_aktiva'];
         // $params['kas_kecil'] = $id['kas_kecil'];
@@ -93,15 +98,25 @@ class M_neraca extends CI_Model
         // $this->db->update('aktiva', $params);
     }
 
-    function update_data($where, $data, $table)
-    {
-        $this->db->where($where);
-        $this->db->update($table, $data);
-    }
+    //     function update_data($where, $data, $table)
+    //     {
+    //         $this->db->where($where);
+    //         $this->db->update($table, $data);
+    // =======
+    //         $params = array(
+    //             'id_aktiva' => $id['id_aktiva'],
+    //             'kas_kecil' => $id['kas_kecil'],
+    //             'kas_pada_bank' => $id['kas_pada_bank'],
+    //         );
+    //         $this->db->set($params);
+    //         $this->db->where('id_aktiva', $id['id_aktiva']);
+    //         $this->db->update('aktiva', $params);
+    // >>>>>>> Stashed changes
+    //     }
 
-    public function get_data_aktiva($id_aktiva)
+    public function get_data_aktiva($id)
     {
-        $this->db->where('id_aktiva', $id_aktiva);
+        $this->db->where('id_aktiva', $id);
         $query = $this->db->get('aktiva');
         return $query->row();
     }
@@ -130,10 +145,22 @@ class M_neraca extends CI_Model
         $this->db->delete('pasiva');
     }
 
-    public function get_data_pasiva($id_pasiva)
+    public function get_data_pasiva($id)
     {
-        $this->db->where('id_pasiva', $id_pasiva);
+        $this->db->where('id_pasiva', $id);
         $query = $this->db->get('pasiva');
         return $query->row();
+    }
+
+    public function edit_pasiva($id)
+    {
+        $params = array(
+            'id_pasiva' => $id['id_pasiva'],
+            'hutang_operasional' => $id['hutang_operaional'],
+            // 'kas_kecil' => $id['kas_kecil'],
+            // 'kas_pada_bank' => $id['kas_pada_bank'],
+        );
+        $this->db->where('id_pasiva', $id['id_pasiva']);
+        $this->db->update('aktiva', $params);
     }
 }

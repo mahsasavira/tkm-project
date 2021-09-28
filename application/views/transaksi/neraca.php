@@ -222,7 +222,7 @@
                                                                 <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp.</td>
                                                                 <td class=" text-center" width="160px">
                                                                     <form action="<?= site_url('transaksi/hapus_pasiva') ?>" method="post">
-                                                                        <a href="<?= site_url('transaksi/neraca/') ?>" class="btn btn-primary btn-xs">
+                                                                        <a href="<?= site_url('transaksi/edit_pasiva/' . $id->id_pasiva) ?>" class="btn btn-primary btn-xs">
                                                                             <i class="fa fa-pencil"></i> Edit
                                                                         </a>
                                                                         <input type="hidden" name="id_pasiva" value="<?= $id->id_pasiva ?>">
