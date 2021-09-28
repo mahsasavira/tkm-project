@@ -72,7 +72,7 @@
                                                     <div class="col-md-6 mt-4 pb-0 px-3">
                                                         <div class="form-group col-5">
                                                             <label for="example-date-input" class="form-control-label">Tanggal : </label>
-                                                            <input class="form-control" type="date" name="tanggal_masuk" value="<?= set_value('tanggal_masuk') ?>" id="example-date-input" required>
+                                                            <input class="form-control" type="date" name="tanggal_masuk" value="<?= set_value('tanggal_masuk') ?>" id="example-date-input">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -85,95 +85,95 @@
                                                 <div class="row">
                                                     <div class="form-group col-5">
                                                         <label>Kas Kecil</label>
-                                                        <input type="number" name="kas_kecil" value="<?php echo ('kas_kecil') ?> ?>" class="form-control" required>
+                                                        <input type="number" name="kas_kecil" value="<?= $this->input->post('kas_kecil') ?? $queryeditakt->KAS_KECIL ?>" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Kas Pada Bank</label>
-                                                        <input type="number" name="kas_pada_bank" value="" class="form-control" required>
+                                                        <input type="number" name="kas_pada_bank" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Piutang Operasional</label>
-                                                        <input type="number" name="piutang_operasional" value="" class="form-control" required>
+                                                        <input type="number" name="piutang_operasional" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Piutang Daya Makara</label>
-                                                        <input type="number" name="piutang_daya_makara" value="" class="form-control" required>
+                                                        <input type="number" name="piutang_daya_makara" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Piutang Proyek</label>
-                                                        <input type="number" name="piutang_proyek" value="" class="form-control" required>
+                                                        <input type="number" name="piutang_proyek" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Piutang TVUI</label>
-                                                        <input type="number" name="piutang_tvui" value="" class="form-control" required>
+                                                        <input type="number" name="piutang_tvui" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Piutang Solar Car</label>
-                                                        <input type="number" name="piutang_solar_car" value="" class="form-control" required>
+                                                        <input type="number" name="piutang_solar_car" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Komputer</label>
-                                                        <input type="number" name="komputer" value="" class="form-control" required>
+                                                        <input type="number" name="komputer" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Akum.Peny.-Komputer</label>
-                                                        <input type="number" name="akum_peny_komputer" value="" class="form-control" required>
+                                                        <input type="number" name="akum_peny_komputer" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Fax</label>
-                                                        <input type="number" name="fax" value="" class="form-control" required>
+                                                        <input type="number" name="fax" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Akum.Peny.-Fax</label>
-                                                        <input type="number" name="akum_peny_fax" value="" class="form-control" required>
+                                                        <input type="number" name="akum_peny_fax" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>AC</label>
-                                                        <input type="number" name="ac" value="" class="form-control" required>
+                                                        <input type="number" name="ac" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Akum.Peny.-AC</label>
-                                                        <input type="number" name="akum_peny_ac" value="" class="form-control" required>
+                                                        <input type="number" name="akum_peny_ac" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Furniture</label>
-                                                        <input type="number" name="furniture" value="" class="form-control" required>
+                                                        <input type="number" name="furniture" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Akum.Peny.-Furniture</label>
-                                                        <input type="number" name="akum_peny_furniture" value="" class="form-control" required>
+                                                        <input type="number" name="akum_peny_furniture" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Notebook</label>
-                                                        <input type="number" name="notebook" value="" class="form-control" required>
+                                                        <input type="number" name="notebook" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Akum.Peny.-Notebook</label>
-                                                        <input type="number" name="akum_peny_notebook" value="" class="form-control" required>
+                                                        <input type="number" name="akum_peny_notebook" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Kamera Digital</label>
-                                                        <input type="number" name="kamera_digital" value="" class="form-control" required>
+                                                        <input type="number" name="kamera_digital" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Akum.Peny.-Kamera Digital</label>
-                                                        <input type="number" name="akum_peny_kamera" value="" class="form-control" required>
+                                                        <input type="number" name="akum_peny_kamera" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Printer</label>
-                                                        <input type="number" name="printer" value="" class="form-control" required>
+                                                        <input type="number" name="printer" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Akum.Peny.-Printer</label>
-                                                        <input type="number" name="akum_peny_printer" value="" class="form-control" required>
+                                                        <input type="number" name="akum_peny_printer" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Kamera Video</label>
-                                                        <input type="number" name="video_kamera" value="" class="form-control" required>
+                                                        <input type="number" name="video_kamera" value="" class="form-control">
                                                     </div>
                                                     <div class="form-group col-5">
                                                         <label>Akum.Peny.-Kamera Video</label>
-                                                        <input type="number" name="akum_peny_video" value="" class="form-control" required>
+                                                        <input type="number" name="akum_peny_video" value="" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>

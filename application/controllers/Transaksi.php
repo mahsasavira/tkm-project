@@ -51,13 +51,13 @@ class Transaksi extends CI_Controller
         //input , alias, kondisi
         $queryedit = $this->m_neraca->get_data_aktiva($id_aktiva);
         $DATA = array('queryeditakt' => $queryedit);
-        echo "<pre>";
-        print_r($queryedit);
-        echo "</pre>";
-        // $this->form_validation->set_rules('id_aktiva', 'ID Aktiva');
-        // $this->form_validation->set_rules('tanggal_masuk', 'Tanggal');
-        // $this->form_validation->set_rules('kas_kecil', 'Kas Kecil');
-        // $this->form_validation->set_rules('kas_pada_bank', 'Kas Pada Bank', 'required');
+        // echo "<pre>";
+        // print_r($queryedit);
+        // echo "</pre>";
+        $this->form_validation->set_rules('id_aktiva', 'Id Aktiva', 'required|is_unique[aktiva.id_aktiva]');
+        $this->form_validation->set_rules('tanggal_masuk', 'Tanggal', 'required|is_unique[aktiva.tanggal_masuk]');
+        $this->form_validation->set_rules('kas_kecil', 'Kas Kecil', 'required|is_unique[aktiva.kas_kecil]');
+        $this->form_validation->set_rules('kas_pada_bank', 'Kas Pada Bank', 'required|is_unique[aktiva.kas_pada_bank]');
 
         // $this->form_validation->set_message('required', '%s masih kosong, silahkan isi data!');
         // $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');

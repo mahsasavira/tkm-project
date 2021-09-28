@@ -122,4 +122,11 @@ class M_neraca extends CI_Model
         $this->db->where('id_pasiva', $id);
         $this->db->delete('pasiva');
     }
+
+    public function get_data_pasiva($id_pasiva)
+    {
+        $this->db->where('id_pasiva', $id_pasiva);
+        $query = $this->db->get('pasiva');
+        return $query->row();
+    }
 }
