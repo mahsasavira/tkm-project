@@ -49,6 +49,25 @@ class M_labarugi extends CI_Model
         $this->db->delete('pendapatan');
     }
 
+    public function get_data_pendapatan($id)
+    {
+        $this->db->where('id_pendapatan', $id);
+        $query = $this->db->get('pendapatan');
+        return $query->row();
+    }
+
+    public function edit_pendapatan($id)
+    {
+        $params = array(
+            'id_pendapatan' => $id['id_pendapatan'],
+            'pendapatan_proyek' => $id['pendapatan_proyek'],
+            // 'kas_kecil' => $id['kas_kecil'],
+            // 'kas_pada_bank' => $id['kas_pada_bank'],
+        );
+        $this->db->where('id_pendapatan', $id['id_pendapatan']);
+        $this->db->update('pendapatan', $params);
+    }
+
     public function tambah_beban()
     {
         $tanggal_masuk = $this->input->post('tanggal_masuk');
@@ -70,6 +89,7 @@ class M_labarugi extends CI_Model
         $data = array(
             'tanggal_masuk' => $tanggal_masuk,
             'beban_proyek' => $beban_proyek,
+            'beban_gaji' => $beban_gaji,
             'tunjangan_hari_raya' => $tunjangan_hari_raya,
             'beban_operasional' => $beban_operasional,
             'beban_setoran_ui' => $beban_setoran_ui,
@@ -90,5 +110,24 @@ class M_labarugi extends CI_Model
     {
         $this->db->where('id_beban', $id);
         $this->db->delete('beban');
+    }
+
+    public function get_data_beban($id)
+    {
+        $this->db->where('id_beban', $id);
+        $query = $this->db->get('beban');
+        return $query->row();
+    }
+
+    public function edit_beban($id)
+    {
+        $params = array(
+            'id_beban' => $id['id_beban'],
+            'beban_proyek' => $id['beban_proyek'],
+            // 'kas_kecil' => $id['kas_kecil'],
+            // 'kas_pada_bank' => $id['kas_pada_bank'],
+        );
+        $this->db->where('id_beban', $id['id_beban']);
+        $this->db->update('beban', $params);
     }
 }

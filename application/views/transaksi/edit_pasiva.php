@@ -62,7 +62,7 @@
                         <div class="col-md-12 mt-4">
                             <div class="card">
                                 <div class="card-header pb-0 px-3 text-center">
-                                    <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Edit Aktiva</h5>
+                                    <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Edit Pasiva</h5>
                                 </div>
                                 <form action="" method="post">
                                     <div class="card-body pt-4 p-3">
@@ -72,7 +72,7 @@
                                                     <div class="col-md-6 mt-4 pb-0 px-3">
                                                         <div class="form-group col-5">
                                                             <label for="example-date-input" class="form-control-label">Tanggal : </label>
-                                                            <input class="form-control" type="date" name="tanggal_masuk" value="<?= set_value('tanggal_masuk') ?>" id="example-date-input">
+                                                            <input class="form-control" type="date" min="2019-01-01" max="2021-12-31" name="tanggal_masuk" value="<?= $this->input->post('tanggal_masuk') ?? $querypas->TANGGAL_MASUK ?>" id="example-date-input">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -88,6 +88,18 @@
                                                 <div class="form-group col-5">
                                                     <label>Hutang Operasional</label>
                                                     <input type="number" name="hutang_operasional" value="<?= $this->input->post('hutang_operasional') ?? $querypas->HUTANG_OPERASIONAL ?>" class="form-control">
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Hutang Gaji</label>
+                                                    <input type="number" name="hutang_gaji" value="<?= $this->input->post('hutang_gaji') ?? $querypas->HUTANG_GAJI ?>" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Hutang Proyek</label>
+                                                    <input type="number" name="hutang_proyek" value="<?= $this->input->post('hutang_proyek') ?? $querypas->HUTANG_PROYEK ?>" class="form-control" required>
+                                                </div>
+                                                <div class="form-group col-5">
+                                                    <label>Hutang Pada RTV</label>
+                                                    <input type="number" name="hutang_pada_rtv" value="<?= $this->input->post('hutang_pada_rtv') ?? $querypas->HUTANG_PADA_RTV ?>" class="form-control" required>
                                                 </div>
                                             </div>
                                         </div>

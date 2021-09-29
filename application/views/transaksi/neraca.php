@@ -233,18 +233,21 @@
                                                                 <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_proyek) ?></td>
                                                                 <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_pada_rtv) ?></td>
                                                                 <!-- total kewajiban-->
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($totalpas) ?></td>
-                                                                <td class=" text-center" width="160px">
-                                                                    <form action="<?= site_url('transaksi/hapus_pasiva') ?>" method="post">
-                                                                        <a href="<?= site_url('transaksi/edit_pasiva/' . $id->id_pasiva) ?>" class="btn btn-primary btn-xs">
-                                                                            <i class="fa fa-pencil"></i> Edit
-                                                                        </a>
-                                                                        <input type="hidden" name="id_pasiva" value="<?= $id->id_pasiva ?>">
-                                                                        <button onclick="return confirm('Apakah anda yakin?')" class="btn btn-danger btn-xs">
-                                                                            <i class="fa fa-trash"> Hapus</i>
-                                                                        </button>
-                                                                    </form>
-                                                                </td>
+                                                                <<<<<<< Updated upstream <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($totalpas) ?></td>
+                                                                    =======
+                                                                    <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp.</td>
+                                                                    >>>>>>> Stashed changes
+                                                                    <td class=" text-center" width="160px">
+                                                                        <form action="<?= site_url('transaksi/hapus_pasiva') ?>" method="post">
+                                                                            <a href="<?= site_url('transaksi/edit_pasiva/' . $id->id_pasiva) ?>" class="btn btn-primary btn-xs">
+                                                                                <i class="fa fa-pencil"></i> Edit
+                                                                            </a>
+                                                                            <input type="hidden" name="id_pasiva" value="<?= $id->id_pasiva ?>">
+                                                                            <button onclick="return confirm('Apakah anda yakin?')" class="btn btn-danger btn-xs">
+                                                                                <i class="fa fa-trash"> Hapus</i>
+                                                                            </button>
+                                                                        </form>
+                                                                    </td>
                                                             </tr>
                                                         <?php } ?>
                                                     </tbody>

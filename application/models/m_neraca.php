@@ -102,7 +102,7 @@ class M_neraca extends CI_Model
     //     {
     //         $this->db->where($where);
     //         $this->db->update($table, $data);
-    // =======
+
     //         $params = array(
     //             'id_aktiva' => $id['id_aktiva'],
     //             'kas_kecil' => $id['kas_kecil'],
@@ -111,15 +111,8 @@ class M_neraca extends CI_Model
     //         $this->db->set($params);
     //         $this->db->where('id_aktiva', $id['id_aktiva']);
     //         $this->db->update('aktiva', $params);
-    // >>>>>>> Stashed changes
-    //     }
 
-    public function get_data_aktiva($id)
-    {
-        $this->db->where('id_aktiva', $id);
-        $query = $this->db->get('aktiva');
-        return $query->row();
-    }
+    //     }
 
     public function tambah_pasiva()
     {
