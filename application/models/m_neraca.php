@@ -87,6 +87,13 @@ class M_neraca extends CI_Model
         $this->db->delete('aktiva');
     }
 
+    public function get_data_aktiva($id)
+    {
+        $this->db->where('id_aktiva', $id);
+        $query = $this->db->get('aktiva');
+        return $query->row();
+    }
+
     public function edit_aktiva($post)
     {
         // <<<<<<< Updated upstream

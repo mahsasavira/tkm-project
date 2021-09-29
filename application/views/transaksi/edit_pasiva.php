@@ -101,28 +101,16 @@
                                                     <label>Hutang Pada RTV</label>
                                                     <input type="number" name="hutang_pada_rtv" value="<?= $this->input->post('hutang_pada_rtv') ?? $querypas->HUTANG_PADA_RTV ?>" class="form-control" required>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group col-6">
+                                                            <button type="submit" class="btn btn-success">Simpan</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <form action="" method="post">
-                                        <div class="col-md-0 mt-4">
-                                            <div class="col-md-2">
-                                                <ul class="list-group">
-                                                    <div class="card-body px-3 pt-1 pb-0">
-                                                        <center>
-                                                            <div class="row">
-                                                                <div class="col-md-4">
-                                                                    <div class="form-group col-6">
-                                                                        <button type="submit" class="btn btn-success">Simpan</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </center>
-                                                    </div>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </form>
                                 </form>
                             </div>
                         </div>

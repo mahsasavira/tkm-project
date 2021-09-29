@@ -15,6 +15,7 @@ class Transaksi extends CI_Controller
     {
         $data['id_akt'] = $this->m_neraca->tampil_aktiva();
         $data['id_pas'] = $this->m_neraca->tampil_pasiva();
+
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar');
         $this->load->view('transaksi/neraca');
@@ -49,8 +50,8 @@ class Transaksi extends CI_Controller
     public function edit_aktiva($id)
     {
         //input , alias, kondisi
-        // $queryedit = $this->m_neraca->get_data_aktiva($id_aktiva);
-        // $DATA = array('queryeditakt' => $queryedit);
+        $queryedit = $this->m_neraca->get_data_aktiva($id);
+        $DATA = array('queryeditakt' => $queryedit);
         // echo "<pre>";
         // print_r($queryedit);
         // echo "</pre>";
@@ -83,29 +84,29 @@ class Transaksi extends CI_Controller
         $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
 
 
-        if ($this->form_validation->run() == FALSE) {
-            $this->load->view('template/header');
-            $query = $this->load->m_neraca->tampil_aktiva($id);
-            if ($query->num_rows() > 0) {
-                $data['neraca'] = $query->row();
-                $this->load->view('transaksi/edit_aktiva', $data);
-            } else {
-                echo "<script> alert('Data tidak ditemukan');";
-                echo "window.location='" . site_url('neraca') . "';</script>";
-            }
+        // if ($this->form_validation->run() == FALSE) {
+        //     $this->load->view('template/header');
+        //     $query = $this->load->m_neraca->tampil_aktiva($id);
+        //     if ($query->num_rows() > 0) {
+        //         $data['neraca'] = $query->row();
+        //         $this->load->view('transaksi/edit_aktiva', $data);
+        //     } else {
+        //         echo "<script> alert('Data tidak ditemukan');";
+        //         echo "window.location='" . site_url('neraca') . "';</script>";
+        //     }
 
-            $this->load->view('template/sidebar');
-        } else {
-            $post = $this->input->post(null, TRUE);
-            $this->m_neraca->edit_aktiva($post);
-            if ($this->db->affected_rows() > 0) {
-                echo "<script> alert('Data berhasil diubah');</script>";
-            }
-            echo "<script> window.location='" . site_url('neraca') . "';</script>";
-        }
-        // $this->load->view('template/header');
-        // $this->load->view('template/sidebar');
-        // $this->load->view('transaksi/edit_aktiva', $DATA);
+        //     $this->load->view('template/sidebar');
+        // } else {
+        //     $post = $this->input->post(null, TRUE);
+        //     $this->m_neraca->edit_aktiva($post);
+        //     if ($this->db->affected_rows() > 0) {
+        //         echo "<script> alert('Data berhasil diubah');</script>";
+        //     }
+        //     echo "<script> window.location='" . site_url('neraca') . "';</script>";
+        // }
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/edit_aktiva', $DATA);
         // redirect('transaksi/neraca');
 
         // if ($this->form_validation->run() == FALSE) {
@@ -209,6 +210,21 @@ class Transaksi extends CI_Controller
         redirect('transaksi/neraca');
     }
 
+    public function edit_pasiva($id)
+    {
+        //input , alias, kondisi
+        $queryedit = $this->m_neraca->get_data_pasiva($id);
+        $DATA = array('querypas' => $queryedit);
+        // echo "<pre>";
+        // print_r($queryedit);
+        // echo "</pre>";
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/edit_pasiva', $DATA);
+        // redirect('transaksi/neraca');
+
+    }
+
     public function tambah_pendapatan()
     {
         $data['id_pend'] = $this->m_labarugi->tambah_pendapatan();
@@ -225,6 +241,21 @@ class Transaksi extends CI_Controller
         redirect('transaksi/labarugi');
     }
 
+    public function edit_pendapatan($id)
+    {
+        //input , alias, kondisi
+        $queryedit = $this->m_labarugi->get_data_pendapatan($id);
+        $DATA = array('querypen' => $queryedit);
+        // echo "<pre>";
+        // print_r($queryedit);
+        // echo "</pre>";
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/edit_pendapatan', $DATA);
+        // redirect('transaksi/neraca');
+
+    }
+
     public function tambah_beban()
     {
         $data['id_beban'] = $this->m_labarugi->tambah_beban();
@@ -239,5 +270,20 @@ class Transaksi extends CI_Controller
         $id = $this->input->post('id_beban');
         $pasiva = $this->m_labarugi->hapus_beban($id);
         redirect('transaksi/labarugi');
+    }
+
+    public function edit_beban($id)
+    {
+        //input , alias, kondisi
+        $queryedit = $this->m_labarugi->get_data_beban($id);
+        $DATA = array('querybeban' => $queryedit);
+        // echo "<pre>";
+        // print_r($queryedit);
+        // echo "</pre>";
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/edit_beban', $DATA);
+        // redirect('transaksi/neraca');
+
     }
 }

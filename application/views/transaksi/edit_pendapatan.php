@@ -103,34 +103,16 @@
                                                     <label>Laba Selisih Kurs</label>
                                                     <input type="number" name="laba_selisih_kurs" value="<?= $this->input->post('laba_selisih_kurs') ?? $querypen->LABA_SELISIH_KURS ?>" class="form-control" required>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group col-6">
+                                                            <button type="submit" class="btn btn-success">Simpan</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-
                                         </div>
                                     </div>
-                                    <form action="" method="post">
-                                        <div class="col-md-0 mt-4">
-                                            <div>
-                                                <ul class="list-group">
-                                                    <div class="card-body px-3 pt-1 pb-0">
-                                                        <center>
-                                                            <div class="row">
-                                                                <div class="col-2">
-                                                                    <div class="form-group col-2">
-                                                                        <button type="submit" href="#" class="btn btn-success">Simpan</button>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-3">
-                                                                    <div class="form-group col-5">
-                                                                        <button type="reset" href="<?php echo base_url('dashboard') ?>" class="btn btn-danger">Batal</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </center>
-                                                    </div>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </form>
                                 </form>
                             </div>
                         </div>
