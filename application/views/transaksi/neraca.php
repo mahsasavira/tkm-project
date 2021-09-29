@@ -105,35 +105,46 @@
                                                     </tr>
                                                     <tbody>
                                                         <?php
+                                                        function harga($angka)
+                                                        {
+                                                            $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                                            return $hasil_rupiah;
+                                                        }
                                                         $no = 1;
-                                                        foreach ($id_akt as $id) { ?>
+                                                        foreach ($id_akt as $id) {
+                                                            $totalakt = $id->kas_kecil + $id->kas_pada_bank + $id->piutang_operasional + $id->piutang_daya_makara + $id->piutang_proyek + $id->piutang_tvui +
+                                                                $id->piutang_solar_car + ($id->komputer - $id->akum_peny_komputer) + ($id->fax - $id->akum_peny_fax) + ($id->ac - $id->akum_peny_ac) +
+                                                                ($id->furniture - $id->akum_peny_furniture) + ($id->notebook - $id->akum_peny_notebook) + ($id->printer - $id->akum_peny_printer) +
+                                                                ($id->kamera_digital - $id->akum_peny_kamera) + ($id->video_kamera - $id->akum_peny_video);
+                                                        ?>
                                                             <tr>
                                                                 <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo $no++ ?></td>
                                                                 <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo $id->tanggal_masuk ?></td>
-                                                                <td class=" text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->kas_kecil ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->kas_pada_bank ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->piutang_operasional ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->piutang_daya_makara ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->piutang_proyek ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->piutang_tvui ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->piutang_solar_car ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->komputer ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->akum_peny_komputer ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->fax ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->akum_peny_fax ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->ac ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->akum_peny_ac ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->furniture ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->akum_peny_furniture ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->notebook ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->akum_peny_notebook ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->printer ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->akum_peny_printer ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->kamera_digital ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->akum_peny_kamera ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->video_kamera ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->akum_peny_video ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp.</td>
+                                                                <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->kas_kecil) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->kas_pada_bank) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_operasional) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_daya_makara) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_proyek)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_tvui) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_solar_car)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->komputer)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_komputer) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->fax) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_fax)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->ac) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_ac)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->furniture)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_furniture) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->notebook)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_notebook) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->printer)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_printer) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->kamera_digital) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_kamera)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->video_kamera) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_video) ?></td>
+
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($totalakt) ?></td>
                                                                 <td class=" text-center" width="160px">
                                                                     <form action="<?= site_url('transaksi/hapus_aktiva/') ?>" method="post">
                                                                         <a href="<?= site_url('transaksi/edit_aktiva/' . $id->id_aktiva) ?>" class="btn btn-primary btn-xs">
@@ -189,6 +200,9 @@
                                                         Tambah Pasiva
                                                     </a>
                                                 </div>
+                                                <div class="text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
+                                                    Kewajiban
+                                                </div>
 
                                                 <table class="table table-bordered align-items-center mb-5">
                                                     <tr>
@@ -198,28 +212,28 @@
                                                         <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Hutang Gaji</th>
                                                         <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Hutang Proyek</th>
                                                         <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Hutang Pada RTV</th>
-                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Total</th>
-                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Total Modal</th>
-                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Total Pasiva</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Total Kewajiban</th>
                                                         <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Aksi</th>
                                                     </tr>
                                                     <tbody>
                                                         <?php
+                                                        function hargapas($angka)
+                                                        {
+                                                            $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                                            return $hasil_rupiah;
+                                                        }
                                                         $no = 1;
-                                                        foreach ($id_pas as $id) { ?>
+                                                        foreach ($id_pas as $id) {
+                                                            $totalpas = $id->hutang_operasional + $id->hutang_gaji + $id->hutang_proyek + $id->hutang_pada_rtv;                                                        ?>
                                                             <tr>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo $no++ ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $no++ ?></td>
                                                                 <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $id->tanggal_masuk ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->hutang_operasional ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->hutang_gaji ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->hutang_proyek ?></td>
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->hutang_pada_rtv ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_operasional) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_gaji) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_proyek) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_pada_rtv) ?></td>
                                                                 <!-- total kewajiban-->
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp.</td>
-                                                                <!-- total modal -->
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp.</td>
-                                                                <!-- total pasiva -->
-                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp.</td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($totalpas) ?></td>
                                                                 <td class=" text-center" width="160px">
                                                                     <form action="<?= site_url('transaksi/hapus_pasiva') ?>" method="post">
                                                                         <a href="<?= site_url('transaksi/edit_pasiva/' . $id->id_pasiva) ?>" class="btn btn-primary btn-xs">

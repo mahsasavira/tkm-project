@@ -82,100 +82,100 @@
                                     <!-- <<<<<<< Updated upstream
                                     <div class="card-body p-3">
                                         <div class="table-responsive p-0">
-                                            <?php foreach ($neraca as $ner) { ?>
+                                            <?php foreach ($neraca->result() as $ner) { ?>
 
                                                 <div class="col-12 px-3">
                                                     <div class="row">
                                                         <div class="form-group col-5">
-                                                            <input type="hidden" name="kas_kecil" value="<?php echo $ner->id_aktiva ?>" class="form-control">
+                                                            <input type="hidden" name="id_aktiva" value="<?= $this->input->post('id_aktiva') ?? $ner->id_aktiva ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Kas Kecil</label>
-                                                            <input type="number" name="kas_kecil" value="<?php echo $ner->kas_kecil ?>" class="form-control">
+                                                            <input type="number" name="kas_kecil" value="<?= $this->input->post('kas_kecil') ?? $ner->kas_kecil ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Kas Pada Bank</label>
-                                                            <input type="number" name="kas_pada_bank" value="<?php echo $ner->kas_pada_bank ?>" class="form-control">
+                                                            <input type="number" name="kas_pada_bank" value="<?= $this->input->post('kas_pada_bank') ?? $ner->kas_pada_bank ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Piutang Operasional</label>
-                                                            <input type="number" name="piutang_operasional" value="<?php echo $ner->piutang_operasional ?>" class="form-control">
+                                                            <input type="number" name="piutang_operasional" value="<?= $this->input->post('piutang_operasional') ?? $ner->piutang_operasional ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Piutang Daya Makara</label>
-                                                            <input type="number" name="piutang_daya_makara" value="<?php echo $ner->$piutang_daya_makara ?>" class="form-control">
+                                                            <input type="number" name="piutang_daya_makara" value="<?= $this->input->post('piutang_daya_makara') ?? $ner->piutang_daya_makara ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Piutang Proyek</label>
-                                                            <input type="number" name="piutang_proyek" value="<?php echo $ner->piutang_proyek ?>" class="form-control">
+                                                            <input type="number" name="piutang_proyek" value="<?= $this->input->post('piutang_proyek') ?? $ner->piutang_proyek ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Piutang TVUI</label>
-                                                            <input type="number" name="piutang_tvui" value="<?php echo $ner->piutang_tvui ?>" class="form-control">
+                                                            <input type="number" name="piutang_tvui" value="<?= $this->input->post('piutang_ui') ?? $ner->piutang_tvui ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Piutang Solar Car</label>
-                                                            <input type="number" name="piutang_solar_car" value="<?php echo $ner->piutang_solar_car ?>" class="form-control">
+                                                            <input type="number" name="piutang_solar_car" value="<?= $this->input->post('piutang_solar_car ') ?? $ner->piutang_solar_car ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Komputer</label>
-                                                            <input type="number" name="komputer" value="<?php echo $ner->komputer ?>" class="form-control">
+                                                            <input type="number" name="komputer" value="<?= $this->input->post('komputer') ?? $ner->komputer ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Akum.Peny.-Komputer</label>
-                                                            <input type="number" name="akum_peny_komputer" value="<?php echo $ner->akum_peny_komputer ?>" class="form-control">
+                                                            <input type="number" name="akum_peny_komputer" value="<?= $this->input->post('akum_peny_komputer') ?? $ner->akum_peny_komputer ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Fax</label>
-                                                            <input type="number" name="fax" value="<?php echo $ner->fax ?>" class="form-control">
+                                                            <input type="number" name="fax" value="<?= $this->input->post('fax') ?? $ner->fax ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Akum.Peny.-Fax</label>
-                                                            <input type="number" name="akum_peny_fax" value="<?php echo $ner->akum_peny_fax ?>" class="form-control">
+                                                            <input type="number" name="akum_peny_fax" value="<?= $this->input->post('akum_peny_fax') ?? $ner->akum_peny_fax ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>AC</label>
-                                                            <input type="number" name="ac" value="<?php echo $ner->ac ?>" class="form-control">
+                                                            <input type="number" name="ac" value="<?= $this->input->post('ac') ?? $ner->ac ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Akum.Peny.-AC</label>
-                                                            <input type="number" name="akum_peny_ac" value="<?php echo $ner->akum_peny_ac ?>" class="form-control">
+                                                            <input type="number" name="akum_peny_ac" value="<?= $this->input->post('akum_peny_ac') ?? $ner->akum_peny_ac ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Furniture</label>
-                                                            <input type="number" name="furniture" value="<?php echo $ner->furniture ?>" class="form-control">
+                                                            <input type="number" name="furniture" value="<?= $this->input->post('furniture') ?? $ner->furniture ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Akum.Peny.-Furniture</label>
-                                                            <input type="number" name="akum_peny_furniture" value="<?php echo $ner->akum_peny_furniture ?>" class="form-control">
+                                                            <input type="number" name="akum_peny_furniture" value="<?= $this->input->post('akum_peny_furniture') ?? $ner->akum_peny_furniture ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Notebook</label>
-                                                            <input type="number" name="notebook" value="<?php echo $ner->notebook ?>" class="form-control">
+                                                            <input type="number" name="notebook" value="<?= $this->input->post('notebook') ?? $ner->notebook ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Akum.Peny.-Notebook</label>
-                                                            <input type="number" name="akum_peny_notebook" value="<?php echo $ner->akum_peny_notebook ?>" class="form-control">
+                                                            <input type="number" name="akum_peny_notebook" value="<?= $this->input->post('akum_peny_notebook') ?? $ner->akum_peny_notebook ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Kamera Digital</label>
-                                                            <input type="number" name="kamera_digital" value="<?php echo $ner->kamera_digital ?>" class="form-control">
+                                                            <input type="number" name="kamera_digital" value="<?= $this->input->post('kamera_digital') ?? $ner->kamera_digital ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Akum.Peny.-Kamera Digital</label>
-                                                            <input type="number" name="akum_peny_kamera" value="<?php echo $ner->akum_peny_kamera ?>" class="form-control">
+                                                            <input type="number" name="akum_peny_kamera" value="<?= $this->input->post('akum_peny_kamera') ?? $ner->akum_peny_kamera ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Printer</label>
-                                                            <input type="number" name="printer" value="<?php echo $ner->printer ?>" class="form-control">
+                                                            <input type="number" name="printer" value="<?= $this->input->post('printer') ?? $ner->printer ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Akum.Peny.-Printer</label>
-                                                            <input type="number" name="akum_peny_printer" value="<?php echo $ner->akum_peny_printer ?>" class="form-control">
+                                                            <input type="number" name="akum_peny_printer" value="<?= $this->input->post('akum_peny_printer') ?? $ner->akum_peny_printer ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Kamera Video</label>
-                                                            <input type="number" name="video_kamera" value="<?php echo $ner->video_kamera ?>" class="form-control">
+                                                            <input type="number" name="video_kamera" value="<?= $this->input->post('video_kamera') ?? $ner->video_kamera ?>" class="form-control">
                                                         </div>
                                                         <div class="form-group col-5">
                                                             <label>Akum.Peny.-Kamera Video</label>

@@ -26,47 +26,48 @@
         <div class="text-center w-100">
             <div class="col-md-12 mx-auto my-6">
                 <div class="brand">
-                    <h4 class="title">
-                        LAPORAN NERACA SALDO
-                    </h4>
-                    <h5>PT. TIRTA KENCANA MULIA</h5>
-                    <h6>Periode ....</h6>
+                    <center>
+                        <h4 class="title">
+                            LAPORAN NERACA SALDO
+                        </h4>
+                        <h5>PT. TIRTA KENCANA MULIA</h5>
+                        <h6>Periode ....</h6>
+                    </center>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="px-6">
-        <table class="table table-bordered text-dark">
+        <table>
             <tbody>
                 <tr>
-                    <th scope="col" class="text">AKTIVA</th>
-                    <th></th>
-                    <th></th>
+                    <th scope="col" class="text" align="left">AKTIVA</th>
                 </tr>
                 <tr>
-                    <th colspan="1">Kas Kecil </th>
-                    <td colspan="1">...</td>
-                    <td colspan="1"><?php echo $id_akt[0]->kas_kecil ?></td>
+                    <th colspan="1" align="left">Kas Kecil </th>
+                    <td colspan="1" align="center">...</td>
+                    <td colspan="1" align="right"><?php echo $id_akt[0]->kas_kecil ?></td>
                 </tr>
                 <tr>
-                    <th colspan="1"> Kas Pada Bank</th>
-                    <td colspan="1">...</td>
-                    <td colspan="1"><?php echo $id_akt[0]->kas_pada_bank ?></td>
+                    <th colspan="1" align="left"> Kas Pada Bank</th>
+                    <td colspan="1" align="center">...</td>
+                    <td colspan="1" align="right"><?php echo $id_akt[0]->kas_pada_bank ?></td>
                 </tr>
                 <tr>
-                    <th colspan="1">Piutang Operasional</th>
-                    <td colspan="1">...</td>
-                    <td colspan="1"><?php echo $id_akt[0]->piutang_operasional ?></td>
+                    <th colspan="1" align="left">Piutang Operasional</th>
+                    <td colspan="1" align="center">...</td>
+                    <td colspan="1" align="right"><?php echo $id_akt[0]->piutang_operasional ?></td>
                 </tr>
                 <tr>
-                    <th colspan="1">Piutang Daya Makara</th>
-                    <td colspan="1">...</td>
-                    <td colspan="1">(nilai Piutang Daya Makara)</td>
+                    <th colspan="1" align="left">Piutang Daya Makara</th>
+                    <td colspan="1" align="center">...</td>
+                    <td colspan="1" align="right">(nilai Piutang Daya Makara)</td>
                 </tr>
                 <tr>
-                    <th colspan="1">Piutang Proyek</th>
-                    <td colspan="1">...</td>
-                    <td colspan="1">(nilai Piutang Proyek)</td>
+                    <th colspan="1" align="left">Piutang Proyek</th>
+                    <td colspan="1" align="center">...</td>
+                    <td colspan="1" align="right">(nilai Piutang Proyek)</td>
                 </tr>
                 <tr>
                     <th colspan="1">Piutang TVUI</th>
@@ -197,13 +198,16 @@
             </tbody>
         </table>
     </div>
+    <br><br>
     <div class="px-6 py-6">
         <div class="position-relative mt-12">
-            <div class="position-absolute right-7 bottom-0 end-0 mb-9">Tanggal cetak</div>
-            <div class="position-absolute bottom-0 end-0 mb-8">Staff Administrasi</div>
-            <div class="position-absolute bottom-0 end-0 mb-3">(nama staff))</div>
+            <div class="position-absolute bottom-0 end-0 mb-8" align="right">Dikeluarkan Oleh,</div>
+            <div class="position-absolute bottom-0 end-0 mb-8" align="right">Staf Administrasi</div>
+            <!-- <div class="position-absolute bottom-0 end-0 mb-3" align="right">(Nama Staff)</div> -->
             <br>
             <br>
+
+            <div class="position-absolute right-7 bottom-0 end-0 mb-9" align="right">Tanggal cetak</div>
         </div>
 
     </div>

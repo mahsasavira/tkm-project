@@ -86,20 +86,27 @@
                                 </tr>
                                 <tbody>
                                     <?php
+                                    function hargapen($angka)
+                                    {
+                                        $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                        return $hasil_rupiah;
+                                    }
                                     $no = 1;
-                                    foreach ($id_pend as $id) { ?>
+                                    foreach ($id_pend as $id) {
+                                        $totalpen = $id->pendapatan_proyek + $id->pendapatan_giro + $id->bonus + $id->pendapatan_lainlain + $id->laba_selisih_kurs;
+                                    ?>
                                         <tr>
-                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo $no++ ?></td>
-                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo $id->tanggal_masuk ?></td>
-                                            <td class=" text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->pendapatan_proyek ?></td>
-                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->pendapatan_giro ?></td>
-                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->bonus ?></td>
-                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->pendapatan_lainlain ?></td>
-                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->laba_selisih_kurs ?></td>
-                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. </td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $no++ ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $id->tanggal_masuk ?></td>
+                                            <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->pendapatan_proyek) ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->pendapatan_giro) ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->bonus) ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->pendapatan_lainlain) ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->laba_selisih_kurs) ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($totalpen) ?></td>
                                             <td class=" text-center" width="160px">
                                                 <form action="<?= site_url('transaksi/hapus_pendapatan') ?>" method="post">
-                                                    <a href="<?= site_url('transaksi/neraca/') ?>" class="btn btn-primary btn-xs">
+                                                    <a href="<?= site_url('transaksi/edit_pendapatan/' . $id->id_pendapatan) ?>" class="btn btn-primary btn-xs">
                                                         <i class="fa fa-pencil"></i> Edit
                                                     </a>
                                                     <input type="hidden" name="id_pendapatan" value="<?= $id->id_pendapatan ?>">
@@ -171,34 +178,42 @@
                                     <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Rugi Penjualan Aset</th>
                                     <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Rugi Selisih Kurs</th>
                                     <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Total Beban</th>
-                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Laba Bersih</th>
                                     <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Aksi</th>
                                     <tbody>
                                         <?php
+                                        function hargabeban($angka)
+                                        {
+                                            $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                            return $hasil_rupiah;
+                                        }
                                         $no = 1;
-                                        foreach ($id_beban as $id) { ?>
+                                        foreach ($id_beban as $id) {
+                                            $totalbeban = $id->beban_proyek + $id->beban_gaji + $id->tunjangan_hari_raya + $id->beban_operasional + $id->beban_setoran_ui +
+                                                $id->beban_penyusutan + $id->beban_bonus + $id->beban_perlengkapan_kantor + $id->beban_pengelolaan_rek + $id->beban_buku_cek +
+                                                $id->beban_pajak + $id->beban_lainlain + $id->rugi_penjualan_aset + $id->rugi_selisih_kurs;
+                                            $lababersih = $totalbeban + $totalpen;
+                                        ?>
                                             <tr>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo $no++ ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo $id->tanggal_masuk ?></td>
-                                                <td class=" text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->beban_proyek ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->beban_gaji ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->tunjangan_hari_raya ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->beban_operasional ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->beban_setoran_ui ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->beban_penyusutan ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp <?php echo $id->beban_bonus ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp <?php echo $id->beban_perlengkapan_kantor ?></td>
-                                                <td class=" text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->beban_pengelolaan_rek ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->beban_buku_cek ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->beban_pajak ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->beban_lainlain ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->rugi_penjualan_aset ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. <?php echo $id->rugi_selisih_kurs ?></td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. </td>
-                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8">Rp. </td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $no++ ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $id->tanggal_masuk ?></td>
+                                                <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_proyek) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_gaji) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->tunjangan_hari_raya)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_operasional)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_setoran_ui)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_penyusutan)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_bonus) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_perlengkapan_kantor) ?></td>
+                                                <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_pengelolaan_rek)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_buku_cek)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_pajak) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_lainlain) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->rugi_penjualan_aset) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->rugi_selisih_kurs)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($totalbeban) ?></td>
                                                 <td class=" text-center" width="160px">
                                                     <form action="<?= site_url('transaksi/hapus_beban') ?>" method="post">
-                                                        <a href="<?= site_url('transaksi/neraca/') ?>" class="btn btn-primary btn-xs">
+                                                        <a href="<?= site_url('transaksi/edit_beban/' . $id->id_beban) ?>" class="btn btn-primary btn-xs">
                                                             <i class="fa fa-pencil"></i> Edit
                                                         </a>
                                                         <input type="hidden" name="id_beban" value="<?= $id->id_beban ?>">
