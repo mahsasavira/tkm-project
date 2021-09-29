@@ -46,28 +46,63 @@ class Transaksi extends CI_Controller
         redirect('transaksi/neraca');
     }
 
-    public function edit_aktiva($id_aktiva)
+    public function edit_aktiva($id)
     {
         //input , alias, kondisi
-
-        $where = array('id' => $id_aktiva);
-        $data['neraca'] = $this->m_neraca->edit_aktiva($where, 'aktiva')->result_array();
-        $this->load->view('template/header');
-        $this->load->view('template/sidebar');
-        $this->load->view('transaksi/edit_aktiva', $data);
         // $queryedit = $this->m_neraca->get_data_aktiva($id_aktiva);
         // $DATA = array('queryeditakt' => $queryedit);
         // echo "<pre>";
         // print_r($queryedit);
         // echo "</pre>";
-        // $this->form_validation->set_rules('id_aktiva', 'Id Aktiva', 'required|is_unique[aktiva.id_aktiva]');
-        // $this->form_validation->set_rules('tanggal_masuk', 'Tanggal', 'required|is_unique[aktiva.tanggal_masuk]');
-        // $this->form_validation->set_rules('kas_kecil', 'Kas Kecil', 'required|is_unique[aktiva.kas_kecil]');
-        // $this->form_validation->set_rules('kas_pada_bank', 'Kas Pada Bank', 'required|is_unique[aktiva.kas_pada_bank]');
+        $this->form_validation->set_rules('id_aktiva', 'Id Aktiva ', 'required|is_unique[aktiva.id_aktiva]');
+        $this->form_validation->set_rules('kas_kecil', 'Tanggal', 'required');
+        $this->form_validation->set_rules('kas_pada_bank', 'Kas pada Bank', 'required');
+        $this->form_validation->set_rules('piutang_operasional', 'Piutang Operasional', 'required');
+        $this->form_validation->set_rules('piutang_daya_makara', 'Piutang Makara', 'required');
+        $this->form_validation->set_rules('piutang_proyek', 'Piutang Proyek', 'required');
+        $this->form_validation->set_rules('piutang_tvui', 'Piutang tvui', 'required');
+        $this->form_validation->set_rules('piutang_solar_car', 'Piutang solar car', 'required');
+        $this->form_validation->set_rules('komputer', 'Komputer', 'required');
+        $this->form_validation->set_rules('akum_peny_komputer', 'Akum peny komputera', 'required');
+        $this->form_validation->set_rules('fax', 'Fax', 'required');
+        $this->form_validation->set_rules('akum_peny_fax', 'Akum peny fax', 'required');
+        $this->form_validation->set_rules('ac', 'Ac', 'required');
+        $this->form_validation->set_rules('akum_peny_ac', 'Akum peny ac', 'required');
+        $this->form_validation->set_rules('furniture', 'Furniture', 'required');
+        $this->form_validation->set_rules('akum_peny_furniture', 'Akum peny furniture', 'required');
+        $this->form_validation->set_rules('notebook', 'Notebook', 'required');
+        $this->form_validation->set_rules('akum_peny_notebook', 'Akum peny notebook', 'required');
+        $this->form_validation->set_rules('kamera_digital', 'Kamera digital', 'required');
+        $this->form_validation->set_rules('akum_peny_kamera', 'Akum peny kamera', 'required');
+        $this->form_validation->set_rules('printer', 'Printer', 'required');
+        $this->form_validation->set_rules('akum_peny_printer', 'Akum peny printer', 'required');
+        $this->form_validation->set_rules('video_kamera', 'Video kamera', 'required');
+        $this->form_validation->set_rules('akum_peny_video', 'Akum peny video', 'required');
 
-        // $this->form_validation->set_message('required', '%s masih kosong, silahkan isi data!');
-        // $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
+        $this->form_validation->set_message('required', '%s masih kosong, silahkan isi data!');
+        $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
 
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('template/header');
+            $query = $this->load->m_neraca->tampil_aktiva($id);
+            if ($query->num_rows() > 0) {
+                $data['neraca'] = $query->row();
+                $this->load->view('transaksi/edit_aktiva', $data);
+            } else {
+                echo "<script> alert('Data tidak ditemukan');";
+                echo "window.location='" . site_url('neraca') . "';</script>";
+            }
+
+            $this->load->view('template/sidebar');
+        } else {
+            $post = $this->input->post(null, TRUE);
+            $this->m_neraca->edit_aktiva($post);
+            if ($this->db->affected_rows() > 0) {
+                echo "<script> alert('Data berhasil diubah');</script>";
+            }
+            echo "<script> window.location='" . site_url('neraca') . "';</script>";
+        }
         // $this->load->view('template/header');
         // $this->load->view('template/sidebar');
         // $this->load->view('transaksi/edit_aktiva', $DATA);

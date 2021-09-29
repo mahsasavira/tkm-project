@@ -83,21 +83,39 @@ class M_neraca extends CI_Model
         $this->db->delete('aktiva');
     }
 
-    public function edit_aktiva($where, $table)
+    public function edit_aktiva($post)
     {
-        return $this->db->get_where($table, $where);
-        // $params['id_aktiva'] = $id['id_aktiva'];
-        // $params['kas_kecil'] = $id['kas_kecil'];
-        // $params['kas_pada_bank'] = $id['kas_pada_bank'];
-        // $this->db->where('id_aktiva', $id['id_aktiva']);
-        // $this->db->update('aktiva', $params);
+        // return $this->db->get_where($table, $where);
+        $params['id_aktiva'] = $post['id_aktiva'];
+        $params['kas_kecil'] = $post['kas_kecil'];
+        $params['kas_pada_bank'] = $post['kas_pada_bank'];
+        $params['piutang_operasional'] = $post['piutang_operasional'];
+        $params['piutang_daya_makara'] = $post['piutang_daya_makara'];
+        $params['piutang_proyek'] = $post['piutang_proyek'];
+        $params['piutang_tvui'] = $post['piutang_tvui'];
+        $params['piutang_solar_car'] = $post['piutang_solar_car'];
+        $params['komputer'] = $post['komputer'];
+        $params['akum_peny_komputer'] = $post['akum_peny_komputer'];
+        $params['fax'] = $post['fax'];
+        $params['akum_peny_fax'] = $post['akum_peny_fax'];
+        $params['ac'] = $post['ac'];
+        $params['akum_peny_ac'] = $post['akum_peny_ac'];
+        $params['furniture'] = $post['furniture'];
+        $params['akum_peny_furniture'] = $post['akum_peny_furniture'];
+        $params['notebook'] = $post['notebook'];
+        $params['akum_peny_notebook'] = $post['akum_peny_notebook'];
+        $params['akum_peny_ac'] = $post['akum_peny_ac'];
+        $params['kamera_digital'] = $post['kamera_digital'];
+        $params['akum_peny_kamera'] = $post['akum_peny_kamera'];
+        $params['printer'] = $post['printer'];
+        $params['akum_peny_printer'] = $post['akum_peny_printer'];
+        $params['video_kamera'] = $post['video_kamera'];
+        $params['akum_peny_video'] = $post['akum_peny_video'];
+        $this->db->where('id_aktiva', $post['id_aktiva']);
+        $this->db->update('aktiva', $params);
     }
 
-    function update_data($where, $data, $table)
-    {
-        $this->db->where($where);
-        $this->db->update($table, $data);
-    }
+
 
     public function get_data_aktiva($id_aktiva)
     {
