@@ -94,32 +94,10 @@ class M_neraca extends CI_Model
         return $query->row();
     }
 
-    public function edit_aktiva($post)
+    function update_data_aktiva($where, $data, $table)
     {
-        // <<<<<<< Updated upstream
-        // return $this->db->get_where($table, $where);
-        // $params['id_aktiva'] = $id['id_aktiva'];
-        // $params['kas_kecil'] = $id['kas_kecil'];
-        // $params['kas_pada_bank'] = $id['kas_pada_bank'];
-        // $this->db->where('id_aktiva', $id['id_aktiva']);
-        // $this->db->update('aktiva', $params);
+        return $this->db->update($table, $data, $where);
     }
-
-    //     function update_data($where, $data, $table)
-    //     {
-    //         $this->db->where($where);
-    //         $this->db->update($table, $data);
-
-    //         $params = array(
-    //             'id_aktiva' => $id['id_aktiva'],
-    //             'kas_kecil' => $id['kas_kecil'],
-    //             'kas_pada_bank' => $id['kas_pada_bank'],
-    //         );
-    //         $this->db->set($params);
-    //         $this->db->where('id_aktiva', $id['id_aktiva']);
-    //         $this->db->update('aktiva', $params);
-
-    //     }
 
     public function tambah_pasiva()
     {
@@ -152,15 +130,8 @@ class M_neraca extends CI_Model
         return $query->row();
     }
 
-    public function edit_pasiva($id)
+    function update_data_pasiva($where, $data, $table)
     {
-        $params = array(
-            'id_pasiva' => $id['id_pasiva'],
-            'hutang_operasional' => $id['hutang_operaional'],
-            // 'kas_kecil' => $id['kas_kecil'],
-            // 'kas_pada_bank' => $id['kas_pada_bank'],
-        );
-        $this->db->where('id_pasiva', $id['id_pasiva']);
-        $this->db->update('aktiva', $params);
+        return $this->db->update($table, $data, $where);
     }
 }

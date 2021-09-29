@@ -64,7 +64,8 @@
                                 <div class="card-header pb-0 px-3 text-center">
                                     <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Edit Pasiva</h5>
                                 </div>
-                                <form action="" method="post">
+                                <form action="<?= base_url('transaksi/update_pas') ?>" method="post">
+                                    <input type="hidden" name="id_pasiva" value="<?= $this->uri->segment(3) ?>">
                                     <div class="card-body pt-4 p-3">
                                         <ul class="list-group">
                                             <div class="card-body px-0 pt-0 pb-2">

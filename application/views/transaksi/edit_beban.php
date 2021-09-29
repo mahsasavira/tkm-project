@@ -65,7 +65,8 @@
                                 <div class="card-header pb-0 px-3 text-center">
                                     <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Edit Beban</h5>
                                 </div>
-                                <form action="" method="POST">
+                                <form action="<?= base_url('transaksi/update_beban') ?>" method="POST">
+                                    <input type="hidden" name="id_beban" value="<?= $this->uri->segment(3) ?>">
                                     <div class="card-body pt-4 p-3">
                                         <ul class="list-group">
                                             <div class="card-body px-0 pt-0 pb-2">
@@ -80,7 +81,6 @@
                                             </div>
                                         </ul>
                                     </div>
-
                                     <div class="card-body p-3">
                                         <div class="table-responsive p-0">
                                             <div class="col-12 px-3">

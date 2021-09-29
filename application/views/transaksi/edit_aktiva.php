@@ -64,7 +64,8 @@
                                 <div class="card-header pb-0 px-3 text-center">
                                     <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Edit Aktiva</h5>
                                 </div>
-                                <form action="" method="post">
+                                <form action="<?= base_url('transaksi/update_akt') ?>" method="post">
+                                    <input type="hidden" name="id_aktiva" value="<?= $this->uri->segment(3) ?>">
                                     <div class="card-body pt-4 p-3">
                                         <ul class="list-group">
                                             <div class="card-body px-0 pt-0 pb-2">
@@ -74,7 +75,6 @@
                                                             <label for="example-date-input" class="form-control-label">Tanggal : </label>
                                                             <input class="form-control" type="date" min="2019-01-01" max="2021-12-31" name="tanggal_masuk" value="<?= $this->input->post('tanggal_masuk') ?? $queryeditakt->TANGGAL_MASUK ?>" id="example-date-input">
                                                         </div>
-
                                                         <div class="row">
                                                             <div class="form-group col-5">
                                                                 <label>Kas Kecil</label>

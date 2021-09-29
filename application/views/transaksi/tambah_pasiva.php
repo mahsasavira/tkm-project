@@ -64,7 +64,7 @@
                                 <div class="card-header pb-0 px-3 text-center">
                                     <h5 class="mb-2 text-center text-uppercase text-dark text-l font-weight-bolder opacity-8">Tambah Pasiva</h5>
                                 </div>
-                                <form action="" method="POST">
+                                <form action="<?= base_url('transaksi/tambah_pasiva') ?>" method="POST">
                                     <div class="card-body pt-4 p-3">
                                         <ul class="list-group">
                                             <div class="card-body px-0 pt-0 pb-2">
@@ -72,7 +72,7 @@
                                                     <div class="col-md-6 mt-4 pb-0 px-3">
                                                         <div class="form-group col-5">
                                                             <label for="example-date-input" class="form-control-label">Tanggal : </label>
-                                                            <input class="form-control" type="date" min="2019-01-01" max="2021-12-31" name="tanggal_masuk" value="<?= set_value('tanggal_masuk') ?>" id="example-date-input" required>
+                                                            <input class="form-control" type="date" min="2019-01-01" max="2021-12-31" name="tanggal_masuk" value="" id="example-date-input">
                                                         </div>
                                                     </div>
                                                 </div>
