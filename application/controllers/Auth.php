@@ -10,33 +10,42 @@ class Auth extends CI_Controller
         $this->load->model('m_login');
     }
 
-    function profile()
-    {
-        $this->load->view('template/header');
-        $this->load->view('template/sidebar');
-        $this->load->view('auth/profile');
-    }
-
     function aksi_login()
     {
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-        if ($username == "admin" && $password == "admin") {
-            $data_session = array(
-                'username' => $username,
-                'status' => "login"
-            );
+        $email = htmlspecialchars($this->input->post('email', TRUE), ENT_QUOTES);
+        $password = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
 
-            $this->session->set_userdata($data_session);
-            redirect(base_url("/dashboard"));
+        $cek_user = $this->m_login->cek_login($email, $password);
+
+        if ($cek_user->num_rows() > 0) {
+            $data = $cek_user->row_array();
+
+            $this->session->set_userdata('masuk', TRUE);
+
+            if ($data['id_role'] == '1') {
+                $this->session->set_userdata('akses', '1');
+                $this->session->set_userdata('id_user', $data['id_user']);
+                $this->session->set_userdata('email', $data['email']);
+                $this->session->set_userdata('password', $data['password']);
+                $this->session->set_userdata('id_role', $data['id_role']);
+                $this->session->set_userdata('is_active', $data['IS_ACTIVE']);
+                redirect('dashboard');
+            } else {
+                $this->session->set_userdata('akses', '1');
+                $this->session->set_userdata('id_user', $data['id_user']);
+                $this->session->set_userdata('email', $data['email']);
+                $this->session->set_userdata('password', $data['password']);
+                $this->session->set_userdata('id_role', $data['id_role']);
+                $this->session->set_userdata('is_active', $data['IS_ACTIVE']);
+                redirect('dashboard');
+            }
         } else {
             echo "<script>
-			alert('login gagal, username/password salah');
-			window.location='" . base_url('auth/login') . "';
-			</script>";
+             alert('Login gagal, email/password yang anda masukkan salah');
+            window.location='" . base_url('auth/login') . "';
+             </script>";
         }
     }
-
 
     function login()
     {

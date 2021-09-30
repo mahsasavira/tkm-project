@@ -105,7 +105,7 @@
                         <div class="card-body">
                             <form class="pt-1 mt-0" action="<?php echo site_url('auth/aksi_login') ?>" method="post">
                                 <div class="mb-3">
-                                    <input type="text" name="username" class="form-control" placeholder="Username" aria-label="text" aria-describedby="teks-addon">
+                                    <input type="text" name="email" class="form-control" placeholder="Email" aria-label="text" aria-describedby="teks-addon">
                                 </div>
                                 <div class="mb-3">
                                     <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
@@ -114,6 +114,7 @@
                                 <div class="text-center">
                                     <button type="submit" name="login" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign In</button>
                                 </div>
+                                <a href=<?= base_url('dashboard'); ?> class="auth-link text-black">Lupa Kata Sandi?</a>
                                 <!-- <p class="text-sm mt-3 mb-0">Dont have an account? <a href="javascript:;" class="text-dark font-weight-bolder">Sign up</a></p> -->
                             </form>
                         </div>
