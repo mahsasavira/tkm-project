@@ -7,6 +7,7 @@ class User extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->library('form_validation');
         $this->load->model('m_login');
         $this->load->model('m_user');
     }
@@ -30,6 +31,18 @@ class User extends CI_Controller
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('user/mnj_user');
+    }
+
+    public function tambah_user()
+    {
+        if ($this->input->post()) {
+            $this->m_user->tambah_user();
+            redirect('user/mnj_user');
+        } else {
+            $this->load->view('template/header');
+            $this->load->view('template/sidebar');
+            $this->load->view('user/mnj_user');
+        }
     }
 
     public function edit_user($id)

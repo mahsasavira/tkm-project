@@ -14,10 +14,10 @@
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                         <div class="input-group">
-                            <span class="input-group-text text-body">
+                            <!-- <span class="input-group-text text-body">
                                 <i class="fas fa-search" aria-hidden="true"></i>
-                            </span>
-                            <input type="text" class="form-control" placeholder="Type here...">
+                            </span> -->
+                            <!-- <input type="text" class="form-control" placeholder="Type here..."> -->
                         </div>
                     </div>
                     <div class="navbar-nav  justify-content-end">
@@ -72,9 +72,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="btn-group mt-2" role="group" aria-label="Basic mixed styles example">
-                        <a href="<?= base_url('user/mnj_user'); ?>" type="button" class="btn btn-primary">Manajemen Akun Pengguna</a>
-                        <a href="<?= base_url('user/profile_biasa'); ?>" type="button" class="btn btn-light">Pengaturan Profil Pengguna</a>
+                    <div class="btn-group mt-5" role="group" aria-label="Basic mixed styles example">
+                        <a href="<?= base_url('user/mnj_user'); ?>" type="button" class="btn btn-primary">Tambah Akun Pengguna</a>
+                        <a href="<?= base_url('user/profile_biasa'); ?>" type="button" class="btn btn-light">Profil Pengguna</a>
                     </div>
                     <div class="container-fluid py-4">
                         <div class="row">
@@ -83,10 +83,10 @@
                                     <div class="col-12 grid-margin">
                                         <div class="card">
                                             <div class="card-body">
-                                                <h4 class="card-title">Pengaturan Profil Pengguna</h4>
+                                                <h4 class="card-title">Profil Pengguna</h4>
                                                 <p class="card-description"> Anda tidak dapat melakukan perubahan pada profil anda dihalaman ini </p><br>
 
-                                                <form class="forms-sample" action="">
+                                                <form class="forms-sample" action="<?php echo base_url() . 'user/edit_user' ?>">
                                                     <!-- <div class="form-group">
                                                         <label for="exampleInputName1">Id User</label>
                                                         <input type="text" class="form-control" id="id_user" name="id_user" value="" readonly>

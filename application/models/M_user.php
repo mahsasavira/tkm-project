@@ -10,6 +10,22 @@ class M_user extends CI_Model
         return $query->result();
     }
 
+    public function tambah_user()
+    {
+        $id_user = $this->input->post('id_user');
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $level = $this->input->post('level');
+
+        $data = array(
+            'id_user' => $id_user,
+            'email' => $email,
+            'password' => $password,
+            'level' => $level,
+        );
+        return $this->db->insert('user', $data);
+    }
+
     public function get_data_user($id)
     {
         $this->db->where('id_user', $id);

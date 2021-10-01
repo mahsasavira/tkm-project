@@ -14,10 +14,10 @@
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                         <div class="input-group">
-                            <span class="input-group-text text-body">
+                            <!-- <span class="input-group-text text-body">
                                 <i class="fas fa-search" aria-hidden="true"></i>
-                            </span>
-                            <input type="text" class="form-control" placeholder="Type here...">
+                            </span> -->
+                            <!-- <input type="text" class="form-control" placeholder="Type here..."> -->
                         </div>
                     </div>
                     <div class="navbar-nav  justify-content-end">
@@ -27,8 +27,6 @@
                                 <span class="d-sm-inline d-none">Keluar</span>
                             </a>
                         </li>
-
-
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                                 <div class="sidenav-toggler-inner">
@@ -71,16 +69,16 @@
                             </p>
                         </div>
                     </div>
-                    <div class="btn-group mt-2" role="group" aria-label="Basic mixed styles example">
-                        <a href="<?= base_url('user/mnj_user'); ?>" type="button" class="btn btn-primary">Manajemen Akun PEngguna</a>
-                        <a href="<?= base_url('user/profile_biasa'); ?>" type="button" class="btn btn-light">Pengaturan Profil Pengguna</a>
+                    <div class="btn-group mt-5" role="group" aria-label="Basic mixed styles example">
+                        <a href="<?= base_url('user/mnj_user'); ?>" type="button" class="btn btn-primary">Tambah Akun Pengguna</a>
+                        <a href="<?= base_url('user/profile_biasa'); ?>" type="button" class="btn btn-light">Profil Pengguna</a>
                     </div>
                     <div class="container-fluid py-4">
-                        <div class="col-md-12 grid-margin">
+                        <!-- <div class="col-md-12 grid-margin">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Manajemen Akun Pengguna</h4>
-                                    <p class="card-description"> Anda dapat <code>(Memperbarui - Menghapus)</code> Akun Pengguna lain disini </p>
+                                    <p class="card-description"> Anda dapat <code>(Memperbarui)</code> Akun Pengguna lain disini </p>
 
                                     <div class="form-group">
                                         <label for="exampleSelectGender">Nama User</label>
@@ -145,54 +143,53 @@
                                     <button class="btn btn-light">Batal</button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 mt-5 grid-margin">
+                        </div> -->
+                        <div class="col-md-12 mt-3 grid-margin">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Tambah Akun Pengguna</h4>
                                     <p class="card-description"> Anda dapat <code>(Menambah)</code> Akun Pengguna lain disini </p>
 
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">@</span>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="ID User" name="id_user">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">@</span>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">*</span>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Level</button>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">1</a>
-                                                    <a class="dropdown-item" href="#">2</a>
+                                    <form action="<?= base_url('user/tambah_user'); ?>" method="post">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">@</span>
                                                 </div>
+                                                <input type="text" class="form-control" id="id_user" placeholder="ID User" name="id_user" required>
                                             </div>
-                                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
                                         </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary mr-2">Tambah</button>
-                                    <button class="btn btn-light">Batal</button>
+
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">@</span>
+                                                </div>
+                                                <input type="text" class="form-control" id="email" placeholder="Email" name="email" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">*</span>
+                                                </div>
+                                                <input type="text" class="form-control" id="password1" name="password" placeholder="Password" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">!!!</span>
+                                                </div>
+                                                <input type="text" class="form-control" id="levle" name="level" placeholder="Level" required>
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary mr-2">Tambah</button>
+                                        <button class="btn btn-light">Batal</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

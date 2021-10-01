@@ -13,10 +13,10 @@
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                         <div class="input-group">
-                            <span class="input-group-text text-body">
+                            <!-- <span class="input-group-text text-body">
                                 <i class="fas fa-search" aria-hidden="true"></i>
-                            </span>
-                            <input type="text" class="form-control" placeholder="Type here...">
+                            </span> -->
+                            <!-- <input type="text" class="form-control" placeholder="Type here..."> -->
                         </div>
                     </div>
                     <div class="navbar-nav  justify-content-end">
@@ -169,9 +169,14 @@
                                                                 <input type="number" name="akum_peny_video" value="<?= $this->input->post('akum_peny_video') ?? $queryeditakt->AKUM_PENY_VIDEO ?>" class="form-control">
                                                             </div>
                                                             <div class="row">
-                                                                <div class="col-md-4">
+                                                                <div class="col-md-3">
                                                                     <div class="form-group col-6">
                                                                         <button type="submit" class="btn btn-success">Simpan</button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group col-2">
+                                                                        <a type="button" href="<?= base_url('transaksi/neraca'); ?>" class="btn btn-danger">Batal</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -15,18 +15,57 @@
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                        <div class="input-group">
+                            <!-- <span class="input-group-text text-body">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </span> -->
+                            <!-- <input type="text" class="form-control" placeholder="Type here..."> -->
+                        </div>
+                    </div>
+                    <div class="navbar-nav  justify-content-end">
+                        <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                            <a href="<?= site_url('auth/logout') ?>" class="nav-link text-body font-weight-bold px-0">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span class="d-sm-inline d-none">Keluar</span>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                                <div class="sidenav-toggler-inner">
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item px-3 d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-body p-0">
+                                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-bell cursor-pointer"></i>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+                <!-- <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                         <div class="btn-group mt-4">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 Action
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="<?= base_url('auth/profile'); ?>" type="button" class="form-control">Profil</a></li>
+                                <li><a href="<?= base_url('user/profile'); ?>" type="button" class="form-control">Profil</a></li>
                                 <li><a href="<?= site_url('auth/logout') ?>" class="form-control primary">Keluar</a>
                                 <li>
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </nav>
         <!-- End Navbar -->
