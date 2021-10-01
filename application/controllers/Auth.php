@@ -10,59 +10,52 @@ class Auth extends CI_Controller
         $this->load->model('m_login');
     }
 
-    function aksi_login()
-    {
-        $email = htmlspecialchars($this->input->post('email', TRUE), ENT_QUOTES);
-        $password = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
-
-        $cek_user = $this->m_login->cek_login($email, $password);
-
-        if ($cek_user->num_rows() > 0) {
-            $data = $cek_user->row_array();
-
-            $this->session->set_userdata('masuk', TRUE);
-
-            if ($data['id_role'] == '1') {
-                $this->session->set_userdata('akses', '1');
-                $this->session->set_userdata('id_user', $data['id_user']);
-                $this->session->set_userdata('email', $data['email']);
-                $this->session->set_userdata('password', $data['password']);
-                $this->session->set_userdata('id_role', $data['id_role']);
-                $this->session->set_userdata('is_active', $data['IS_ACTIVE']);
-                redirect('dashboard');
-            } else {
-                $this->session->set_userdata('akses', '1');
-                $this->session->set_userdata('id_user', $data['id_user']);
-                $this->session->set_userdata('email', $data['email']);
-                $this->session->set_userdata('password', $data['password']);
-                $this->session->set_userdata('id_role', $data['id_role']);
-                $this->session->set_userdata('is_active', $data['IS_ACTIVE']);
-                redirect('dashboard');
-            }
-        } else {
-            echo "<script>
-             alert('Login gagal, email/password yang anda masukkan salah');
-            window.location='" . base_url('auth/login') . "';
-             </script>";
-        }
-    }
-
-    function login()
+    public function login()
     {
         $this->load->view('login');
     }
 
-    function login_user()
+    public function aksi_login()
+    {
+        $email = $this->input->post('email', true);
+        $password = md5($this->input->post('password', true));
+
+        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+
+        if ($this->form_validation->run() != false) {
+            $where = array(
+                'email' => $email,
+                'password' => $password
+            );
+            $cek = $this->m_login->cek_login($where)->num_rows();
+
+            if ($cek > 0) {
+                $sess_data = array(
+                    'email' => $email,
+                    'login' => 'OK',
+                );
+                $this->session->set_userdata($sess_data);
+                redirect(base_url('login'));
+            } else {
+                redirect(base_url('dashboard'));
+            }
+        } else {
+            $url = base_url('');
+            echo $this->session->set_flashdata('msg', 'Email Atau Password Anda Salah!');
+            redirect($url);
+        }
+    }
+
+    public function login_user()
     {
         if ($_POST) {
             redirect(base_url("/dashboard"));
         }
     }
 
-
     public function logout()
     {
-
         $this->session->sess_destroy();
         redirect(base_url('auth/login'));
     }

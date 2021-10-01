@@ -5,7 +5,7 @@ class M_user extends CI_Model
 {
     public function tampil_user()
     {
-        $query = $this->db->query('SELECT * FROM user');
+        $query = $this->db->query('SELECT id_user,email,password FROM user');
 
         return $query->result();
     }

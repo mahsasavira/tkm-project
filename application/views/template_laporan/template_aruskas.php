@@ -32,19 +32,7 @@
                 <td style="font-size:11pt;" colspan="12" align="right">(ambil dari laba bersih)</td>
             </tr>
             <tr>
-                <th style="font-size:11pt;" colspan="1" align="left">Penyusutan Bangunan</th>
-                <td style="font-size:11pt;" colspan="12" align="right">(ambil )</td>
-            </tr>
-            <tr>
-                <th style="font-size:11pt;" colspan="1" align="left">Penyusutan Kendaraan</th>
-                <td style="font-size:11pt;" colspan="12" align="right">(ambil )</td>
-            </tr>
-            <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Penurunan Piutang</th>
-                <td style="font-size:11pt;" colspan="12" align="right">(ambil )</td>
-            </tr>
-            <tr>
-                <th style="font-size:11pt;" colspan="1" align="left">Penurunan Persediaan</th>
                 <td style="font-size:11pt;" colspan="12" align="right">(ambil )</td>
             </tr>
             <tr>
@@ -55,7 +43,34 @@
                 <th style="font-size:11pt;" colspan="1" align="left">Arus Kas Aktivitas Operasional</th>
                 <td style="font-size:11pt;" colspan="12" align="right">(ambil )</td>
             </tr>
+            <tr>
+                <th style="font-size:12pt;" scope="col-1" class="text" align="left">Aktivitas Investasi</th>
+            </tr>
+            <tr>
+                <th style="font-size:11pt;" colspan="1" align="left">Akum.Peny. Peralatan Kantor</th>
+                <td style="font-size:11pt;" colspan="12" align="right">(ambil dari laba bersih)</td>
+            </tr>
+            <tr>
+                <th style="font-size:12pt;" scope="col-1" class="text" align="left">Aktivitas Pendanaan</th>
+            </tr>
+            <tr>
+                <th style="font-size:11pt;" colspan="1" align="left">Hutang Pada Bank</th>
+                <td style="font-size:11pt;" colspan="12" align="right">(ambil dari laba bersih)</td>
+            </tr>
+            <tr>
+                <th style="font-size:11pt;" colspan="1" align="left">Penambahan Kas</th>
+                <td style="font-size:11pt;" colspan="12" align="right">(ambil dari laba bersih)</td>
+            </tr>
+            <tr>
+                <th style="font-size:11pt;" colspan="1" align="left">Saldo Akhir (bulan/tahun)</th>
+                <td style="font-size:11pt;" colspan="12" align="right">(ambil dari laba bersih)</td>
+            </tr>
+            <tr>
+                <th style="font-size:11pt;" colspan="1" align="left">Saldo Awal Bulan/tahun</th>
+                <td style="font-size:11pt;" colspan="12" align="right">(ambil dari laba bersih)</td>
+            </tr>
         </tbody>
+
     </table>
     </div>
     <br><br>
