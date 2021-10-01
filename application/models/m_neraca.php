@@ -6,9 +6,14 @@ class M_neraca extends CI_Model
         $this->db->database();
     }
 
+    public function get_limit_aktiva($limit, $start)
+    {
+        return $this->db->get('aktiva', $limit, $start)->result_array();
+    }
     //menampilkan AKTIVA
     public function tampil_aktiva()
     {
+
         $query = $this->db->query('SELECT id_aktiva,tanggal_masuk,kas_kecil,kas_pada_bank,piutang_operasional,piutang_daya_makara,
         piutang_proyek,piutang_tvui,piutang_solar_car,komputer,akum_peny_komputer,fax,akum_peny_fax,
         ac,akum_peny_ac,furniture,akum_peny_furniture,notebook,akum_peny_notebook,kamera_digital,
