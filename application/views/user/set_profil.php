@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <body class="g-sidenav-show  bg-gray-100">
+
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
         <!-- Navbar -->
         <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Laporan</a></li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Laporan Arus Kas</li>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Profil</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Laporan Arus Kas</h6>
+                    <h6 class="font-weight-bolder mb-0">Profil</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -28,8 +26,9 @@
                                 <i class="fas fa-sign-out-alt"></i>
                                 <span class="d-sm-inline d-none">Keluar</span>
                             </a>
-                            <!-- <a href="<?= site_url('auth/logout') ?>"><i class="glyphicon glyphicon-log-out"></i> <span>Keluar</span></a> -->
                         </li>
+
+
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                                 <div class="sidenav-toggler-inner">
@@ -54,75 +53,98 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <div class="container-fluid py-4">
-            <div class="row">
-                <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-4">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="form-group col-2">
-                                            <label for="example-date-input" class="form-control-label">Periode Awal : </label>
-                                            <input class="btn btn-outline-primary" type="date" min="2019-01-01" max="2021-12-31" name="tgl_awal" value="" id="tgl_awal">
-                                        </div>
-                                        <div class="form-group col-2">
-                                            <label for="example-date-input" class="form-control-label">Periode Akhir : </label>
-                                            <input class="btn btn-outline-primary" type="date" min="2019-01-01" max="2021-12-31" name="tgl_akhir" value="" id="tgl_akhir">
-                                        </div>
-                                        <a href="#" onclick="showLaporan()"><button type="button" class="btn btn-outline-primary btn-icon-text"> Tampilkan <i class="mdi mdi-eye btn-icon-append"></i></button></a>
-                                        <div align="right">
-                                            <a href="<?= site_url('laporan/laporan_aruskas_pdf') ?>" id="url_cetak_laporan"><button type="button" class="btn btn-outline-primary btn-icon-text"> Cetak <i class="mdi mdi-printer btn-icon-append"></i></button></a>
+        <div class="container-fluid">
+            <div class="page-header min-height-250 border-radius-xl mt-4" style="background-image: url('../assets/img/background.png'); background-position-y: 50%;">
+                <span class="mask bg-gradient-primary opacity-6"></span>
+            </div>
+            <div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
+                <div class="row gx-4">
+                    <div class="col-auto">
+                        <div class="avatar avatar-xl position-relative">
+                            <img src="../assets/img/logo.png" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+                        </div>
+                    </div>
+                    <div class="col-auto my-auto">
+                        <div class="h-100">
+                            <p class="mb-1 text-black"><?php echo $this->session->userdata('email'); ?></p>
+                            <p class="mb-0 font-weight-bold text-sm">
+                                INI BUAT STAF ADMINISTRASI YA
+                            </p>
+                        </div>
+                    </div>
+                    <div class="btn-group mt-2" role="group" aria-label="Basic mixed styles example">
+                        <a href="<?= base_url('user/mnj_user'); ?>" type="button" class="btn btn-primary">Manajemen Akun Pengguna</a>
+                        <a href="<?= base_url('user/profile_biasa'); ?>" type="button" class="btn btn-light">Pengaturan Profil Pengguna</a>
+                    </div>
+                    <div class="container-fluid py-4">
+                        <div class="row">
+                            <div class="col-12 col-xl-12">
+                                <div class="card h-100">
+                                    <div class="col-12 grid-margin">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Pengaturan Profil Pengguna</h4>
+                                                <p class="card-description"> Anda tidak dapat melakukan perubahan pada profil anda dihalaman ini </p><br>
+
+                                                <form class="forms-sample" action="<?php echo base_url() . 'user/edit_user' ?>">
+                                                    <!-- <div class="form-group">
+                                                        <label for="exampleInputName1">Id User</label>
+                                                        <input type="text" class="form-control" id="id_user" name="id_user" value="" readonly>
+                                                    </div> -->
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail3">Email</label>
+                                                        <input type="email" class="form-control" id="username" name="username" placeholder="Email">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword4">Password</label>
+                                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="table-responsive p-0 border border-dark">
-                                        <center>
-                                            <h4 class="card-title mt-4"><b>LAPORAN ARUS KAS</b></h4>
-                                            <p class="card-description"><b> Periode s.d.</b></p><br><br>
-                                        </center>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <footer class="footer pt-3  ">
-            <div class="container-fluid">
-                <div class="row align-items-center justify-content-lg-between">
-                    <div class="col-lg-6 mb-lg-0 mb-4">
-                        <div class="copyright text-center text-sm text-muted text-lg-start">
-                            © <script>
-                                document.write(new Date().getFullYear())
-                            </script>,
-                            made with <i class="fa fa-heart"></i> by
-                            <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                            for a better web.
+                <footer class="footer pt-3  ">
+                    <div class="container-fluid">
+                        <div class="row align-items-center justify-content-lg-between">
+                            <div class="col-lg-6 mb-lg-0 mb-4">
+                                <div class="copyright text-center text-sm text-muted text-lg-start">
+                                    © <script>
+                                        document.write(new Date().getFullYear())
+                                    </script>,
+                                    made with <i class="fa fa-heart"></i> by
+                                    <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                                    for a better web.
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                                    <li class="nav-item">
+                                        <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                </footer>
             </div>
-        </footer>
     </main>
+
     <!--   Core JS Files   -->
     <script src="<?php echo base_url() ?>assets/js/core/popper.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/core/bootstrap.min.js"></script>
@@ -313,5 +335,3 @@
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="<?php echo base_url() ?>assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 </body>
-
-</html>

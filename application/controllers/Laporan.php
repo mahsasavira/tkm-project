@@ -91,4 +91,34 @@ class Laporan extends CI_Controller
         //simpan sertifikat ke direktori
         file_put_contents($path_pdf, $resPdf);
     }
+
+    public function laporan_aruskas_pdf()
+    {
+
+        $data['id_pend'] = $this->m_labarugi->tampil_pendapatan();
+        $data['id_beban'] = $this->m_labarugi->tampil_beban();
+        $data['id_akt'] = $this->m_neraca->tampil_aktiva();
+        $data['id_pas'] = $this->m_neraca->tampil_pasiva();
+
+        $this->load->library('pdfgenerator');
+        $html = $this->load->view('template_laporan/template_aruskas', $data, true);
+        $file_pdf = date("Y-m-d h-m-s");
+        $paper = 'A4';
+        $orientation = 'potrait';
+
+        //lokasi upload sertifikat
+        $path_pdf = 'uploads/laporan_aruskas/' . $file_pdf . '.pdf';
+
+        //compile sertifikat
+        $resPdf = $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
+        if (!is_dir('.uploads/laporan_aruskas/')) {
+            mkdir('.uploads/laporan_aruskas/', 0777, TRUE);
+            print_r(true);
+        } else {
+            print_r(false);
+        }
+
+        //simpan sertifikat ke direktori
+        file_put_contents($path_pdf, $resPdf);
+    }
 }

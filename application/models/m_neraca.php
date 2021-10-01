@@ -134,4 +134,9 @@ class M_neraca extends CI_Model
     {
         return $this->db->update($table, $data, $where);
     }
+
+    // public function total_neraca_setahun(){
+    //     $this->db->where('')
+
+    // }
 }

@@ -58,35 +58,6 @@ class Transaksi extends CI_Controller
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('transaksi/edit_aktiva', $DATA);
-        // echo "<pre>";
-        // print_r($queryedit);
-        // echo "</pre>";
-        // $this->form_validation->set_rules('id_aktiva', 'Id Aktiva ', 'required|is_unique[aktiva.id_aktiva]');
-        // $this->form_validation->set_rules('kas_kecil', 'Tanggal', 'required');
-        // $this->form_validation->set_rules('kas_pada_bank', 'Kas pada Bank', 'required');
-        // $this->form_validation->set_rules('piutang_operasional', 'Piutang Operasional', 'required');
-        // $this->form_validation->set_rules('piutang_daya_makara', 'Piutang Makara', 'required');
-        // $this->form_validation->set_rules('piutang_proyek', 'Piutang Proyek', 'required');
-        // $this->form_validation->set_rules('piutang_tvui', 'Piutang tvui', 'required');
-        // $this->form_validation->set_rules('piutang_solar_car', 'Piutang solar car', 'required');
-        // $this->form_validation->set_rules('komputer', 'Komputer', 'required');
-        // $this->form_validation->set_rules('akum_peny_komputer', 'Akum peny komputera', 'required');
-        // $this->form_validation->set_rules('fax', 'Fax', 'required');
-        // $this->form_validation->set_rules('akum_peny_fax', 'Akum peny fax', 'required');
-        // $this->form_validation->set_rules('ac', 'Ac', 'required');
-        // $this->form_validation->set_rules('akum_peny_ac', 'Akum peny ac', 'required');
-        // $this->form_validation->set_rules('furniture', 'Furniture', 'required');
-        // $this->form_validation->set_rules('akum_peny_furniture', 'Akum peny furniture', 'required');
-        // $this->form_validation->set_rules('notebook', 'Notebook', 'required');
-        // $this->form_validation->set_rules('akum_peny_notebook', 'Akum peny notebook', 'required');
-        // $this->form_validation->set_rules('kamera_digital', 'Kamera digital', 'required');
-        // $this->form_validation->set_rules('akum_peny_kamera', 'Akum peny kamera', 'required');
-        // $this->form_validation->set_rules('printer', 'Printer', 'required');
-        // $this->form_validation->set_rules('akum_peny_printer', 'Akum peny printer', 'required');
-        // $this->form_validation->set_rules('video_kamera', 'Video kamera', 'required');
-        // $this->form_validation->set_rules('akum_peny_video', 'Akum peny video', 'required');
-
-
     }
 
     function update_akt()
