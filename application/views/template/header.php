@@ -19,4 +19,6 @@
     <link href="<?php echo base_url() ?>assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="<?php echo base_url() ?>assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
 </head>

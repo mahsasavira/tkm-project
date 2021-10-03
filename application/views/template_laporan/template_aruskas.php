@@ -9,7 +9,7 @@
                     <img src="<?php echo base_url() ?>assets/img/kop.png">
                     <center>
                         <h4 class="card-title"><b>LAPORAN ARUS KAS</b></h4>
-                        <p class="card-description"><b> Periode Bulan ... Tahun ...</b></p>
+                        <!-- <p class="card-description"><b> Periode Bulan ... Tahun ...</b></p> -->
                     </center>
                 </div>
             </div>

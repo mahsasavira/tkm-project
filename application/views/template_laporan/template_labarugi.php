@@ -9,7 +9,7 @@
                     <img src="<?php echo base_url() ?>assets/img/kop.png">
                     <center>
                         <h4 class="card-title"><b>LAPORAN LABA RUGI</b></h4>
-                        <p class="card-description"><b> Periode s.d.</b></p>
+                        <!-- <p class="card-description"><b> Periode < s.d.</b></p> -->
                     </center>
                 </div>
             </div>
@@ -22,7 +22,8 @@
             {
                 $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
                 return $hasil_rupiah;
-            } ?>
+            }
+            ?>
 
             <tr>
                 <th style="font-size:12pt;" scope="col" class="text" align="left">PENDAPATAN</th>
@@ -44,18 +45,21 @@
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Pendapatan Lain-Lain</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_pend[0]->pendapatan_lainlain ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_pend[0]->pendapatan_lainlain); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Laba Selisih Kurs</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_pend[0]->laba_selisih_kurs ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_pend[0]->laba_selisih_kurs); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">TOTAL PENDAPATAN</th>
                 <td style="font-size:11pt;" colspan="" align="center"></td>
-                <td style="font-size:11pt;" colspan="12" align="right">(nilai total)</td>
+                <?php
+                $totalpendapatan = $id_pend[0]->pendapatan_proyek + $id_pend[0]->pendapatan_giro + $id_pend[0]->bonus + $id_pend[0]->pendapatan_lainlain + $id_pend[0]->laba_selisih_kurs;
+                ?>
+                <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($totalpendapatan) ?>< /td>
             </tr>
 
             <tr>
@@ -63,78 +67,91 @@
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Beban Proyek</th>
-                <td style="font-size:11pt;" colspan="" align="center"><?php echo $id_beban[0]->beban_proyek ?></td>
+                <td style="font-size:11pt;" colspan="" align="center"><?php echo format($id_beban[0]->beban_proyek); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Beban Gaji</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_gaji ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->beban_gaji); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Tunjangan Hari Raya</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->tunjangan_hari_raya ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->tunjangan_hari_raya); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Beban Operasional</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_operasional ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->beban_operasional); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Beban Setoran UI</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_setoran_ui ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->beban_setoran_ui); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Beban Penyusutan</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_penyusutan ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->beban_penyusutan); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Beban Bonus</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_bonus ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->beban_bonus); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Beban Perlengkapan Kantor</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_perlengkapan_kantor ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->beban_perlengkapan_kantor); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Beban Pengelolaan Rek.</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_perlengkapan_kantor ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->beban_pengelolaan_rek); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Beban Buku Cek</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_perlengkapan_kantor ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->beban_buku_cek); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Beban Pajak</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_perlengkapan_kantor ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->beban_pajak); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Beban Lain-Lain</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_perlengkapan_kantor ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->beban_lainlain); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Rugi Penjualan Aset</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_perlengkapan_kantor ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->rugi_penjualan_aset); ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">Rugi Selisih Kurs</th>
-                <td style="font-size:11pt;" colspan="6" align="center"><?php echo $id_beban[0]->beban_perlengkapan_kantor ?></td>
+                <td style="font-size:11pt;" colspan="6" align="center"><?php echo format($id_beban[0]->rugi_selisih_kurs) ?></td>
                 <td style="font-size:11pt;" colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">TOTAL BEBAN</th>
                 <td style="font-size:11pt;" colspan="1" align="center"></td>
-                <td style="font-size:11pt;" colspan="12" align="right">(nilai BEBAN)</td>
+                <?php
+                $totalbeban = $id_beban[0]->beban_proyek + $id_beban[0]->beban_gaji + $id_beban[0]->tunjangan_hari_raya + $id_beban[0]->beban_operasional + $id_beban[0]->beban_setoran_ui +
+                    $id_beban[0]->beban_penyusutan + $id_beban[0]->beban_bonus + $id_beban[0]->beban_perlengkapan_kantor + $id_beban[0]->beban_pengelolaan_rek + $id_beban[0]->beban_buku_cek +
+                    $id_beban[0]->beban_pajak + $id_beban[0]->beban_lainlain + $id_beban[0]->rugi_penjualan_aset + $id_beban[0]->rugi_selisih_kurs;
+                ?>
+                <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($totalbeban); ?></td>
+            </tr>
+            <tr>
+                <th style="font-size:11pt;" colspan="1" align="left">LABA BERSIH</th>
+                <td style="font-size:11pt;" colspan="1" align="center"></td>
+                <?php
+                $lababersih = $totalpendapatan - $totalbeban;
+                ?>
+                <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($lababersih); ?></td>
             </tr>
         </tbody>
     </table>

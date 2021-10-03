@@ -14,12 +14,57 @@ class M_labarugi extends CI_Model
         return $query->result();
     }
 
+    public function tampil_pendapatan_filter_by_date($tgl_awal, $tgl_akhir)
+    {
+        $query = $this->db->query("SELECT id_pendapatan,tanggal_masuk,pendapatan_proyek,pendapatan_giro,bonus,
+        pendapatan_lainlain,laba_selisih_kurs FROM pendapatan WHERE tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir'");
+        return $query->result();
+    }
+
+    public function cetak_pendapatan_filter_by_date($tgl_awal, $tgl_akhir)
+    {
+        $query = $this->db->query("SELECT SUM(pendapatan_proyek) AS 'pendapatan_proyek', SUM(pendapatan_giro) AS 'pendapatan_giro', SUM(bonus) AS 'bonus',
+        SUM(pendapatan_lainlain) AS 'pendapatan_lainlain' , SUM(laba_selisih_kurs) AS 'laba_selisih_kurs' FROM pendapatan WHERE tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir'");
+        return $query->result();
+    }
+
+    public function cetak_pendapatan()
+    {
+        $query = $this->db->query("SELECT SUM(pendapatan_proyek) AS 'pendapatan_proyek', SUM(pendapatan_giro) AS 'pendapatan_giro', SUM(bonus) AS 'bonus',
+        SUM(pendapatan_lainlain) AS 'pendapatan_lainlain' , SUM(laba_selisih_kurs) AS 'laba_selisih_kurs' FROM pendapatan");
+        return $query->result();
+    }
+
     //menampilkan pasiva
     public function tampil_beban()
     {
         $query = $this->db->query('SELECT id_beban,tanggal_masuk,beban_proyek,beban_gaji,tunjangan_hari_raya,beban_operasional,
         beban_setoran_ui,beban_penyusutan,beban_bonus,beban_perlengkapan_kantor,beban_pengelolaan_rek,beban_buku_cek,beban_pajak,
         rugi_penjualan_aset,beban_lainlain,rugi_selisih_kurs FROM beban');
+        return $query->result();
+    }
+
+    public function tampil_beban_filter_by_date($tgl_awal, $tgl_akhir)
+    {
+        $query = $this->db->query("SELECT id_beban,tanggal_masuk,beban_proyek,beban_gaji,tunjangan_hari_raya,beban_operasional,
+        beban_setoran_ui,beban_penyusutan,beban_bonus,beban_perlengkapan_kantor,beban_pengelolaan_rek,beban_buku_cek,beban_pajak,
+        rugi_penjualan_aset,beban_lainlain,rugi_selisih_kurs FROM beban WHERE tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir'");
+        return $query->result();
+    }
+
+    public function cetak_beban()
+    {
+        $query = $this->db->query("SELECT SUM(beban_proyek) AS 'beban_proyek', SUM(beban_gaji) AS 'beban_gaji', SUM(tunjangan_hari_raya) AS 'tunjangan_hari_raya', SUM(beban_operasional) AS 'beban_operasional',
+        SUM(beban_setoran_ui) AS 'beban_setoran_ui', SUM(beban_penyusutan) AS 'beban_penyusutan', SUM(beban_bonus) AS 'beban_bonus', SUM(beban_perlengkapan_kantor) AS 'beban_perlengkapan_kantor', SUM(beban_pengelolaan_rek) AS 'beban_pengelolaan_rek', SUM(beban_buku_cek) AS 'beban_buku_cek', SUM(beban_pajak) AS 'beban_pajak',
+        SUM(rugi_penjualan_aset) AS 'rugi_penjualan_aset', SUM(beban_lainlain) AS 'beban_lainlain', SUM(rugi_selisih_kurs) AS 'rugi_selisih_kurs' FROM beban");
+        return $query->result();
+    }
+
+    public function cetak_beban_filter_by_date($tgl_awal, $tgl_akhir)
+    {
+        $query = $this->db->query("SELECT SUM(beban_proyek) AS 'beban_proyek', SUM(beban_gaji) AS 'beban_gaji', SUM(tunjangan_hari_raya) AS 'tunjangan_hari_raya', SUM(beban_operasional) AS 'beban_operasional',
+        SUM(beban_setoran_ui) AS 'beban_setoran_ui', SUM(beban_penyusutan) AS 'beban_penyusutan', SUM(beban_bonus) AS 'beban_bonus', SUM(beban_perlengkapan_kantor) AS 'beban_perlengkapan_kantor', SUM(beban_pengelolaan_rek) AS 'beban_pengelolaan_rek', SUM(beban_buku_cek) AS 'beban_buku_cek', SUM(beban_pajak) AS 'beban_pajak',
+        SUM(rugi_penjualan_aset) AS 'rugi_penjualan_aset', SUM(beban_lainlain) AS 'beban_lainlain', SUM(rugi_selisih_kurs) AS 'rugi_selisih_kurs' FROM beban WHERE tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir'");
         return $query->result();
     }
 

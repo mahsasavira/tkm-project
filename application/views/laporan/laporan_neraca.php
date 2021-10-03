@@ -62,24 +62,36 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="row">
-                                        <div class="form-group col-2">
-                                            <label for="example-date-input" class="form-control-label">Periode Awal : </label>
-                                            <input class="btn btn-outline-primary" type="date" min="2019-01-01" max="2021-12-31" name="tgl_awal" value="" id="tgl_awal">
-                                        </div>
-                                        <div class="form-group col-2">
-                                            <label for="example-date-input" class="form-control-label">Periode Akhir : </label>
-                                            <input class="btn btn-outline-primary" type="date" min="2019-01-01" max="2021-12-31" name="tgl_akhir" value="" id="tgl_akhir">
-                                        </div>
-                                        <a href="#" onclick="showLaporan()"><button type="button" class="btn btn-outline-primary btn-icon-text"> Tampilkan <i class="mdi mdi-eye btn-icon-append"></i></button></a>
-                                        <div align="right">
-                                            <a href="<?= site_url('laporan/laporan_neraca_pdf') ?>" id="url_cetak_laporan"><button type="button" class="btn btn-outline-primary btn-icon-text"> Cetak <i class="mdi mdi-printer btn-icon-append"></i></button></a>
-                                        </div>
+                                        <form action="<?php echo base_url("Laporan/laporan_neraca") ?>" method="POST">
+                                            <div class="form-group col-2">
+                                                <label for="example-date-input" class="form-control-label">Periode Awal : </label>
+                                                <input placeholder="Bulan Awal" class="btn btn-outline-primary" min="2019-01-01" max="2021-12-31" name="tgl_awal" value="" id="tgl_awal">
+                                            </div>
+                                            <div class="form-group col-2">
+                                                <label for="example-date-input" class="form-control-label">Periode Akhir : </label>
+                                                <input placeholder="Bulan Akhir" class="btn btn-outline-primary" min="2019-01-01" max="2021-12-31" name="tgl_akhir" value="" id="tgl_akhir">
+                                            </div>
+                                            <button type="submit" class="btn btn-outline-primary btn-icon-text">Tampilkan</button>
+                                            <!-- <a href="#" onclick=""><button type="button" class="btn btn-outline-primary btn-icon-text"> Tampilkan <i class="mdi mdi-eye btn-icon-append"></i></button></a> -->
+                                        </form>
+                                        <form action="<?php echo base_url("laporan/laporan_neraca_pdf") ?>" method="POST">
+                                            <div align="right">
+                                                <input name="tgl_awal_cetak" value="<?php if ($tgl_awal_cetak != null) {
+                                                                                        echo $tgl_awal_cetak;
+                                                                                    }; ?>" hidden>
+                                                <input name="tgl_akhir_cetak" value="<?php if ($tgl_akhir_cetak != null) {
+                                                                                            echo $tgl_akhir_cetak;
+                                                                                        } ?>" hidden>
+                                                <button type="submit" class="btn btn-outline-primary btn-icon-text">Cetak</button>
+                                                <!-- <a href="<?= site_url('laporan/laporan_neraca_pdf') ?>" id="url_cetak_laporan"><button type="button" class="btn btn-outline-primary btn-icon-text"> Cetak <i class="mdi mdi-printer btn-icon-append"></i></button></a> -->
+                                            </div>
+                                        </form>
                                     </div>
 
                                     <div class="table-responsive p-0 border border-dark">
                                         <center>
                                             <h4 class="card-title mt-4"><b>LAPORAN NERACA</b></h4>
-                                            <p class="card-description"><b> Periode s.d.</b></p><br><br>
+                                            <!-- <p class="card-description"><b> Periode s.d.</b></p><br><br> -->
                                         </center>
                                         <div class="card-header pb-0 px-3 text-center">
                                             <h5 class="mb-2 text-center text-dark text-l font-weight-bolder opacity-8">AKTIVA</h5>
@@ -428,6 +440,18 @@
             }
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
+    </script>
+    <script>
+        var dp = $("#tgl_awal").datepicker({
+            format: "mm - yyyy",
+            startView: "months",
+            minViewMode: "months"
+        });
+        var dp = $("#tgl_akhir").datepicker({
+            format: "mm - yyyy",
+            startView: "months",
+            minViewMode: "months"
+        });
     </script>
     <!-- Github buttons -->
     <script async defer src="<?php echo base_url() ?>https://buttons.github.io/buttons.js"></script>

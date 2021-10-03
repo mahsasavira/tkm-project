@@ -9,7 +9,7 @@
                     <img src="<?php echo base_url() ?>assets/img/kop.png">
                     <center>
                         <h4 class="card-title"><b>LAPORAN NERACA</b></h4>
-                        <p class="card-description"><b> Periode s.d.</b></p>
+                        <!-- <p class="card-description"><b> Periode s.d.</b></p> -->
                     </center>
                 </div>
             </div>
@@ -44,90 +44,96 @@
             <tr>
                 <th colspan="1" align="left">Piutang Daya Makara</th>
                 <td colspan="1" align="center"></td>
-                <td colspan="1" align="right"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="right"><?php echo format($id_akt[0]->piutang_daya_makara) ?></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Piutang Proyek</th>
                 <td colspan="1" align="center"></td>
-                <td colspan="1" align="right"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="right"><?php echo format($id_akt[0]->piutang_proyek) ?></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Piutang TVUI</th>
                 <td colspan="1" align="center"></td>
-                <td colspan="1" align="right"><?php echo format($id_akt[0]->piutang_operasional) ?>)</td>
+                <td colspan="1" align="right"><?php echo format($id_akt[0]->piutang_tvui) ?>)</td>
             </tr>
             <tr>
                 <th colspan="1" align="left"> Piutang Solar Car</th>
-                <td colspan="1" align="center">asd</td>
-                <td colspan="1" align="right"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"></td>
+                <td colspan="1" align="right"><?php echo format($id_akt[0]->piutang_solar_car) ?></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">PERLENGKAPAN KANTOR</th>
             </tr>
             <tr>
                 <th colspan="1" align="left">Komputer</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->komputer) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Akum.Peny.-Komputer</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->akum_peny_komputer) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">FAX</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->fax) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Akum.Peny.-FAX</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->akum_peny_fax) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">AC</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->ac) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Akum.Peny.-AC</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->akum_peny_ac) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Furniture</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->furniture) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Notebook</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->akum_peny_furniture) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Kamera Digital</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->kamera_digital) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Printer</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->akum_peny_kamera) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Kamera Video</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->video_kamera) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Akum.Peny.-Kamera Video</th>
-                <td colspan="1" align="center"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                <td colspan="1" align="center"><?php echo format($id_akt[0]->akum_peny_video) ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">TOTAL AKTIVA</th>
                 <td colspan="1" align="center"></td>
-                <td colspan="1" align="right">(nilai TOTAL)</td>
+                <?php
+                $totalakt = $id_akt[0]->kas_kecil + $id_akt[0]->kas_pada_bank + $id_akt[0]->piutang_operasional + $id_akt[0]->piutang_daya_makara + $id_akt[0]->piutang_proyek + $id_akt[0]->piutang_tvui +
+                    $id_akt[0]->piutang_solar_car + ($id_akt[0]->komputer - $id_akt[0]->akum_peny_komputer) + ($id_akt[0]->fax - $id_akt[0]->akum_peny_fax) + ($id_akt[0]->ac - $id_akt[0]->akum_peny_ac) +
+                    ($id_akt[0]->furniture - $id_akt[0]->akum_peny_furniture) + ($id_akt[0]->notebook - $id_akt[0]->akum_peny_notebook) + ($id_akt[0]->printer - $id_akt[0]->akum_peny_printer) +
+                    ($id_akt[0]->kamera_digital - $id_akt[0]->akum_peny_kamera) + ($id_akt[0]->video_kamera - $id_akt[0]->akum_peny_video);
+                ?>
+                <td colspan="1" align="right"><?php echo format($totalakt) ?></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">PASIVA</th>
@@ -143,33 +149,34 @@
             </tr>
             <tr>
                 <th colspan="1" align="left">Hutang Gaji</th>
-                <td colspan="1" align="center"><?php echo format($id_pas[0]->hutang_operasional); ?></td>
+                <td colspan="1" align="center"><?php echo format($id_pas[0]->hutang_gaji); ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Hutang Proyek </th>
-                <td colspan="1" align="center"><?php echo format($id_pas[0]->hutang_operasional); ?></td>
+                <td colspan="1" align="center"><?php echo format($id_pas[0]->hutang_proyek); ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Hutang pada rtv</th>
-                <td colspan="1" align="center"><?php echo format($id_pas[0]->hutang_operasional); ?></td>
+                <td colspan="1" align="center"><?php echo format($id_pas[0]->hutang_pada_rtv); ?></td>
                 <td colspan="1" align="right"></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">Total Kewajiban </th>
                 <td colspan="1" align="center"></td>
-                <td colspan="1" align="right"><?php echo format($id_pas[0]->hutang_operasional); ?></td>
-            </tr>
-            <tr>
-                <th colspan="1" align="left">TOTAL MODAL</th>
-                <td colspan="1" align="center"></td>
-                <td colspan="1" align="right"><?php echo format($id_pas[0]->hutang_operasional); ?></td>
+                <?php
+                $totalkewajiban = $id_pas[0]->hutang_operasional + $id_pas[0]->hutang_gaji + $id_pas[0]->hutang_proyek + $id_pas[0]->hutang_pada_rtv;
+                ?>
+                <td colspan="1" align="right"><?php echo format($totalkewajiban); ?></td>
             </tr>
             <tr>
                 <th colspan="1" align="left">TOTAL PASIVA</th>
                 <td colspan="1" align="center"></td>
-                <td colspan="1" align="right"><?php echo format($id_pas[0]->hutang_operasional); ?></td>
+                <?php
+                $totalpas = $totalakt + $totalkewajiban;
+                ?>
+                <td colspan="1" align="right"><?php echo format($totalpas); ?></td>
             </tr>
         </tbody>
     </table>
