@@ -17,7 +17,7 @@ class Transaksi extends CI_Controller
         $data['id_pas'] = $this->m_neraca->tampil_pasiva();
 
         $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar');
+        $this->load->view('sidebartemplate/neraca');
         $this->load->view('transaksi/neraca');
     }
 
@@ -26,7 +26,7 @@ class Transaksi extends CI_Controller
         $data['id_pend'] = $this->m_labarugi->tampil_pendapatan();
         $data['id_beban'] = $this->m_labarugi->tampil_beban();
         $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar');
+        $this->load->view('sidebartemplate/labarugi');
         $this->load->view('transaksi/labarugi');
     }
 
@@ -38,7 +38,7 @@ class Transaksi extends CI_Controller
         } else {
             // $data['id_akt'] = $this->m_neraca->tambah_aktiva();
             $this->load->view('template/header');
-            $this->load->view('template/sidebar');
+            $this->load->view('sidebartemplate/neraca');
             $this->load->view('transaksi/tambah_aktiva');
         }
     }
@@ -56,7 +56,7 @@ class Transaksi extends CI_Controller
         $queryedit = $this->m_neraca->get_data_aktiva($id);
         $DATA = array('queryeditakt' => $queryedit);
         $this->load->view('template/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('sidebartemplate/neraca');
         $this->load->view('transaksi/edit_aktiva', $DATA);
     }
 
@@ -131,7 +131,7 @@ class Transaksi extends CI_Controller
         } else {
             // $data['id_akt'] = $this->m_neraca->tambah_aktiva();
             $this->load->view('template/header');
-            $this->load->view('template/sidebar');
+            $this->load->view('sidebartemplate/neraca');
             $this->load->view('transaksi/tambah_pasiva');
         }
     }
@@ -152,7 +152,7 @@ class Transaksi extends CI_Controller
         // print_r($queryedit);
         // echo "</pre>";
         $this->load->view('template/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('sidebartemplate/neraca');
         $this->load->view('transaksi/edit_pasiva', $DATA);
     }
 
@@ -189,7 +189,7 @@ class Transaksi extends CI_Controller
         } else {
             // $data['id_pend'] = $this->m_labarugi->tambah_pendapatan();
             $this->load->view('template/header');
-            $this->load->view('template/sidebar');
+            $this->load->view('sidebartemplate/labarugi');
             $this->load->view('transaksi/tambah_pendapatan');
         }
     }
@@ -210,7 +210,7 @@ class Transaksi extends CI_Controller
         // print_r($queryedit);
         // echo "</pre>";
         $this->load->view('template/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('sidebartemplate/labarugi');
         $this->load->view('transaksi/edit_pendapatan', $DATA);
         // redirect('transaksi/neraca');
     }
@@ -251,7 +251,7 @@ class Transaksi extends CI_Controller
         } else {
             // $data['id_beban'] = $this->m_labarugi->tambah_beban();
             $this->load->view('template/header');
-            $this->load->view('template/sidebar');
+            $this->load->view('sidebartemplate/labarugi');
             $this->load->view('transaksi/tambah_beban');
         }
     }
@@ -272,7 +272,7 @@ class Transaksi extends CI_Controller
         // print_r($queryedit);
         // echo "</pre>";
         $this->load->view('template/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('sidebartemplate/labarugi');
         $this->load->view('transaksi/edit_beban', $DATA);
         // redirect('transaksi/neraca');
 

@@ -79,7 +79,7 @@
                                     <div class="table-responsive p-0 border border-dark">
                                         <center>
                                             <h4 class="card-title mt-4"><b>LAPORAN ARUS KAS</b></h4>
-                                            <p class="card-description"><b> Periode s.d.</b></p><br><br>
+                                            <!-- <p class="card-description"><b> Periode s.d.</b></p><br><br> -->
                                         </center>
                                     </div>
                                 </div>

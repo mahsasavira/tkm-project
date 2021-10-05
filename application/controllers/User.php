@@ -15,21 +15,21 @@ class User extends CI_Controller
     function profile()
     {
         $this->load->view('template/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('sidebartemplate/profil');
         $this->load->view('user/set_profil');
     }
 
     function profile_biasa()
     {
         $this->load->view('template/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('sidebartemplate/profil');
         $this->load->view('user/profil_pengguna');
     }
 
     function mnj_user()
     {
         $this->load->view('template/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('sidebartemplate/profil');
         $this->load->view('user/mnj_user');
     }
 
@@ -40,7 +40,7 @@ class User extends CI_Controller
             redirect('user/mnj_user');
         } else {
             $this->load->view('template/header');
-            $this->load->view('template/sidebar');
+            $this->load->view('sidebartemplate/profil');
             $this->load->view('user/mnj_user');
         }
     }
@@ -53,7 +53,7 @@ class User extends CI_Controller
         // print_r($queryedit);
         // echo "</pre>";
         $this->load->view('template/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('sidebartemplate/profil');
         $this->load->view('user/set_profil', $data);
     }
 

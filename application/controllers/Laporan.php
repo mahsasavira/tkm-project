@@ -24,7 +24,7 @@ class Laporan extends CI_Controller
             $data['tgl_awal_cetak'] = $param_awal;
             $data['tgl_akhir_cetak'] = $param_akhir;
             $this->load->view('template/header', $data);
-            $this->load->view('template/sidebar');
+            $this->load->view('sidebartemplate/laporanneraca');
             $this->load->view('laporan/laporan_neraca');
         } else {
             $data['id_akt'] = $this->m_neraca->tampil_aktiva();
@@ -32,7 +32,7 @@ class Laporan extends CI_Controller
             $data['tgl_awal_cetak'] = null;
             $data['tgl_akhir_cetak'] = null;
             $this->load->view('template/header', $data);
-            $this->load->view('template/sidebar');
+            $this->load->view('sidebartemplate/laporanneraca');
             $this->load->view('laporan/laporan_neraca');
         }
     }
@@ -50,7 +50,7 @@ class Laporan extends CI_Controller
             $data['tgl_awal_cetak'] = $param_awal;
             $data['tgl_akhir_cetak'] = $param_akhir;
             $this->load->view('template/header', $data);
-            $this->load->view('template/sidebar');
+            $this->load->view('sidebartemplate/laporanlaba');
             $this->load->view('laporan/laporan_laba_rugi');
         } else {
             $data['id_pend'] = $this->m_labarugi->tampil_pendapatan();
@@ -58,7 +58,7 @@ class Laporan extends CI_Controller
             $data['tgl_awal_cetak'] = null;
             $data['tgl_akhir_cetak'] = null;
             $this->load->view('template/header', $data);
-            $this->load->view('template/sidebar');
+            $this->load->view('sidebartemplate/laporanlaba');
             $this->load->view('laporan/laporan_laba_rugi');
         }
     }
@@ -66,7 +66,7 @@ class Laporan extends CI_Controller
     function laporan_arus_kas()
     {
         $this->load->view('template/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('sidebartemplate/laporanarus');
         $this->load->view('laporan/laporan_arus_kas');
     }
 
@@ -171,6 +171,7 @@ class Laporan extends CI_Controller
 
         //simpan sertifikat ke direktori
         file_put_contents($path_pdf, $resPdf);
+        redirect('Laporan/laporan_arus_kas', 'refresh');
     }
 
     public function getPeriodeLabaRugi()
