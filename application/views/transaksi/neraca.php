@@ -72,6 +72,9 @@
                                                         Tambah Aktiva
                                                     </a>
                                                 </div>
+                                                <!-- <a type="button" href="<?= base_url('transaksi/modal'); ?>" class="btn btn-primary btn-sm">
+                                                    mdoal
+                                                </a> -->
 
                                                 <table class="table table-bordered align-items-center mb-5">
                                                     <tr>

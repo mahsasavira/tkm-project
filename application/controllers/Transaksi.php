@@ -11,17 +11,16 @@ class Transaksi extends CI_Controller
         $this->load->model('m_labarugi');
     }
 
-    function neraca()
+    public function neraca()
     {
         $data['id_akt'] = $this->m_neraca->tampil_aktiva();
         $data['id_pas'] = $this->m_neraca->tampil_pasiva();
-
         $this->load->view('template/header', $data);
         $this->load->view('sidebartemplate/neraca');
         $this->load->view('transaksi/neraca');
     }
 
-    function labarugi()
+    public function labarugi()
     {
         $data['id_pend'] = $this->m_labarugi->tampil_pendapatan();
         $data['id_beban'] = $this->m_labarugi->tampil_beban();
@@ -29,6 +28,15 @@ class Transaksi extends CI_Controller
         $this->load->view('sidebartemplate/labarugi');
         $this->load->view('transaksi/labarugi');
     }
+
+    public function modal()
+    {
+        $data['id_arus'] = $this->m_labarugi->tampil_modal();
+        $this->load->view('template/header', $data);
+        $this->load->view('sidebartemplate/neraca');
+        $this->load->view('transaksi/aruskas');
+    }
+
 
     public function tambah_aktiva()
     {
@@ -275,7 +283,6 @@ class Transaksi extends CI_Controller
         $this->load->view('sidebartemplate/labarugi');
         $this->load->view('transaksi/edit_beban', $DATA);
         // redirect('transaksi/neraca');
-
     }
 
     public function update_beban()
@@ -321,5 +328,15 @@ class Transaksi extends CI_Controller
 
         $proc = $this->m_labarugi->update_data_beban($where, $data, 'beban');
         redirect('transaksi/labarugi');
+    }
+
+    public function modal_akhir($id)
+    {
+        //input , alias, kondisi
+        $querymodal = $this->m_labarugi->get_modal($id);
+        $DATA = array('queryemodal' => $querymodal);
+        $this->load->view('template/header');
+        $this->load->view('sidebartemplate/neraca');
+        $this->load->view('transaksi/edit_aktiva', $DATA);
     }
 }

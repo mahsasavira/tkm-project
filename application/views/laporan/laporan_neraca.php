@@ -83,7 +83,7 @@
                                                                                             echo $tgl_akhir_cetak;
                                                                                         } ?>" hidden>
                                                 <button type="submit" class="btn btn-outline-primary btn-icon-text">Cetak</button>
-                                                <!-- <a href="<?= site_url('laporan/laporan_neraca_pdf') ?>" id="url_cetak_laporan"><button type="button" class="btn btn-outline-primary btn-icon-text"> Cetak <i class="mdi mdi-printer btn-icon-append"></i></button></a> -->
+                                                <!-- <a href="<?= site_url('laporan/laporan_labarugi_pdf') ?>" id="url_cetak_laporan"><button type="button" class="btn btn-outline-primary btn-icon-text"> Cetak <i class="mdi mdi-printer btn-icon-append"></i></button></a> -->
                                             </div>
                                         </form>
                                     </div>

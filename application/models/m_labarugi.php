@@ -6,6 +6,11 @@ class M_labarugi extends CI_Model
         $this->db->database();
     }
 
+    public function tampil_modal()
+    {
+        $query = $this->db->query('SELECT id_aruskas,tanggal_masuk,saldo_akhir FROM arus_kas');
+        return $query->result();
+    }
     //menampilkan pendapatan
     public function tampil_pendapatan()
     {
@@ -157,8 +162,17 @@ class M_labarugi extends CI_Model
         return $query->row();
     }
 
-    function update_data_beban($where, $data, $table)
+    public function update_data_beban($where, $data, $table)
     {
         return $this->db->update($table, $data, $where);
+    }
+
+
+
+    public function get_modal($id)
+    {
+        $this->db->where('id_aruskas', $id);
+        $query = $this->db->get('arus_kas');
+        return $query->row();
     }
 }
