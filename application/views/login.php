@@ -103,10 +103,9 @@
 
                         <div class="card-body">
                             <form class="pt-1 mt-0" action="<?php echo site_url('auth/aksi_login') ?>" method="post">
-                                <center><?php echo $this->session->flashdata('msg'); ?></center>
-
+                                <center><?php echo $this->session->flashdata('msg', 'Email Atau Password Anda Salah!'); ?></center>
                                 <div class="mb-3">
-                                    <label for="name">Email*</label>
+                                    <label for="email">Email*</label>
                                     <input type="text" name="email" class="form-control" placeholder="Email" aria-label="text" aria-describedby="teks-addon" required>
                                 </div>
                                 <div class="mb-3">

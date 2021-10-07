@@ -16,7 +16,7 @@ class User extends CI_Controller
     {
         $this->load->view('template/header');
         $this->load->view('sidebartemplate/profil');
-        $this->load->view('user/set_profil');
+        $this->load->view('user/profil_pengguna');
     }
 
     function profile_biasa()

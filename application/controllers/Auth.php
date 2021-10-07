@@ -18,7 +18,7 @@ class Auth extends CI_Controller
     public function aksi_login()
     {
         $email = $this->input->post('email', true);
-        $password = md5($this->input->post('password', true));
+        $password = $this->input->post('password');
 
         $this->form_validation->set_rules('email', 'Email', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
@@ -28,22 +28,24 @@ class Auth extends CI_Controller
                 'email' => $email,
                 'password' => $password
             );
-            $cek = $this->m_login->cek_login($where)->num_rows();
+            $cek = $this->m_login->cek_login($where);
 
-            if ($cek > 0) {
+            if ($cek->num_rows() > 0) {
+                $data_user = $cek->row_array();
                 $sess_data = array(
                     'email' => $email,
+                    'level' => $data_user['level'],
                     'login' => 'OK',
                 );
                 $this->session->set_userdata($sess_data);
-                redirect(base_url('login'));
+                redirect('dashboard');
             } else {
-                redirect(base_url('dashboard'));
+                redirect('auth/login');
             }
         } else {
-            $url = base_url('');
+            // $url = base_url('');
             echo $this->session->set_flashdata('msg', 'Email Atau Password Anda Salah!');
-            redirect($url);
+            redirect('auth/login');
         }
     }
 
