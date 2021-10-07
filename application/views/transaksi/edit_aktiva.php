@@ -85,6 +85,10 @@
                                                                 <input type="number" name="kas_pada_bank" value="<?= $this->input->post('kas_pada_bank') ?? $queryeditakt->KAS_PADA_BANK ?>" class="form-control">
                                                             </div>
                                                             <div class="form-group col-5">
+                                                                <label>Jaminan Bank</label>
+                                                                <input type="number" name="jaminan_bank" value="<?= $this->input->post('jaminan_bank') ?? $queryeditakt->JAMINAN_BANK ?>" class="form-control">
+                                                            </div>
+                                                            <div class="form-group col-5">
                                                                 <label>Piutang Operasional</label>
                                                                 <input type="number" name="piutang_operasional" value="<?= $this->input->post('piutang_operasional') ?? $queryeditakt->PIUTANG_OPERASIONAL ?>" class="form-control">
                                                             </div>

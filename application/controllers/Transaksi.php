@@ -74,6 +74,7 @@ class Transaksi extends CI_Controller
         $tanggal_masuk = $this->input->post('tanggal_masuk');
         $kas_kecil = $this->input->post('kas_kecil');
         $kas_pada_bank = $this->input->post('kas_pada_bank');
+        $jaminan_bank = $this->input->post('jaminan_bank');
         $piutang_operasional = $this->input->post('piutang_operasional');
         $piutang_daya_makara = $this->input->post('piutang_daya_makara');
         $piutang_proyek = $this->input->post('piutang_proyek');
@@ -100,6 +101,7 @@ class Transaksi extends CI_Controller
             'tanggal_masuk' => $tanggal_masuk,
             'kas_kecil' => $kas_kecil,
             'kas_pada_bank' => $kas_pada_bank,
+            'jaminan_bank' => $jaminan_bank,
             'piutang_operasional' => $piutang_operasional,
             'piutang_daya_makara' => $piutang_daya_makara,
             'piutang_proyek' => $piutang_proyek,

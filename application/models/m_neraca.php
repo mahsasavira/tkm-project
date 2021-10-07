@@ -13,7 +13,7 @@ class M_neraca extends CI_Model
     //menampilkan AKTIVA
     public function tampil_aktiva()
     {
-        $query = $this->db->query('SELECT id_aktiva,tanggal_masuk,kas_kecil,kas_pada_bank,piutang_operasional,piutang_daya_makara,
+        $query = $this->db->query('SELECT id_aktiva,tanggal_masuk,kas_kecil,kas_pada_bank,jaminan_bank,piutang_operasional,piutang_daya_makara,
         piutang_proyek,piutang_tvui,piutang_solar_car,komputer,akum_peny_komputer,fax,akum_peny_fax,
         ac,akum_peny_ac,furniture,akum_peny_furniture,notebook,akum_peny_notebook,kamera_digital,
         akum_peny_kamera,printer,akum_peny_printer,video_kamera,akum_peny_video FROM aktiva');
@@ -22,7 +22,7 @@ class M_neraca extends CI_Model
 
     public function tampil_aktiva_filter_by_date($tgl_awal, $tgl_akhir)
     {
-        $query = $this->db->query("SELECT id_aktiva,tanggal_masuk,kas_kecil,kas_pada_bank,piutang_operasional,piutang_daya_makara,
+        $query = $this->db->query("SELECT id_aktiva,tanggal_masuk,kas_kecil,kas_pada_bank,jaminan_bank,piutang_operasional,piutang_daya_makara,
         piutang_proyek,piutang_tvui,piutang_solar_car,komputer,akum_peny_komputer,fax,akum_peny_fax,
         ac,akum_peny_ac,furniture,akum_peny_furniture,notebook,akum_peny_notebook,kamera_digital,
         akum_peny_kamera,printer,akum_peny_printer,video_kamera,akum_peny_video FROM aktiva WHERE tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir'");
@@ -31,9 +31,9 @@ class M_neraca extends CI_Model
 
     public function cetak_aktiva_filter_by_date($tgl_awal, $tgl_akhir)
     {
-        $query = $this->db->query("SELECT SUM(kas_kecil) AS 'kas_kecil', SUM(kas_pada_bank) AS 'kas_pada_bank', SUM(piutang_operasional) AS 'piutang_operasional',
-        SUM(piutang_daya_makara) AS 'piutang_daya_makara' , SUM(piutang_proyek) AS 'piutang_proyek', SUM(piutang_tvui) AS 'piutang_tvui',
-        SUM(piutang_solar_car) AS 'piutang_solar_car', SUM(komputer) AS 'komputer', SUM(akum_peny_komputer) AS 'akum_peny_komputer' ,
+        $query = $this->db->query("SELECT SUM(kas_kecil) AS 'kas_kecil', SUM(kas_pada_bank) AS 'kas_pada_bank', SUM(jaminan_bank) AS 'jaminan_bank',
+        SUM(piutang_operasional) AS 'piutang_operasional', SUM(piutang_daya_makara) AS 'piutang_daya_makara' , SUM(piutang_proyek) AS 'piutang_proyek',
+        SUM(piutang_tvui) AS 'piutang_tvui', SUM(piutang_solar_car) AS 'piutang_solar_car', SUM(komputer) AS 'komputer', SUM(akum_peny_komputer) AS 'akum_peny_komputer' ,
         SUM(fax) AS 'fax' , SUM(akum_peny_fax) AS 'akum_peny_fax', SUM(ac) AS 'ac', SUM(akum_peny_ac) AS 'akum_peny_ac',
         SUM(furniture) AS 'furniture' , SUM(akum_peny_furniture) AS 'akum_peny_furniture' , SUM(notebook) AS 'notebook',
         SUM(akum_peny_notebook) AS 'akum_peny_notebook' , SUM(kamera_digital) AS 'kamera_digital' , SUM(akum_peny_kamera) AS 'akum_peny_kamera',
@@ -44,13 +44,13 @@ class M_neraca extends CI_Model
 
     public function cetak_aktiva()
     {
-        $query = $this->db->query("SELECT SUM(kas_kecil) AS 'kas_kecil', SUM(kas_pada_bank) AS 'kas_pada_bank', SUM(piutang_operasional) AS 'piutang_operasional',
-        SUM(piutang_daya_makara) AS 'piutang_daya_makara' , SUM(piutang_proyek) AS 'piutang_proyek', SUM(piutang_tvui) AS 'piutang_tvui',
-        SUM(piutang_solar_car) AS 'piutang_solar_car', SUM(komputer) AS 'komputer', SUM(akum_peny_komputer) AS 'akum_peny_komputer' ,
-        SUM(fax) AS 'fax' , SUM(akum_peny_fax) AS 'akum_peny_fax', SUM(ac) AS 'ac', SUM(akum_peny_ac) AS 'akum_peny_ac',
-        SUM(furniture) AS 'furniture' , SUM(akum_peny_furniture) AS 'akum_peny_furniture' , SUM(notebook) AS 'notebook',
-        SUM(akum_peny_notebook) AS 'akum_peny_notebook' , SUM(kamera_digital) AS 'kamera_digital' , SUM(akum_peny_kamera) AS 'akum_peny_kamera',
-        SUM(printer) AS 'printer' , SUM(akum_peny_printer) AS 'akum_peny_printer' , SUM(video_kamera) AS 'video_kamera' ,
+        $query = $this->db->query("SELECT SUM(kas_kecil) AS 'kas_kecil', SUM(kas_pada_bank) AS 'kas_pada_bank', SUM(jaminan_bank) AS 'jaminan_bank',
+        SUM(piutang_operasional) AS 'piutang_operasional', SUM(piutang_daya_makara) AS 'piutang_daya_makara' , SUM(piutang_proyek) AS 'piutang_proyek',
+        SUM(piutang_tvui) AS 'piutang_tvui', SUM(piutang_solar_car) AS 'piutang_solar_car', SUM(komputer) AS 'komputer',
+        SUM(akum_peny_komputer) AS 'akum_peny_komputer' , SUM(fax) AS 'fax' , SUM(akum_peny_fax) AS 'akum_peny_fax',
+        SUM(ac) AS 'ac', SUM(akum_peny_ac) AS 'akum_peny_ac', SUM(furniture) AS 'furniture' , SUM(akum_peny_furniture) AS 'akum_peny_furniture' ,
+        SUM(notebook) AS 'notebook', SUM(akum_peny_notebook) AS 'akum_peny_notebook' , SUM(kamera_digital) AS 'kamera_digital' ,
+        SUM(akum_peny_kamera) AS 'akum_peny_kamera', SUM(printer) AS 'printer' , SUM(akum_peny_printer) AS 'akum_peny_printer' , SUM(video_kamera) AS 'video_kamera' ,
         SUM(akum_peny_video) AS 'akum_peny_video' FROM aktiva");
         return $query->result();
     }
@@ -88,6 +88,7 @@ class M_neraca extends CI_Model
         $tanggal_masuk = $this->input->post('tanggal_masuk');
         $kas_kecil = $this->input->post('kas_kecil');
         $kas_pada_bank = $this->input->post('kas_pada_bank');
+        $jaminan_bank = $this->input->post('jaminan_bank');
         $piutang_operasional = $this->input->post('piutang_operasional');
         $piutang_daya_makara = $this->input->post('piutang_daya_makara');
         $piutang_proyek = $this->input->post('piutang_proyek');
@@ -114,6 +115,7 @@ class M_neraca extends CI_Model
             'tanggal_masuk' => $tanggal_masuk,
             'kas_kecil' => $kas_kecil,
             'kas_pada_bank' => $kas_pada_bank,
+            'jaminan_bank' => $jaminan_bank,
             'piutang_operasional' => $piutang_operasional,
             'piutang_daya_makara' => $piutang_daya_makara,
             'piutang_proyek' => $piutang_proyek,

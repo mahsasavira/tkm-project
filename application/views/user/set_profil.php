@@ -64,14 +64,14 @@
                             <img src="../assets/img/logo.png" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
                         </div>
                     </div>
-                    <div class="col-auto my-auto">
+                    <!-- <div class="col-auto my-auto">
                         <div class="h-100">
                             <p class="mb-1 text-black"><?php echo $this->session->userdata('email'); ?></p>
                             <p class="mb-0 font-weight-bold text-sm">
                                 INI BUAT STAF ADMINISTRASI YA
                             </p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="btn-group mt-5" role="group" aria-label="Basic mixed styles example">
                         <a href="<?= base_url('user/mnj_user'); ?>" type="button" class="btn btn-primary">Tambah Akun Pengguna</a>
                         <a href="<?= base_url('user/profile_biasa'); ?>" type="button" class="btn btn-light">Profil Pengguna</a>

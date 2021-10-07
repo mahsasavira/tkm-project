@@ -67,7 +67,6 @@
     </nav>
     <!-- End Navbar -->
     <section class="min-vh-100 mb-8">
-
         <?php
         $errors = $this->session->flashdata('errors');
         if (!empty($errors)) {
@@ -105,10 +104,13 @@
                         <div class="card-body">
                             <form class="pt-1 mt-0" action="<?php echo site_url('auth/aksi_login') ?>" method="post">
                                 <center><?php echo $this->session->flashdata('msg'); ?></center>
+
                                 <div class="mb-3">
+                                    <label for="name">Email*</label>
                                     <input type="text" name="email" class="form-control" placeholder="Email" aria-label="text" aria-describedby="teks-addon" required>
                                 </div>
                                 <div class="mb-3">
+                                    <label for="password">Password*</label>
                                     <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" required>
                                 </div>
 

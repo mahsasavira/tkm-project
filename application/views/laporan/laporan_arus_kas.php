@@ -56,7 +56,7 @@
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
-                <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
+                <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4">
                     <div class="card">
                         <div class="card-body p-4">
                             <div class="row">
@@ -135,11 +135,12 @@
                                                 <tr>
                                                     <th style="font-size:11pt;" colspan="1" align="left">Penurunan Piutang</th>
                                                     <?php
-                                                    $penurunanpiutang = $id_akt[0]->piutang_operasional +
+                                                    $penurunanpiutang = $id_akt[0]->jaminan_bank +
                                                         $id_akt[0]->piutang_daya_makara +
                                                         $id_akt[0]->piutang_proyek +
                                                         $id_akt[0]->piutang_tvui +
-                                                        $id_akt[0]->piutang_solar_car;
+                                                        $id_akt[0]->piutang_solar_car +
+                                                        $id_akt[0]->piutang_operasional;
                                                     ?>
                                                     <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($penurunanpiutang); ?></td>
                                                 </tr>
@@ -179,27 +180,45 @@
                                                 </tr>
                                                 <tr>
                                                     <th style="font-size:11pt;" colspan="1" align="left">Arus Kas Aktivitas Investasi</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($akumpenyusutan); ?></td>
+                                                    <?php
+                                                    $totalInvestasi = $akumpenyusutan;
+                                                    ?>
+                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($totalInvestasi); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <th style="font-size:12pt;" scope="col-1" class="text" align="left">Aktivitas Pendanaan</th>
                                                 </tr>
                                                 <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Hutang Pada Bank</th>
+                                                    <th style="font-size:11pt;" colspan="1" align="left">Kas Kecil</th>
 
-                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($lababersih); ?></td>
+                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($id_akt[0]->kas_kecil); ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:11pt;" colspan="1" align="left">Kas Kecil</th>
+
+                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($id_akt[0]->kas_pada_bank); ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:11pt;" colspan="1" align="left">Arus Kas Pendanaan</th>
+                                                    <?php
+                                                    $totalPendanaan = $id_akt[0]->kas_kecil + $id_akt[0]->kas_pada_bank;
+                                                    ?>
+                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($totalPendanaan); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <th style="font-size:11pt;" colspan="1" align="left">Penambahan Kas</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($lababersih); ?></td>
+                                                    <?php
+                                                    $penambahan_kas = $totalOperasional + $totalInvestasi + $totalPendanaan;
+                                                    ?>
+                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($penambahan_kas); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <th style="font-size:11pt;" colspan="1" align="left">Saldo Akhir (bulan/tahun)</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($lababersih); ?></td>
+                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format(699305923); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <th style="font-size:11pt;" colspan="1" align="left">Saldo Awal Bulan/tahun</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($lababersih); ?></td>
+                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($penambahan_kas + 699305923); ?></td>
                                                 </tr>
                                             </tbody>
                                         </table>

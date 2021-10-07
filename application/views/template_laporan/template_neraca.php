@@ -170,11 +170,28 @@
                 ?>
                 <td colspan="1" align="right"><?php echo format($totalkewajiban); ?></td>
             </tr>
+            <!-- <tr>
+                <th style="font-size:11pt;" colspan="1" align="left">MODAL</th>
+                <td style="font-size:11pt;" colspan="1" align="center"></td>
+                <?php
+                $totalbeban = $id_beban[0]->beban_proyek + $id_beban[0]->beban_gaji + $id_beban[0]->tunjangan_hari_raya + $id_beban[0]->beban_operasional + $id_beban[0]->beban_setoran_ui +
+                    $id_beban[0]->beban_penyusutan + $id_beban[0]->beban_bonus + $id_beban[0]->beban_perlengkapan_kantor + $id_beban[0]->beban_pengelolaan_rek + $id_beban[0]->beban_buku_cek +
+                    $id_beban[0]->beban_pajak + $id_beban[0]->beban_lainlain + $id_beban[0]->rugi_penjualan_aset + $id_beban[0]->rugi_selisih_kurs;
+                $totalpendapatan = $id_pend[0]->pendapatan_proyek + $id_pend[0]->pendapatan_giro + $id_pend[0]->bonus + $id_pend[0]->pendapatan_lainlain + $id_pend[0]->laba_selisih_kurs;
+                $lababersih = $totalpendapatan - $totalbeban;
+                ?>
+                <td style="font-size:11pt;" colspan="12" align="right"><?php echo format(699305923 + $lababersih); ?></td>
+            </tr> -->
+            <!-- <tr>
+                <th style="font-size:11pt;" colspan="1" align="left">TOTAL MODAL</th>
+                <td style="font-size:11pt;" colspan="1" align="center"></td>
+                <td style="font-size:11pt;" colspan="12" align="right"><?php echo format(699305923 + $lababersih); ?></td>
+            </tr> -->
             <tr>
                 <th colspan="1" align="left">TOTAL PASIVA</th>
                 <td colspan="1" align="center"></td>
                 <?php
-                $totalpas = $totalakt + $totalkewajiban;
+                $totalpas = $totalakt + $totalkewajiban + 699305923 + $lababersih;
                 ?>
                 <td colspan="1" align="right"><?php echo format($totalpas); ?></td>
             </tr>

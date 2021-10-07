@@ -153,6 +153,11 @@
                 ?>
                 <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($lababersih); ?></td>
             </tr>
+            <!-- <tr>
+                <th style="font-size:11pt;" colspan="1" align="left">MODAL AWAL</th>
+                <td style="font-size:11pt;" colspan="1" align="center"></td>
+                <td style="font-size:11pt;" colspan="12" align="right"><?php echo format(699305923 + $lababersih); ?></td>
+            </tr> -->
         </tbody>
     </table>
     </div>
