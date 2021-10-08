@@ -109,10 +109,10 @@ class Laporan extends CI_Controller
             $param_awal = $tgl_awal[1] . "-" . $tgl_awal[0] . "-1";
             $param_akhir = $tgl_akhir[1] . "-" . $tgl_akhir[0] . "-31";
 
-            $data['id_akt'] = $this->m_neraca->tampil_aktiva_filter_by_date($param_awal, $param_akhir);
-            $data['id_pas'] = $this->m_neraca->tampil_pasiva_filter_by_date($param_awal, $param_akhir);
-            $data['id_pend'] = $this->m_labarugi->tampil_pendapatan_filter_by_date($param_awal, $param_akhir);
-            $data['id_beban'] = $this->m_labarugi->tampil_beban_filter_by_date($param_awal, $param_akhir);
+            $data['id_akt'] = $this->m_neraca->cetak_aktiva_filter_by_date($param_awal, $param_akhir);
+            $data['id_pas'] = $this->m_neraca->cetak_pasiva_filter_by_date($param_awal, $param_akhir);
+            $data['id_pend'] = $this->m_labarugi->cetak_pendapatan_filter_by_date($param_awal, $param_akhir);
+            $data['id_beban'] = $this->m_labarugi->cetak_beban_filter_by_date($param_awal, $param_akhir);
             $data['tgl_awal_cetak'] = $param_awal;
             $data['tgl_akhir_cetak'] = $param_akhir;
             $this->load->view('template/header', $data);

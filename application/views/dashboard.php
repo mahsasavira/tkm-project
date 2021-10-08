@@ -75,10 +75,40 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Laba Rugi</p>
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Saldo Perusahaan</p>
                                         <h5 class="font-weight-bolder mb-0">
-                                            $53,000
-                                            <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                            <?php
+                                            function nilai($angka)
+                                            {
+                                                $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                                return $hasil_rupiah;
+                                            }
+                                            $pendapatan =
+                                                $pendapatan[0]->pendapatan_proyek +
+                                                $pendapatan[0]->pendapatan_giro +
+                                                $pendapatan[0]->bonus +
+                                                $pendapatan[0]->pendapatan_lainlain +
+                                                $pendapatan[0]->laba_selisih_kurs;
+                                            $beban =
+                                                $beban[0]->beban_proyek +
+                                                $beban[0]->beban_gaji +
+                                                $beban[0]->tunjangan_hari_raya +
+                                                $beban[0]->beban_operasional +
+                                                $beban[0]->beban_setoran_ui +
+                                                $beban[0]->beban_penyusutan +
+                                                $beban[0]->beban_bonus +
+                                                $beban[0]->beban_perlengkapan_kantor +
+                                                $beban[0]->beban_pengelolaan_rek +
+                                                $beban[0]->beban_buku_cek +
+                                                $beban[0]->beban_pajak +
+                                                $beban[0]->beban_lainlain +
+                                                $beban[0]->rugi_penjualan_aset +
+                                                $beban[0]->rugi_selisih_kurs;
+                                            $saldo =
+                                                $pendapatan - $beban;
+                                            ?>
+                                            <?php echo nilai($saldo); ?>
+                                            <!-- <span class="text-success text-sm font-weight-bolder">+55%</span> -->
                                         </h5>
                                     </div>
                                 </div>
@@ -97,10 +127,23 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Neraca Saldo</p>
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Piutang Perusahaan</p>
                                         <h5 class="font-weight-bolder mb-0">
-                                            2,300
-                                            <span class="text-success text-sm font-weight-bolder">+3%</span>
+                                            <?php
+                                            function harga($angka)
+                                            {
+                                                $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                                return $hasil_rupiah;
+                                            }
+                                            $piutang =
+                                                $piutang[0]->PIUTANG_OPERASIONAL +
+                                                $piutang[0]->PIUTANG_DAYA_MAKARA +
+                                                $piutang[0]->PIUTANG_PROYEK +
+                                                $piutang[0]->PIUTANG_SOLAR_CAR +
+                                                $piutang[0]->PIUTANG_TVUI;
+                                            ?>
+                                            <?php echo harga($piutang); ?>
+                                            <!-- <span class="text-success text-sm font-weight-bolder">+3%</span> -->
                                         </h5>
                                     </div>
                                 </div>
@@ -119,10 +162,22 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Jumlah Saldo Saat Ini:</p>
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Hutang Perusahaan</p>
                                         <h5 class="font-weight-bolder mb-0">
-                                            +3,462
-                                            <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                                            <?php
+                                            function format($angka)
+                                            {
+                                                $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                                return $hasil_rupiah;
+                                            }
+                                            $hutang =
+                                                $hutang[0]->HUTANG_OPERASIONAL +
+                                                $hutang[0]->HUTANG_PADA_RTV +
+                                                $hutang[0]->HUTANG_PROYEK +
+                                                $hutang[0]->HUTANG_GAJI;
+                                            ?>
+                                            <?php echo format($hutang); ?>
+                                            <!-- <span class="text-danger text-sm font-weight-bolder">-2%</span> -->
                                         </h5>
                                     </div>
                                 </div>
@@ -137,15 +192,37 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="col-lg-5 mb-lg-0 mb-4">
+
+                <div class="col-lg-12">
+                    <div class="card z-index-2">
+                        <div class="card-header pb-0">
+                            <h6>Keuntungan PT. Tirta Kencana Mulia</h6>
+                            <p class="text-sm">
+                                <i class="fa fa-arrow-up text-success"></i>
+                                <!-- <span class="font-weight-bold">Tahun ...</span> -->
+                            </p>
+                        </div>
+                        <div class="card-body p-3">
+                            <div class="chart">
+                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-5 mb-lg-0 mb-4 mt-4">
                     <div class="card z-index-2">
                         <div class="card-body p-3">
+                            <h6>Keuntungan PT. Tirta Kencana Mulia</h6>
+                            <p class="text-sm">
+                                <i class="fa fa-arrow-up text-success"></i>
+                                <span class="font-weight-bold">Tahun ...</span>
+                            </p>
                             <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
                                 <div class="chart">
                                     <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
                                 </div>
                             </div>
-                            <!-- <h6 class="ms-2 mt-4 mb-0"> Active Users </h6>
+                            <h6 class="ms-2 mt-4 mb-0"> Active Users </h6>
                             <p class="text-sm ms-2"> (<span class="font-weight-bolder">+23%</span>) than last week </p>
                             <div class="container border-radius-lg">
                                 <div class="row">
@@ -255,26 +332,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="card z-index-2">
-                        <div class="card-header pb-0">
-                            <h6>Arus Kas</h6>
-                            <p class="text-sm">
-                                <i class="fa fa-arrow-up text-success"></i>
-                                <span class="font-weight-bold">PT. Tirta Kencana Mulia</span> di Tahun 2021
-                            </p>
-                        </div>
-                        <div class="card-body p-3">
-                            <div class="chart">
-                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <footer class="footer pt-3  ">
