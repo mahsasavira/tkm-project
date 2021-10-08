@@ -20,6 +20,10 @@ class Dashboard extends CI_Controller
         $data['kas_kecil'] = $this->M_Dashboard->getSumKasKecil();
         $data['kas_pada_bank'] = $this->M_Dashboard->getSumKasPadaBank();
 
+        $data['pendapatan_by_month'] = $this->M_Dashboard->getSumPendapatanByMonth();
+        $data['beban_by_month'] = $this->M_Dashboard->getSumBebanByMonth();
+
+
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('dashboard', $data);

@@ -49,6 +49,20 @@ class M_Dashboard extends CI_Model
         $query = $this->db->query("SELECT SUM(KAS_PADA_BANK) AS 'KAS_PADA_BANK' FROM aktiva");
         return $query->result();
     }
+
+    public function getSumPendapatanByMonth()
+    {
+        $query = $this->db->query("SELECT TANGGAL_MASUK, SUM(pendapatan_proyek) AS 'pendapatan_proyek', SUM(pendapatan_giro) AS 'pendapatan_giro', SUM(bonus) AS 'bonus', SUM(pendapatan_lainlain) AS 'pendapatan_lainlain' , SUM(laba_selisih_kurs) AS 'laba_selisih_kurs' FROM pendapatan GROUP BY YEAR(TANGGAL_MASUK), MONTH(TANGGAL_MASUK)");
+        return $query->result();
+    }
+
+    public function getSumBebanByMonth()
+    {
+        $query = $this->db->query("SELECT TANGGAL_MASUK, SUM(beban_proyek) AS 'beban_proyek', SUM(beban_gaji) AS 'beban_gaji', SUM(tunjangan_hari_raya) AS 'tunjangan_hari_raya', SUM(beban_operasional) AS 'beban_operasional',
+        SUM(beban_setoran_ui) AS 'beban_setoran_ui', SUM(beban_penyusutan) AS 'beban_penyusutan', SUM(beban_bonus) AS 'beban_bonus', SUM(beban_perlengkapan_kantor) AS 'beban_perlengkapan_kantor', SUM(beban_pengelolaan_rek) AS 'beban_pengelolaan_rek', SUM(beban_buku_cek) AS 'beban_buku_cek', SUM(beban_pajak) AS 'beban_pajak',
+        SUM(rugi_penjualan_aset) AS 'rugi_penjualan_aset', SUM(beban_lainlain) AS 'beban_lainlain', SUM(rugi_selisih_kurs) AS 'rugi_selisih_kurs' FROM beban GROUP BY YEAR(TANGGAL_MASUK), MONTH(TANGGAL_MASUK)");
+        return $query->result();
+    }
 }
     
     /* End of file M_Dashboard.php */
