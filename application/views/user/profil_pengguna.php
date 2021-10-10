@@ -71,7 +71,9 @@
                         </div>
                     </div>
                     <div class="btn-group mt-5" role="group" aria-label="Basic mixed styles example">
-                        <a href="<?= base_url('user/mnj_user'); ?>" type="button" class="btn btn-primary">Tambah Akun Pengguna</a>
+                        <?php if ($this->session->userdata('level') == 1) { ?>
+                            <a href="<?= base_url('user/mnj_user'); ?>" type="button" class="btn btn-primary">Tambah Akun Pengguna</a>
+                        <?php } ?>
                         <a href="<?= base_url('user/profile_biasa'); ?>" type="button" class="btn btn-light">Profil Pengguna</a>
                     </div>
                     <div class="container-fluid py-4">

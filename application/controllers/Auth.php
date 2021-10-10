@@ -34,7 +34,7 @@ class Auth extends CI_Controller
                 $data_user = $cek->row_array();
                 $sess_data = array(
                     'email' => $email,
-                    'level' => $data_user['level'],
+                    'level' => $data_user['LEVEL'],
                     'login' => 'OK',
                 );
                 $this->session->set_userdata($sess_data);
