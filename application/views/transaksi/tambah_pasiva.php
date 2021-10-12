@@ -101,18 +101,6 @@
                                                     <label>Hutang Pada RTV</label>
                                                     <input type="number" name="hutang_pada_rtv" value="" class="form-control" required>
                                                 </div>
-                                                <div class="form-group col-5">
-                                                    <label>Total</label>
-                                                    <input type="number" name="total" value="" class="form-control" required>
-                                                </div>
-                                                <div class="form-group col-5">
-                                                    <label>Total Pasiva</label>
-                                                    <input type="number" name="total_pasiva" value="" class="form-control" required>
-                                                </div>
-                                                <div class="form-group col-5">
-                                                    <label>Total Modal</label>
-                                                    <input type="number" name="total_modal" value="" class="form-control" required>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>

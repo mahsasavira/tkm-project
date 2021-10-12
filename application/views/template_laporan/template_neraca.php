@@ -191,7 +191,7 @@
                 <th colspan="1" align="left">TOTAL PASIVA</th>
                 <td colspan="1" align="center"></td>
                 <?php
-                $totalpas = $totalakt + $totalkewajiban + 699305923 + $lababersih;
+                $totalpas = $totalakt + $totalkewajiban + $lababersih;
                 ?>
                 <td colspan="1" align="right"><?php echo format($totalpas); ?></td>
             </tr>

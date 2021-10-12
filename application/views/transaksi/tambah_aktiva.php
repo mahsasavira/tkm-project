@@ -92,6 +92,11 @@
                                                         <input type="number" name="kas_pada_bank" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
+                                                        <label>Jaminan Bank</label>
+                                                        <input type="number" name="jaminan_bank" value="" class="form-control" required>
+                                                    </div>
+
+                                                    <div class="form-group col-5">
                                                         <label>Piutang Operasional</label>
                                                         <input type="number" name="piutang_operasional" value="" class="form-control" required>
                                                     </div>
