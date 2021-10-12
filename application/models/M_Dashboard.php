@@ -50,6 +50,30 @@ class M_Dashboard extends CI_Model
         return $query->result();
     }
 
+    public function getSumPerlengkapanKantor()
+    {
+        $query = $this->db->query("SELECT SUM(KOMPUTER) AS 'KOMPUTER', SUM(AC) AS 'AC', SUM(FAX) AS 'FAX', 
+        SUM(FURNITURE) AS 'FURNITURE', SUM(NOTEBOOK) AS 'NOTEBOOK', SUM(PRINTER) AS 'PRINTER',
+        SUM(KAMERA_DIGITAL) AS 'KAMERA_DIGITAL',SUM(VIDEO_KAMERA) AS 'VIDEO_KAMERA' FROM aktiva");
+        return $query->result();
+    }
+
+    public function getSumPenyusutan()
+    {
+        $query = $this->db->query("SELECT SUM(AKUM_PENY_KOMPUTER) AS 'AKUM_PENY_KOMPUTER', SUM(AKUM_PENY_AC) AS 'AKUM_PENY_AC', 
+        SUM(AKUM_PENY_FAX) AS 'AKUM_PENY_FAX', SUM(AKUM_PENY_FURNITURE) AS 'AKUM_PENY_FURNITURE',
+        SUM(AKUM_PENY_NOTEBOOK) AS 'AKUM_PENY_NOTEBOOK', SUM(AKUM_PENY_PRINTER) AS 'AKUM_PENY_PRINTER', 
+        SUM(AKUM_PENY_KAMERA) AS 'AKUM_PENY_KAMERA', SUM(AKUM_PENY_VIDEO) AS 'AKUM_PENY_VIDEO' FROM aktiva");
+        return $query->result();
+    }
+
+    public function getPendapatan()
+    {
+        $query = $this->db->query("SELECT SUM(pendapatan_proyek) AS 'pendapatan_proyek', SUM(pendapatan_giro) AS 'pendapatan_giro', SUM(bonus) AS 'bonus',
+        SUM(pendapatan_lainlain) AS 'pendapatan_lainlain' , SUM(laba_selisih_kurs) AS 'laba_selisih_kurs' FROM pendapatan");
+        return $query->result();
+    }
+
     public function getSumPendapatanByMonth()
     {
         $query = $this->db->query("SELECT TANGGAL_MASUK, SUM(pendapatan_proyek) AS 'pendapatan_proyek', SUM(pendapatan_giro) AS 'pendapatan_giro', SUM(bonus) AS 'bonus', SUM(pendapatan_lainlain) AS 'pendapatan_lainlain' , SUM(laba_selisih_kurs) AS 'laba_selisih_kurs' FROM pendapatan GROUP BY YEAR(TANGGAL_MASUK), MONTH(TANGGAL_MASUK)");

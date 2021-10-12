@@ -165,7 +165,7 @@
                                         <p class="text-sm mb-0 text-capitalize font-weight-bold">Hutang Perusahaan</p>
                                         <h5 class="font-weight-bolder mb-0">
                                             <?php
-                                            function format($angka)
+                                            function number($angka)
                                             {
                                                 $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
                                                 return $hasil_rupiah;
@@ -176,7 +176,7 @@
                                                 $hutang[0]->HUTANG_PROYEK +
                                                 $hutang[0]->HUTANG_GAJI;
                                             ?>
-                                            <?php echo format($hutang); ?>
+                                            <?php echo number($hutang); ?>
                                             <!-- <span class="text-danger text-sm font-weight-bolder">-2%</span> -->
                                         </h5>
                                     </div>
@@ -192,8 +192,7 @@
                 </div>
             </div>
             <div class="row mt-4">
-
-                <div class="col-lg-12">
+                <div class="col-lg-9">
                     <div class="card z-index-2">
                         <div class="card-header pb-0">
                             <h6>Keuntungan PT. Tirta Kencana Mulia</h6>
@@ -209,7 +208,154 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Aset Perusahaan</p>
+                                        <h5 class="font-weight-bolder mb-0">
+                                            <?php
+                                            function format($angka)
+                                            {
+                                                $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                                return $hasil_rupiah;
+                                            }
+                                            $alat_kantor =
+                                                $alat_kantor[0]->KOMPUTER +
+                                                $alat_kantor[0]->AC +
+                                                $alat_kantor[0]->FAX +
+                                                $alat_kantor[0]->FURNITURE +
+                                                $alat_kantor[0]->NOTEBOOK +
+                                                $alat_kantor[0]->PRINTER +
+                                                $alat_kantor[0]->KAMERA_DIGITAL +
+                                                $alat_kantor[0]->VIDEO_KAMERA;
+                                            ?>
+                                            <?php echo format($alat_kantor); ?>
+                                            <!-- <span class="text-danger text-sm font-weight-bolder">-2%</span> -->
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Penyusutan Aset Perusahaan</p>
+                                        <h5 class="font-weight-bolder mb-0">
+                                            <?php
+                                            function penyusutan($angka)
+                                            {
+                                                $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                                return $hasil_rupiah;
+                                            }
+                                            $peny_alat =
+                                                $peny_alat[0]->AKUM_PENY_KOMPUTER +
+                                                $peny_alat[0]->AKUM_PENY_AC +
+                                                $peny_alat[0]->AKUM_PENY_FAX +
+                                                $peny_alat[0]->AKUM_PENY_FURNITURE +
+                                                $peny_alat[0]->AKUM_PENY_NOTEBOOK +
+                                                $peny_alat[0]->AKUM_PENY_PRINTER +
+                                                $peny_alat[0]->AKUM_PENY_KAMERA +
+                                                $peny_alat[0]->AKUM_PENY_VIDEO;
+                                            ?>
+                                            <?php echo penyusutan($peny_alat); ?>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Pendapatan Perusahaan</p>
+                                        <h5 class="font-weight-bolder mb-0">
+                                            <?php
+                                            function pendapatan($angka)
+                                            {
+                                                $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                                return $hasil_rupiah;
+                                            }
+                                            $pendapatan_jumlah =
+                                                $pendapatan_jumlah[0]->pendapatan_proyek +
+                                                $pendapatan_jumlah[0]->pendapatan_giro +
+                                                $pendapatan_jumlah[0]->bonus +
+                                                $pendapatan_jumlah[0]->pendapatan_lainlain +
+                                                $pendapatan_jumlah[0]->laba_selisih_kurs;
+                                            ?>
+                                            <?php echo pendapatan($pendapatan_jumlah); ?>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Beban Perusahaan</p>
+                                        <h5 class="font-weight-bolder mb-0">
+                                            <?php
+                                            function beban($angka)
+                                            {
+                                                $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                                return $hasil_rupiah;
+                                            }
+                                            $beban_jumlah =
+                                                $beban_jumlah[0]->beban_proyek +
+                                                $beban_jumlah[0]->beban_gaji +
+                                                $beban_jumlah[0]->tunjangan_hari_raya +
+                                                $beban_jumlah[0]->beban_operasional +
+                                                $beban_jumlah[0]->beban_setoran_ui +
+                                                $beban_jumlah[0]->beban_penyusutan +
+                                                $beban_jumlah[0]->beban_bonus +
+                                                $beban_jumlah[0]->beban_perlengkapan_kantor +
+                                                $beban_jumlah[0]->beban_pengelolaan_rek +
+                                                $beban_jumlah[0]->beban_buku_cek +
+                                                $beban_jumlah[0]->beban_pajak +
+                                                $beban_jumlah[0]->rugi_penjualan_aset +
+                                                $beban_jumlah[0]->beban_lainlain +
+                                                $beban_jumlah[0]->rugi_selisih_kurs;
+                                            ?>
+                                            <?php echo beban($beban_jumlah); ?>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
         <footer class="footer pt-3  ">
             <div class="container-fluid">
@@ -443,6 +589,12 @@
                 damping: '0.5'
             }
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+
+        function dateIndo(date) {
+            var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+            var dates = date.split('-');
+            return parseInt(dates[2]) + ' ' + months[parseInt(dates[1]) - 1] + ' ' + dates[0];
         }
     </script>
     <!-- Github buttons -->

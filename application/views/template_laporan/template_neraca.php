@@ -9,7 +9,7 @@
                     <img src="<?php echo base_url() ?>assets/img/kop.png">
                     <center>
                         <h4 class="card-title"><b>LAPORAN NERACA</b></h4>
-                        <!-- <p class="card-description"><b> Periode s.d.</b></p> -->
+                        <p class="card-description"><b> Periode <?= ($tgl_awal_cetak != '' ? ($tgl_awal_cetak) . ' ' : '') . 's.d. ' . ($tgl_akhir_cetak) ?></b></p><br><br>
                     </center>
                 </div>
             </div>
@@ -209,7 +209,7 @@
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                 &emsp;&emsp;&emsp;&emsp;&emsp;Staf Administrasi.</p><br><br><br>
-            <p style="font-size:9pt;" align="right">Desi N.</p><br>
+            <p style="font-size:9pt;" align="right">Desianti Nuraini.</p><br>
             <!-- <div class="position-absolute bottom-0 end-0 mb-8" align="right">Dikeluarkan Oleh,</div>
             <div class="position-absolute bottom-0 end-0 mb-8" align="right">Staf Administrasi</div> -->
             <!-- <div class="position-absolute bottom-0 end-0 mb-3" align="right">(Nama Staff)</div> -->
@@ -225,7 +225,21 @@
     <p style="font-size:7pt;">*Apabila terdapat perbedaan informasi pada dokumen ini dengan informasi pada sistem, <br>
         &ensp;maka data yang dianggap valid adalah informasi dari sistem</p><br>
 
-    <!-- <p style="font-size:6pt;"><i>Dicetak dari halaman http://tirtakencanamulia.com/ pada <?= ('tanggal') ?> </i></p> -->
+    <p style="font-size:6pt;"><i>Dicetak pada <?php $currentDateTime = date('Y-m-d H:i:s');
+                                                echo $currentDateTime;
+                                                ?> </i></p>
 </body>
+<script>
+    var dp = $("#tgl_awal").datepicker({
+        format: "mm - yyyy",
+        startView: "months",
+        minViewMode: "months"
+    });
+    var dp = $("#tgl_akhir").datepicker({
+        format: "mm - yyyy",
+        startView: "months",
+        minViewMode: "months"
+    });
+</script>
 
 </html>

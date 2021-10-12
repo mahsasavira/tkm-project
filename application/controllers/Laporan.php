@@ -130,14 +130,21 @@ class Laporan extends CI_Controller
     public function laporan_neraca_pdf()
     {
 
-        if ($this->input->post('tgl_awal_cetak') != null && $this->input->post('tgl_akhir_cetak')) {
+        if ($this->input->post('tgl_awal_cetak') && $this->input->post('tgl_akhir_cetak')) {
             $param_awal = $this->input->post('tgl_awal_cetak');
             $param_akhir = $this->input->post('tgl_akhir_cetak');
+
+            $data['tgl_awal_cetak'] = $param_awal;
+            $data['tgl_akhir_cetak'] = $param_akhir;
+
             $data['id_akt'] = $this->m_neraca->cetak_aktiva_filter_by_date($param_awal, $param_akhir);
             $data['id_pas'] = $this->m_neraca->cetak_pasiva_filter_by_date($param_awal, $param_akhir);
         } else {
             $data['id_akt'] = $this->m_neraca->cetak_aktiva();
             $data['id_pas'] = $this->m_neraca->cetak_pasiva();
+
+            $data['tgl_awal_cetak'] = date('Y') . '-01-01';
+            $data['tgl_akhir_cetak'] = date('Y') . '-12-31';
         }
 
         $this->load->library('pdfgenerator');
@@ -171,9 +178,15 @@ class Laporan extends CI_Controller
             $param_akhir = $this->input->post('tgl_akhir_cetak');
             $data['id_pend'] = $this->m_labarugi->cetak_pendapatan_filter_by_date($param_awal, $param_akhir);
             $data['id_beban'] = $this->m_labarugi->cetak_beban_filter_by_date($param_awal, $param_akhir);
+
+            $data['tgl_awal_cetak'] = $param_awal;
+            $data['tgl_akhir_cetak'] = $param_akhir;
         } else {
             $data['id_pend'] = $this->m_labarugi->cetak_pendapatan();
             $data['id_beban'] = $this->m_labarugi->cetak_beban();
+
+            $data['tgl_awal_cetak'] = date('Y') . '-01-01';
+            $data['tgl_akhir_cetak'] = date('Y') . '-12-31';
         }
 
         $this->load->library('pdfgenerator');
@@ -209,11 +222,17 @@ class Laporan extends CI_Controller
             $data['id_beban'] = $this->m_labarugi->cetak_beban_filter_by_date($param_awal, $param_akhir);
             $data['id_akt'] = $this->m_neraca->cetak_aktiva_filter_by_date($param_awal, $param_akhir);
             $data['id_pas'] = $this->m_neraca->cetak_pasiva_filter_by_date($param_awal, $param_akhir);
+
+            $data['tgl_awal_cetak'] = $param_awal;
+            $data['tgl_akhir_cetak'] = $param_akhir;
         } else {
             $data['id_pend'] = $this->m_labarugi->cetak_pendapatan();
             $data['id_beban'] = $this->m_labarugi->cetak_beban();
             $data['id_akt'] = $this->m_neraca->cetak_aktiva();
             $data['id_pas'] = $this->m_neraca->cetak_pasiva();
+
+            $data['tgl_awal_cetak'] = date('Y') . '-01-01';
+            $data['tgl_akhir_cetak'] = date('Y') . '-12-31';
         }
 
         $this->load->library('pdfgenerator');
