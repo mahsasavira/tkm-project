@@ -181,8 +181,8 @@
                 $lababersih = $totalpendapatan - $totalbeban;
                 ?>
                 <td style="font-size:11pt;" colspan="12" align="right"><?php echo format(699305923 + $lababersih); ?></td>
-            </tr> -->
-            <!-- <tr>
+            </tr>
+            <tr>
                 <th style="font-size:11pt;" colspan="1" align="left">TOTAL MODAL</th>
                 <td style="font-size:11pt;" colspan="1" align="center"></td>
                 <td style="font-size:11pt;" colspan="12" align="right"><?php echo format(699305923 + $lababersih); ?></td>
@@ -191,7 +191,7 @@
                 <th colspan="1" align="left">TOTAL PASIVA</th>
                 <td colspan="1" align="center"></td>
                 <?php
-                $totalpas = $totalakt + $totalkewajiban + $lababersih;
+                $totalpas = $totalkewajiban;
                 ?>
                 <td colspan="1" align="right"><?php echo format($totalpas); ?></td>
             </tr>

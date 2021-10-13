@@ -74,6 +74,13 @@ class M_Dashboard extends CI_Model
         return $query->result();
     }
 
+    public function getPenambahan()
+    {
+        $query = $this->db->query("SELECT SUM(pendapatan_proyek) AS 'pendapatan_proyek', SUM(pendapatan_giro) AS 'pendapatan_giro', SUM(bonus) AS 'bonus',
+        SUM(pendapatan_lainlain) AS 'pendapatan_lainlain' , SUM(laba_selisih_kurs) AS 'laba_selisih_kurs' FROM pendapatan");
+        return $query->result();
+    }
+
     public function getSumPendapatanByMonth()
     {
         $query = $this->db->query("SELECT TANGGAL_MASUK, SUM(pendapatan_proyek) AS 'pendapatan_proyek', SUM(pendapatan_giro) AS 'pendapatan_giro', SUM(bonus) AS 'bonus', SUM(pendapatan_lainlain) AS 'pendapatan_lainlain' , SUM(laba_selisih_kurs) AS 'laba_selisih_kurs' FROM pendapatan GROUP BY YEAR(TANGGAL_MASUK), MONTH(TANGGAL_MASUK)");

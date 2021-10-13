@@ -91,61 +91,68 @@
                                     <div class="table-responsive p-0 border border-dark">
                                         <center>
                                             <h4 class="card-title mt-4"><b>LAPORAN ARUS KAS</b></h4>
-                                            <!-- <p class="card-description"><b> Periode s.d.</b></p><br><br> -->
+                                            <p class="card-description"><b> Periode s/d</b></p><br><br>
                                         </center>
                                         <br>
                                         <br>
                                         <table class="table table-bordered align-items-center mb-5">
                                             <tbody>
                                                 <tr>
-                                                    <th style="font-size:12pt;" scope="col-1" class="text" align="left">Aktivitas Operasional</th>
-                                                </tr>
-                                                <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Laba Bersih Bulan ...</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Penurunan Piutang</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Kenaikan Hutang Dagang</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Arus Kas Aktivitas Operasional</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th style="font-size:12pt;" scope="col-1" class="text" align="left">Aktivitas Investasi</th>
-                                                </tr>
-                                                <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Akum.Peny. Peralatan Kantor</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Arus Kas Aktivitas Investasi</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th style="font-size:12pt;" scope="col-1" class="text" align="left">Aktivitas Pendanaan</th>
-                                                </tr>
-                                                <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Hutang Pada Bank</th>
+                                                    <th style="font-size:12pt;" scope="col-1" class="text" align="left"><b>Aktivitas Operasional</b></th>
 
-                                                    <td style="font-size:11pt;" colspan="12" align="right"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Penambahan Kas</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"></td>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Laba Bersih</th>
+                                                    <td style="font-size:9pt;" colspan="12" align="right"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Saldo Akhir (bulan/tahun)</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"></td>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Penurunan Piutang</th>
+                                                    <td style="font-size:9pt;" colspan="12" align="right"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Saldo Awal Bulan/tahun</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"></td>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Kenaikan Hutang Dagang</th>
+                                                    <td style="font-size:9pt;" colspan="12" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Arus Kas Aktivitas Operasional</th>
+                                                    <td style="font-size:9pt;" colspan="12" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:12pt;" scope="col-1" class="text" align="left"><b>Aktivitas Investasi</b></th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Akum.Peny. Peralatan Kantor</th>
+                                                    <td style="font-size:9pt;" colspan="12" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Arus Kas Aktivitas Investasi</th>
+                                                    <td style="font-size:9pt;" colspan="12" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:12pt;" scope="col-1" class="text" align="left"><b>Aktivitas Pendanaan</b></th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Kas Kecil</th>
+
+                                                    <td style="font-size:9pt;" colspan="12" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Kas Pada Bank</th>
+
+                                                    <td style="font-size:9pt;" colspan="12" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Arus Kas Pendanaan</th>
+
+                                                    <td style="font-size:9pt;" colspan="12" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Penambahan Kas</th>
+                                                    <td style="font-size:9pt;" colspan="12" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left"><b>Saldo Akhir</b></th>
+                                                    <td style="font-size:9pt;" colspan="12" align="right"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -180,6 +187,9 @@
     <script src="<?php echo base_url() ?>assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/plugins/chartjs.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
     <script>
         var ctx = document.getElementById("chart-bars").getContext("2d");
 
@@ -358,6 +368,18 @@
             }
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
+    </script>
+    <script>
+        var dp = $("#tgl_awal").datepicker({
+            format: "mm - yyyy",
+            startView: "months",
+            minViewMode: "months"
+        });
+        var dp = $("#tgl_akhir").datepicker({
+            format: "mm - yyyy",
+            startView: "months",
+            minViewMode: "months"
+        });
     </script>
     <!-- Github buttons -->
     <script async defer src="<?php echo base_url() ?>https://buttons.github.io/buttons.js"></script>

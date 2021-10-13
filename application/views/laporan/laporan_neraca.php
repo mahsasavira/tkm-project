@@ -62,7 +62,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="row">
-                                        <form action="<?php echo base_url("Laporan/laporan_neraca") ?>" method="POST">
+                                        <form action="<?php echo base_url("Laporan/laporan_laba_rugi") ?>" method="POST">
                                             <div class="form-group col-2">
                                                 <label for="example-date-input" class="form-control-label">Periode Awal : </label>
                                                 <input placeholder="Bulan Awal" class="btn btn-outline-primary" min="2019-01-01" max="2021-12-31" name="tgl_awal" value="" id="tgl_awal">
@@ -74,7 +74,7 @@
                                             <button type="submit" class="btn btn-outline-primary btn-icon-text">Tampilkan</button>
                                             <!-- <a href="#" onclick=""><button type="button" class="btn btn-outline-primary btn-icon-text"> Tampilkan <i class="mdi mdi-eye btn-icon-append"></i></button></a> -->
                                         </form>
-                                        <form action="<?php echo base_url("laporan/laporan_neraca_pdf") ?>" method="POST">
+                                        <form action="<?php echo base_url("laporan/laporan_labarugi_pdf") ?>" method="POST">
                                             <div align="right">
                                                 <input name="tgl_awal_cetak" value="<?php if ($tgl_awal_cetak != null) {
                                                                                         echo $tgl_awal_cetak;
@@ -91,7 +91,7 @@
                                     <div class="table-responsive p-0 border border-dark">
                                         <center>
                                             <h4 class="card-title mt-4"><b>LAPORAN NERACA</b></h4>
-                                            <p class="card-description"><b> Periode <?= ($tgl_awal_cetak != '' ? ($tgl_awal_cetak) . ' ' : '') . 's.d. ' . ($tgl_akhir_cetak) ?></b></p><br><br>
+                                            <p class="card-description"><b> Periode <?= ($tgl_awal_cetak != '' ? ($tgl_awal_cetak) . ' ' : '') . 's/d ' . ($tgl_akhir_cetak) ?></b></p><br><br>
                                         </center>
                                         <div class="card-header pb-0 px-3 text-center">
                                             <h5 class="mb-2 text-center text-dark text-l font-weight-bolder opacity-8">AKTIVA</h5>
@@ -244,6 +244,9 @@
     <script src="<?php echo base_url() ?>assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/plugins/chartjs.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
     <script>
         var ctx = document.getElementById("chart-bars").getContext("2d");
 

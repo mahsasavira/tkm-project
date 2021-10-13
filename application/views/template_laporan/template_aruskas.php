@@ -26,10 +26,10 @@
                 } ?>
 
                 <tr>
-                    <th style="font-size:12pt;" scope="col-1" class="text" align="left">Aktivitas Operasional</th>
+                    <th style="font-size:12pt;" scope="col-1" class="text" align="left"><b>Aktivitas Operasional</b></th>
                 </tr>
                 <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Laba Bersih Bulan ...</th>
+                    <th style="font-size:11pt;" colspan="1" align="left">Laba Bersih <?php echo ($tgl_awal_cetak != '' ? ($tgl_awal_cetak) . ' ' : '') ?></th>
                     <?php
                     $totalpendapatan = $id_pend[0]->pendapatan_proyek + $id_pend[0]->pendapatan_giro + $id_pend[0]->bonus + $id_pend[0]->pendapatan_lainlain + $id_pend[0]->laba_selisih_kurs;
                     ?>
@@ -52,10 +52,10 @@
                     <?php
                     $lababersih = $totalpendapatan - $totalbeban;
                     ?>
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($lababersih); ?></td>
+                    <td style="font-size:9pt;" colspan="12" align="right"><?php echo format($lababersih); ?></td>
                 </tr>
                 <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Penurunan Piutang</th>
+                    <th style="font-size:9pt;" colspan="1" align="left">Penurunan Piutang</th>
                     <?php
                     $penurunanpiutang = $id_akt[0]->jaminan_bank +
                         $id_akt[0]->piutang_daya_makara +
@@ -64,30 +64,30 @@
                         $id_akt[0]->piutang_solar_car +
                         $id_akt[0]->piutang_operasional;
                     ?>
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($penurunanpiutang); ?></td>
+                    <td style="font-size:9pt;" colspan="12" align="right"><?php echo format($penurunanpiutang); ?></td>
                 </tr>
                 <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Kenaikan Hutang Dagang</th>
+                    <th style="font-size:9pt;" colspan="1" align="left">Kenaikan Hutang Dagang</th>
                     <?php
                     $kenaikanHutang = $id_pas[0]->hutang_operasional +
                         $id_pas[0]->hutang_gaji +
                         $id_pas[0]->hutang_proyek +
                         $id_pas[0]->hutang_pada_rtv;
                     ?>
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($kenaikanHutang); ?></td>
+                    <td style="font-size:9pt;" colspan="12" align="right"><?php echo format($kenaikanHutang); ?></td>
                 </tr>
                 <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Arus Kas Aktivitas Operasional</th>
+                    <th style="font-size:9pt;" colspan="1" align="left">Arus Kas Aktivitas Operasional</th>
                     <?php
                     $totalOperasional = $lababersih + $penurunanpiutang + $kenaikanHutang;
                     ?>
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($totalOperasional); ?></td>
+                    <td style="font-size:9pt;" colspan="12" align="right"><?php echo format($totalOperasional); ?></td>
                 </tr>
                 <tr>
                     <th style="font-size:12pt;" scope="col-1" class="text" align="left">Aktivitas Investasi</th>
                 </tr>
                 <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Akum.Peny. Peralatan Kantor</th>
+                    <th style="font-size:9pt;" colspan="1" align="left">Akum.Peny. Peralatan Kantor</th>
                     <?php
                     $akumpenyusutan = ($id_akt[0]->komputer - $id_akt[0]->akum_peny_komputer) +
                         ($id_akt[0]->fax - $id_akt[0]->akum_peny_fax) +
@@ -98,49 +98,45 @@
                         ($id_akt[0]->kamera_digital - $id_akt[0]->akum_peny_kamera) +
                         ($id_akt[0]->video_kamera - $id_akt[0]->akum_peny_video);
                     ?>
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($akumpenyusutan); ?></td>
+                    <td style="font-size:9pt;" colspan="12" align="right"><?php echo format($akumpenyusutan); ?></td>
                 </tr>
                 <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Arus Kas Aktivitas Investasi</th>
+                    <th style="font-size:9pt;" colspan="1" align="left">Arus Kas Aktivitas Investasi</th>
                     <?php
                     $totalInvestasi = $akumpenyusutan;
                     ?>
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($totalInvestasi); ?></td>
+                    <td style="font-size:9pt;" colspan="12" align="right"><?php echo format($totalInvestasi); ?></td>
                 </tr>
                 <tr>
                     <th style="font-size:12pt;" scope="col-1" class="text" align="left">Aktivitas Pendanaan</th>
                 </tr>
                 <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Kas Kecil</th>
+                    <th style="font-size:9pt;" colspan="1" align="left">Kas Kecil</th>
 
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($id_akt[0]->kas_kecil); ?></td>
+                    <td style="font-size:9pt;" colspan="12" align="right"><?php echo format($id_akt[0]->kas_kecil); ?></td>
                 </tr>
                 <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Kas Kecil</th>
+                    <th style="font-size:9pt;" colspan="1" align="left">Kas Kecil</th>
 
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($id_akt[0]->kas_pada_bank); ?></td>
+                    <td style="font-size:9pt;" colspan="12" align="right"><?php echo format($id_akt[0]->kas_pada_bank); ?></td>
                 </tr>
                 <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Arus Kas Pendanaan</th>
+                    <th style="font-size:9pt;" colspan="1" align="left">Arus Kas Pendanaan</th>
                     <?php
                     $totalPendanaan = $id_akt[0]->kas_kecil + $id_akt[0]->kas_pada_bank;
                     ?>
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($totalPendanaan); ?></td>
+                    <td style="font-size:9pt;" colspan="12" align="right"><?php echo format($totalPendanaan); ?></td>
                 </tr>
                 <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Penambahan Kas</th>
+                    <th style="font-size:9pt;" colspan="1" align="left">Penambahan Kas</th>
                     <?php
                     $penambahan_kas = $totalOperasional + $totalInvestasi + $totalPendanaan;
                     ?>
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($penambahan_kas); ?></td>
+                    <td style="font-size:9pt;" colspan="12" align="right"><?php echo format($penambahan_kas); ?></td>
                 </tr>
                 <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Saldo Akhir (bulan/tahun)</th>
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format(699305923); ?></td>
-                </tr>
-                <tr>
-                    <th style="font-size:11pt;" colspan="1" align="left">Saldo Awal Bulan/tahun</th>
-                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($penambahan_kas + 699305923); ?></td>
+                    <th style="font-size:11pt;" colspan="1" align="left">Saldo Akhir <?php echo ($tgl_akhir_cetak != '' ? ($tgl_akhir_cetak) . ' ' : '') ?></th>
+                    <td style="font-size:9pt;" colspan="12" align="right"><?php echo format($penambahan_kas); ?></td>
                 </tr>
             </tbody>
         </table>

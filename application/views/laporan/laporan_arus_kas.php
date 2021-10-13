@@ -90,23 +90,24 @@
                                     <div class="table-responsive p-0 border border-dark">
                                         <center>
                                             <h4 class="card-title mt-4"><b>LAPORAN ARUS KAS</b></h4>
-                                            <p class="card-description"><b> Periode <?= ($tgl_awal_cetak != '' ? ($tgl_awal_cetak) . ' ' : '') . 's.d. ' . ($tgl_akhir_cetak) ?></b></p><br><br>
+                                            <p class="card-description"><b> Periode <?= ($tgl_awal_cetak != '' ? ($tgl_awal_cetak) . ' ' : '') . 's/d ' . ($tgl_akhir_cetak) ?></b></p><br><br>
                                         </center>
                                         <br>
                                         <br>
                                         <table class="table table-bordered align-items-center mb-5">
                                             <tbody>
-                                                <?php function format($angka)
+                                                <?php
+                                                function format($angka)
                                                 {
                                                     $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
                                                     return $hasil_rupiah;
                                                 } ?>
 
                                                 <tr>
-                                                    <th style="font-size:12pt;" scope="col-1" class="text" align="left">Aktivitas Operasional</th>
+                                                    <th style="font-size:12pt;" scope="col-1" class="text" align="left"><b>Aktivitas Operasional</b></th>
                                                 </tr>
                                                 <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Laba Bersih Bulan ...</th>
+                                                    <th style="font-size:11pt;" colspan="1" align="left">Laba Bersih <?php echo ($tgl_awal_cetak != '' ? ($tgl_awal_cetak) . ' ' : '') ?></th>
                                                     <?php
                                                     $totalpendapatan = $id_pend[0]->pendapatan_proyek + $id_pend[0]->pendapatan_giro + $id_pend[0]->bonus + $id_pend[0]->pendapatan_lainlain + $id_pend[0]->laba_selisih_kurs;
                                                     ?>
@@ -193,7 +194,7 @@
                                                     <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($id_akt[0]->kas_kecil); ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Kas Kecil</th>
+                                                    <th style="font-size:11pt;" colspan="1" align="left">Kas Pada Bank</th>
 
                                                     <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($id_akt[0]->kas_pada_bank); ?></td>
                                                 </tr>
@@ -212,12 +213,8 @@
                                                     <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($penambahan_kas); ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Saldo Akhir (bulan/tahun)</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format(699305923); ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <th style="font-size:11pt;" colspan="1" align="left">Saldo Awal Bulan/tahun</th>
-                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($penambahan_kas + 699305923); ?></td>
+                                                    <th style="font-size:11pt;" colspan="1" align="left">Saldo Akhir <?php echo ($tgl_akhir_cetak != '' ? ($tgl_akhir_cetak) . ' ' : '') ?></th>
+                                                    <td style="font-size:11pt;" colspan="12" align="right"><?php echo format($penambahan_kas); ?></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -253,6 +250,9 @@
     <script src="<?php echo base_url() ?>assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/plugins/chartjs.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
     <script>
         var ctx = document.getElementById("chart-bars").getContext("2d");
 
@@ -431,6 +431,18 @@
             }
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
+    </script>
+    <script>
+        var dp = $("#tgl_awal").datepicker({
+            format: "mm - yyyy",
+            startView: "months",
+            minViewMode: "months"
+        });
+        var dp = $("#tgl_akhir").datepicker({
+            format: "mm - yyyy",
+            startView: "months",
+            minViewMode: "months"
+        });
     </script>
     <!-- Github buttons -->
     <script async defer src="<?php echo base_url() ?>https://buttons.github.io/buttons.js"></script>

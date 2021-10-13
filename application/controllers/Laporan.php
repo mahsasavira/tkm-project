@@ -123,7 +123,7 @@ class Laporan extends CI_Controller
             $data['tgl_akhir_cetak'] = null;
             $this->load->view('template/header', $data);
             $this->load->view('sidebartemplate/laporanarus');
-            $this->load->view('laporan/set_arus');
+            $this->load->view('laporan/set_aruskas');
         }
     }
 

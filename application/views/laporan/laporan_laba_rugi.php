@@ -91,7 +91,7 @@
                                     <div class="table-responsive p-0 border border-dark">
                                         <center>
                                             <h4 class="card-title mt-4"><b>LAPORAN LABA RUGI</b></h4>
-                                            <p class="card-description"><b> Periode <?= ($tgl_awal_cetak != '' ? ($tgl_awal_cetak) . ' ' : '') . 's.d. ' . ($tgl_akhir_cetak) ?></b></p><br><br>
+                                            <p class="card-description"><b> Periode <?= ($tgl_awal_cetak != '' ? ($tgl_awal_cetak) . ' ' : '') . 's/d ' . ($tgl_akhir_cetak) ?></b></p><br><br>
                                         </center>
                                         <div>
                                             <h6 class="mr-5 text-dark text-l font-weight-bolder opacity-8">PENDAPATAN</h6>

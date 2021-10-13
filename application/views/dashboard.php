@@ -104,6 +104,7 @@
                                                 $beban[0]->beban_lainlain +
                                                 $beban[0]->rugi_penjualan_aset +
                                                 $beban[0]->rugi_selisih_kurs;
+
                                             $saldo =
                                                 $pendapatan - $beban;
                                             ?>
