@@ -54,7 +54,7 @@
             <tr>
                 <th colspan="1" align="left">Piutang TVUI</th>
                 <td colspan="1" align="center"></td>
-                <td colspan="1" align="right"><?php echo format($id_akt[0]->piutang_tvui) ?>)</td>
+                <td colspan="1" align="right"><?php echo format($id_akt[0]->piutang_tvui) ?></td>
             </tr>
             <tr>
                 <th colspan="1" align="left"> Piutang Solar Car</th>
@@ -128,7 +128,7 @@
                 <th colspan="1" align="left">TOTAL AKTIVA</th>
                 <td colspan="1" align="center"></td>
                 <?php
-                $totalakt = $id_akt[0]->kas_kecil + $id_akt[0]->kas_pada_bank + $id_akt[0]->piutang_operasional + $id_akt[0]->piutang_daya_makara + $id_akt[0]->piutang_proyek + $id_akt[0]->piutang_tvui +
+                $totalakt = $id_akt[0]->kas_kecil + $id_akt[0]->kas_pada_bank + $id_akt[0]->jaminan_bank + $id_akt[0]->piutang_operasional + $id_akt[0]->piutang_daya_makara + $id_akt[0]->piutang_proyek + $id_akt[0]->piutang_tvui +
                     $id_akt[0]->piutang_solar_car + ($id_akt[0]->komputer - $id_akt[0]->akum_peny_komputer) + ($id_akt[0]->fax - $id_akt[0]->akum_peny_fax) + ($id_akt[0]->ac - $id_akt[0]->akum_peny_ac) +
                     ($id_akt[0]->furniture - $id_akt[0]->akum_peny_furniture) + ($id_akt[0]->notebook - $id_akt[0]->akum_peny_notebook) + ($id_akt[0]->printer - $id_akt[0]->akum_peny_printer) +
                     ($id_akt[0]->kamera_digital - $id_akt[0]->akum_peny_kamera) + ($id_akt[0]->video_kamera - $id_akt[0]->akum_peny_video);

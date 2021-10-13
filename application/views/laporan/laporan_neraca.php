@@ -62,7 +62,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="row">
-                                        <form action="<?php echo base_url("Laporan/laporan_laba_rugi") ?>" method="POST">
+                                        <form action="<?php echo base_url("Laporan/laporan_neraca") ?>" method="POST">
                                             <div class="form-group col-2">
                                                 <label for="example-date-input" class="form-control-label">Periode Awal : </label>
                                                 <input placeholder="Bulan Awal" class="btn btn-outline-primary" min="2019-01-01" max="2021-12-31" name="tgl_awal" value="" id="tgl_awal">
@@ -74,7 +74,7 @@
                                             <button type="submit" class="btn btn-outline-primary btn-icon-text">Tampilkan</button>
                                             <!-- <a href="#" onclick=""><button type="button" class="btn btn-outline-primary btn-icon-text"> Tampilkan <i class="mdi mdi-eye btn-icon-append"></i></button></a> -->
                                         </form>
-                                        <form action="<?php echo base_url("laporan/laporan_labarugi_pdf") ?>" method="POST">
+                                        <form action="<?php echo base_url("laporan/laporan_neraca_pdf") ?>" method="POST">
                                             <div align="right">
                                                 <input name="tgl_awal_cetak" value="<?php if ($tgl_awal_cetak != null) {
                                                                                         echo $tgl_awal_cetak;
