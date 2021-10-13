@@ -122,10 +122,6 @@
                                                         <input type="number" name="beban_pengelolaan_rek" value="" class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-5">
-                                                        <label>Laba Selisih Kurs</label>
-                                                        <input type="number" name="laba_selisih_kurs" value="" class="form-control" required>
-                                                    </div>
-                                                    <div class="form-group col-5">
                                                         <label>Beban Buku Cek</label>
                                                         <input type="number" name="beban_buku_cek" value="" class="form-control" required>
                                                     </div>
