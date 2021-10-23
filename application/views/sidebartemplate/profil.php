@@ -82,7 +82,7 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Laporan</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="<?php echo base_url() ?>laporan/laporan_laba_rugi">
+                <a class="nav-link  " href="<?php echo base_url() ?>laporan/set_laba">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>box-3d-50</title>
@@ -106,7 +106,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="<?php echo base_url() ?>laporan/set_arus">
+                <a class="nav-link  " href="<?php echo base_url() ?>laporan/set_neraca">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>box-3d-50</title>
@@ -130,7 +130,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="<?php echo base_url() ?>laporan/laporan_arus_kas">
+                <a class="nav-link  " href="<?php echo base_url() ?>laporan/set_arus">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>box-3d-50</title>

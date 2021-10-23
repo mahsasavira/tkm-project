@@ -11,6 +11,38 @@ class Laporan extends CI_Controller
         $this->load->model('m_labarugi');
     }
 
+    function set_neraca()
+    {
+        if ($this->input->post('tgl_awal') != null && $this->input->post('tgl_akhir')) {
+            $tgl_awal = explode(" - ", $this->input->post('tgl_awal'));
+            $tgl_akhir = explode(" - ", $this->input->post('tgl_akhir'));
+            $param_awal = $tgl_awal[1] . "-" . $tgl_awal[0] . "-1";
+            $param_akhir = $tgl_akhir[1] . "-" . $tgl_akhir[0] . "-31";
+
+            $data['id_pend'] = $this->m_labarugi->tampil_pendapatan_filter_by_date($param_awal, $param_akhir);
+            $data['id_beban'] = $this->m_labarugi->tampil_beban_filter_by_date($param_awal, $param_akhir);
+            $data['tgl_awal_cetak'] = $param_awal;
+            $data['tgl_akhir_cetak'] = $param_akhir;
+            $this->load->view('template/header', $data);
+            $this->load->view('sidebartemplate/laporanneraca');
+            $this->load->view('laporan/set_neraca');
+        } else if ($this->input->post('tgl_awal') == null && $this->input->post('tgl_akhir')) {
+            $data['id_pend'] = $this->m_labarugi->tampil_pendapatan();
+            $data['id_beban'] = $this->m_labarugi->tampil_beban();
+            $data['tgl_awal_cetak'] = null;
+            $data['tgl_akhir_cetak'] = null;
+            $this->load->view('template/header', $data);
+            $this->load->view('sidebartemplate/laporanneraca');
+            $this->load->view('laporan/set_neraca');
+        } else {
+            $data['tgl_awal_cetak'] = null;
+            $data['tgl_akhir_cetak'] = null;
+            $this->load->view('template/header', $data);
+            $this->load->view('sidebartemplate/laporanneraca');
+            $this->load->view('laporan/set_neraca');
+        }
+    }
+
     function laporan_neraca()
     {
         if ($this->input->post('tgl_awal') != null && $this->input->post('tgl_akhir')) {
@@ -19,26 +51,23 @@ class Laporan extends CI_Controller
             $param_awal = $tgl_awal[1] . "-" . $tgl_awal[0] . "-1";
             $param_akhir = $tgl_akhir[1] . "-" . $tgl_akhir[0] . "-31";
 
-            $data['id_akt'] = $this->m_neraca->tampil_aktiva_filter_by_date($param_awal, $param_akhir);
-            $data['id_pas'] = $this->m_neraca->tampil_pasiva_filter_by_date($param_awal, $param_akhir);
+            $data['id_akt'] = $this->m_neraca->cetak_aktiva_filter_by_date($param_awal, $param_akhir);
+            $data['id_pas'] = $this->m_neraca->cetak_pasiva_filter_by_date($param_awal, $param_akhir);
             $data['tgl_awal_cetak'] = $param_awal;
             $data['tgl_akhir_cetak'] = $param_akhir;
             $this->load->view('template/header', $data);
             $this->load->view('sidebartemplate/laporanneraca');
             $this->load->view('laporan/laporan_neraca');
         } else {
-            $data['id_akt'] = $this->m_neraca->tampil_aktiva();
-            $data['id_pas'] = $this->m_neraca->tampil_pasiva();
-            $data['id_arus'] = $this->m_labarugi->tampil_modal();
             $data['tgl_awal_cetak'] = null;
             $data['tgl_akhir_cetak'] = null;
             $this->load->view('template/header', $data);
             $this->load->view('sidebartemplate/laporanneraca');
-            $this->load->view('laporan/laporan_neraca');
+            $this->load->view('laporan/set_neraca');
         }
     }
 
-    function laporan_laba_rugi()
+    function set_laba()
     {
         if ($this->input->post('tgl_awal') != null && $this->input->post('tgl_akhir')) {
             $tgl_awal = explode(" - ", $this->input->post('tgl_awal'));
@@ -52,16 +81,45 @@ class Laporan extends CI_Controller
             $data['tgl_akhir_cetak'] = $param_akhir;
             $this->load->view('template/header', $data);
             $this->load->view('sidebartemplate/laporanlaba');
-            $this->load->view('laporan/laporan_laba_rugi');
-        } else {
+            $this->load->view('laporan/set_laba');
+        } else if ($this->input->post('tgl_awal') == null && $this->input->post('tgl_akhir')) {
             $data['id_pend'] = $this->m_labarugi->tampil_pendapatan();
             $data['id_beban'] = $this->m_labarugi->tampil_beban();
-            $data['id_arus'] = $this->m_labarugi->tampil_modal();
             $data['tgl_awal_cetak'] = null;
             $data['tgl_akhir_cetak'] = null;
             $this->load->view('template/header', $data);
             $this->load->view('sidebartemplate/laporanlaba');
+            $this->load->view('laporan/set_laba');
+        } else {
+            $data['tgl_awal_cetak'] = null;
+            $data['tgl_akhir_cetak'] = null;
+            $this->load->view('template/header', $data);
+            $this->load->view('sidebartemplate/laporanlaba');
+            $this->load->view('laporan/set_laba');
+        }
+    }
+
+    function laporan_laba_rugi()
+    {
+        if ($this->input->post('tgl_awal') != null && $this->input->post('tgl_akhir')) {
+            $tgl_awal = explode(" - ", $this->input->post('tgl_awal'));
+            $tgl_akhir = explode(" - ", $this->input->post('tgl_akhir'));
+            $param_awal = $tgl_awal[1] . "-" . $tgl_awal[0] . "-1";
+            $param_akhir = $tgl_akhir[1] . "-" . $tgl_akhir[0] . "-31";
+
+            $data['id_pend'] = $this->m_labarugi->cetak_pendapatan_filter_by_date($param_awal, $param_akhir);
+            $data['id_beban'] = $this->m_labarugi->cetak_beban_filter_by_date($param_awal, $param_akhir);
+            $data['tgl_awal_cetak'] = $param_awal;
+            $data['tgl_akhir_cetak'] = $param_akhir;
+            $this->load->view('template/header', $data);
+            $this->load->view('sidebartemplate/laporanlaba');
             $this->load->view('laporan/laporan_laba_rugi');
+        } else {
+            $data['tgl_awal_cetak'] = null;
+            $data['tgl_akhir_cetak'] = null;
+            $this->load->view('template/header', $data);
+            $this->load->view('sidebartemplate/laporanlaba');
+            $this->load->view('laporan/set_laba');
         }
     }
 
@@ -143,8 +201,8 @@ class Laporan extends CI_Controller
             $data['id_akt'] = $this->m_neraca->cetak_aktiva();
             $data['id_pas'] = $this->m_neraca->cetak_pasiva();
 
-            $data['tgl_awal_cetak'] = date('Y') . '-01-01';
-            $data['tgl_akhir_cetak'] = date('Y') . '-12-31';
+            $data['tgl_awal_cetak'] = '01-01-' . date('Y');
+            $data['tgl_akhir_cetak'] = '31-12-' . date('Y');
         }
 
         $this->load->library('pdfgenerator');
@@ -185,8 +243,8 @@ class Laporan extends CI_Controller
             $data['id_pend'] = $this->m_labarugi->cetak_pendapatan();
             $data['id_beban'] = $this->m_labarugi->cetak_beban();
 
-            $data['tgl_awal_cetak'] = date('Y') . '-01-01';
-            $data['tgl_akhir_cetak'] = date('Y') . '-12-31';
+            $data['tgl_awal_cetak'] = '01-01-' . date('Y');
+            $data['tgl_akhir_cetak'] = '31-12-' . date('Y');
         }
 
         $this->load->library('pdfgenerator');
@@ -231,8 +289,8 @@ class Laporan extends CI_Controller
             $data['id_akt'] = $this->m_neraca->cetak_aktiva();
             $data['id_pas'] = $this->m_neraca->cetak_pasiva();
 
-            $data['tgl_awal_cetak'] = date('Y') . '-01-01';
-            $data['tgl_akhir_cetak'] = date('Y') . '-12-31';
+            $data['tgl_awal_cetak'] = '01-01-' . date('Y');
+            $data['tgl_akhir_cetak'] = '31-12-' . date('Y');
         }
 
         $this->load->library('pdfgenerator');

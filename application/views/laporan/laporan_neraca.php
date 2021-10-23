@@ -93,124 +93,186 @@
                                             <h4 class="card-title mt-4"><b>LAPORAN NERACA</b></h4>
                                             <p class="card-description"><b> Periode <?= ($tgl_awal_cetak != '' ? ($tgl_awal_cetak) . ' ' : '') . 's/d ' . ($tgl_akhir_cetak) ?></b></p><br><br>
                                         </center>
-                                        <div class="card-header pb-0 px-3 text-center">
-                                            <h5 class="mb-2 text-center text-dark text-l font-weight-bolder opacity-8">AKTIVA</h5>
-                                        </div>
                                         <table class="table table-bordered align-items-center mb-5">
-                                            <tr>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">No.</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Tanggal Masuk</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Kas Kecil</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Kas Pada Bank</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Jaminan Bank</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Piutang Operasional</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Piutang Daya Makara</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Piutang Proyek</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Piutang TVUI</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Piutang Solar Car</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Komputer</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny. Komputer</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Fax</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Fax</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">AC</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.AC</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Furniture</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Furniture</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Notebook</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Notebook</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Kamera Digital</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Digital</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Printer</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Printer</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Kamera Video</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Kamera Video</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Total Aktiva</th>
-                                            </tr>
                                             <tbody>
-                                                <?php
-                                                function harga($angka)
+                                                <?php function format($angka)
                                                 {
                                                     $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
                                                     return $hasil_rupiah;
-                                                }
-                                                $no = 1;
-                                                foreach ($id_akt as $id) {
-                                                    $totalakt = $id->kas_kecil + $id->kas_pada_bank + $id->jaminan_bank + $id->piutang_operasional + $id->piutang_daya_makara + $id->piutang_proyek + $id->piutang_tvui +
-                                                        $id->piutang_solar_car + ($id->komputer - $id->akum_peny_komputer) + ($id->fax - $id->akum_peny_fax) + ($id->ac - $id->akum_peny_ac) +
-                                                        ($id->furniture - $id->akum_peny_furniture) + ($id->notebook - $id->akum_peny_notebook) + ($id->printer - $id->akum_peny_printer) +
-                                                        ($id->kamera_digital - $id->akum_peny_kamera) + ($id->video_kamera - $id->akum_peny_video);
-                                                ?>
-                                                    <tr>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo $no++ ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo $id->tanggal_masuk ?></td>
-                                                        <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->kas_kecil) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->kas_pada_bank) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->jaminan_bank) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_operasional) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_daya_makara) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_proyek)  ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_tvui) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_solar_car)  ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->komputer)  ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_komputer) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->fax) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_fax)  ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->ac) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_ac)  ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->furniture)  ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_furniture) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->notebook)  ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_notebook) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->printer)  ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_printer) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->kamera_digital) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_kamera)  ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->video_kamera) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_video) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($totalakt) ?></td>
-                                                    </tr>
-                                                <?php } ?>
-                                            </tbody>
-                                        </table>
-                                        <div class="card-header pb-0 px-3 text-center">
-                                            <h5 class="mb-2 text-center text-dark text-l font-weight-bolder opacity-8">PASIVA</h5>
-                                        </div>
-                                        <div class="text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
-                                            Kewajiban
-                                        </div>
+                                                } ?>
+                                                <tr>
+                                                    <th style="font-size:12pt;" scope="col" class="text" align="left"><b>AKTIVA</b></th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Kas Kecil </th>
+                                                    <td style="font-size:9pt;" colspan="" align="left"></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->kas_kecil) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left"> Kas Pada Bank</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->kas_pada_bank) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Piutang Operasional</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->piutang_operasional) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Piutang Daya Makara</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->piutang_daya_makara) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Piutang Proyek</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->piutang_proyek) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Piutang TVUI</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->piutang_tvui) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left"> Piutang Solar Car</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->piutang_solar_car) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left"><b>PERLENGKAPAN KANTOR</b></th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Komputer</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->komputer) ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Akum.Peny.-Komputer</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->akum_peny_komputer) ?></td>
+                                                    <?php
+                                                    $akum_kom = $id_akt[0]->komputer - $id_akt[0]->akum_peny_komputer;
+                                                    ?>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($akum_kom) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">FAX</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->fax) ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Akum.Peny.-FAX</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->akum_peny_fax) ?></td>
+                                                    <?php
+                                                    $akum_fax = $id_akt[0]->fax - $id_akt[0]->akum_peny_fax;
+                                                    ?>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($akum_fax) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">AC</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->ac) ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Akum.Peny.-AC</th>
+                                                    <td style="font-size:9pt;" style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->akum_peny_ac) ?></td>
+                                                    <?php
+                                                    $akum_ac = $id_akt[0]->ac - $id_akt[0]->akum_peny_ac;
+                                                    ?>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($akum_ac) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Furniture</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->furniture) ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Notebook</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->akum_peny_furniture) ?></td>
+                                                    <?php
+                                                    $akum_fur = $id_akt[0]->furniture - $id_akt[0]->akum_peny_furniture;
+                                                    ?>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($akum_fur) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Kamera Digital</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->kamera_digital) ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Printer</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->akum_peny_kamera) ?></td>
+                                                    <?php
+                                                    $akum_print = $id_akt[0]->printer - $id_akt[0]->akum_peny_printer;
+                                                    ?>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($akum_print) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Kamera Video</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->video_kamera) ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Akum.Peny.-Kamera Video</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_akt[0]->akum_peny_video) ?></td>
+                                                    <?php
+                                                    $akum_vid = $id_akt[0]->video_kamera - $id_akt[0]->akum_peny_video;
+                                                    ?>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($akum_vid) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left"><b>TOTAL AKTIVA</b></th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                    <?php
+                                                    $totalakt = $id_akt[0]->kas_kecil + $id_akt[0]->kas_pada_bank + $id_akt[0]->jaminan_bank + $id_akt[0]->piutang_operasional + $id_akt[0]->piutang_daya_makara + $id_akt[0]->piutang_proyek + $id_akt[0]->piutang_tvui +
+                                                        $id_akt[0]->piutang_solar_car + ($id_akt[0]->komputer - $id_akt[0]->akum_peny_komputer) + ($id_akt[0]->fax - $id_akt[0]->akum_peny_fax) + ($id_akt[0]->ac - $id_akt[0]->akum_peny_ac) +
+                                                        ($id_akt[0]->furniture - $id_akt[0]->akum_peny_furniture) + ($id_akt[0]->notebook - $id_akt[0]->akum_peny_notebook) + ($id_akt[0]->printer - $id_akt[0]->akum_peny_printer) +
+                                                        ($id_akt[0]->kamera_digital - $id_akt[0]->akum_peny_kamera) + ($id_akt[0]->video_kamera - $id_akt[0]->akum_peny_video);
+                                                    ?>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><b><?php echo format($totalakt) ?></b></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:12pt;" colspan="1" align="left"><b>PASIVA</b></th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Kewajiban</th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Hutang Operasional</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_pas[0]->hutang_operasional); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
 
-                                        <table class="table table-bordered align-items-center mb-5">
-                                            <tr>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">No.</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Tanggal Masuk</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Hutang Operasional</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Hutang Gaji</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Hutang Proyek</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Hutang Pada RTV</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Total Kewajiban</th>
-                                            </tr>
-                                            <tbody>
-                                                <?php
-                                                function hargapas($angka)
-                                                {
-                                                    $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
-                                                    return $hasil_rupiah;
-                                                }
-                                                $no = 1;
-                                                foreach ($id_pas as $id) {
-                                                    $totalpas = $id->hutang_operasional + $id->hutang_gaji + $id->hutang_proyek + $id->hutang_pada_rtv;                                                        ?>
-                                                    <tr>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $no++ ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $id->tanggal_masuk ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_operasional) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_gaji) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_proyek) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_pada_rtv) ?></td>
-                                                        <!-- total kewajiban-->
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($totalpas) ?></td>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Hutang Gaji</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_pas[0]->hutang_gaji); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Hutang Proyek </th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_pas[0]->hutang_proyek); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Hutang pada rtv</th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><?php echo format($id_pas[0]->hutang_pada_rtv); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left"><b>Total Kewajiban</b></th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                    <?php
+                                                    $totalkewajiban = $id_pas[0]->hutang_operasional + $id_pas[0]->hutang_gaji + $id_pas[0]->hutang_proyek + $id_pas[0]->hutang_pada_rtv;
+                                                    ?>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><b><?php echo format($totalkewajiban); ?></b></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left"><b>TOTAL PASIVA</b></th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                    <?php
+                                                    $totalpas = $totalkewajiban;
+                                                    ?>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"><b><?php echo format($totalpas); ?></b></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

@@ -93,102 +93,152 @@
                                             <h4 class="card-title mt-4"><b>LAPORAN LABA RUGI</b></h4>
                                             <p class="card-description"><b> Periode <?= ($tgl_awal_cetak != '' ? ($tgl_awal_cetak) . ' ' : '') . 's/d ' . ($tgl_akhir_cetak) ?></b></p><br><br>
                                         </center>
-                                        <div>
-                                            <h6 class="mr-5 text-dark text-l font-weight-bolder opacity-8">PENDAPATAN</h6>
-                                        </div>
-                                        <table class="table table-bordered align-items-center mb-5">
-                                            <tr>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">No.</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Tanggal Masuk</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Pendapatan Proyek</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Pendapatan Giro</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Bonus</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Pendapatan Lain-Lain</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Laba Selisih Kurs</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Total Pendapatan</th>
-                                            </tr>
+                                        <table class="table table-bordered align-items-left mb-5">
                                             <tbody>
-                                                <?php
-                                                function hargapen($angka)
+                                                <?php function format($angka)
                                                 {
                                                     $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
                                                     return $hasil_rupiah;
                                                 }
-                                                $no = 1;
-                                                foreach ($id_pend as $id) {
-                                                    $totalpen = $id->pendapatan_proyek + $id->pendapatan_giro + $id->bonus + $id->pendapatan_lainlain + $id->laba_selisih_kurs;
                                                 ?>
-                                                    <tr>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $no++ ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $id->tanggal_masuk ?></td>
-                                                        <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->pendapatan_proyek) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->pendapatan_giro) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->bonus) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->pendapatan_lainlain) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->laba_selisih_kurs) ?></td>
-                                                        <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($totalpen) ?></td>
-
-                                                    </tr>
-                                                <?php } ?>
-                                            </tbody>
-                                        </table>
-                                        <div>
-                                            <h6 class="mr-5 text-dark text-l font-weight-bolder opacity-8">BEBAN</h6>
-                                        </div>
-                                        <table class="table table-bordered align-items-center mb-5">
-                                            <tr>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">No.</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Tanggal Masuk</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Beban Proyek</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Gaji</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Tunjangan Hari Raya</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Operasional</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Setoran UI</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Beban Penyusutan</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Beban Bonus</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Perlengkapan Kantor</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Beban Pengelolaan Rek.</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Buku Cek</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Beban Pajak</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Lain-Lain</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Rugi Penjualan Aset</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Rugi Selisih Kurs</th>
-                                                <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Total Beban</th>
-                                                <tbody>
+                                                <tr>
+                                                    <th style="font-size:12pt;" scope="col" class="text" align="left"><b>PENDAPATAN</b></th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Pendapatan Proyek </th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_pend[0]->pendapatan_proyek); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Pendapatan Giro</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_pend[0]->pendapatan_giro); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Bonus</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_pend[0]->bonus); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Pendapatan Lain-Lain</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_pend[0]->pendapatan_lainlain); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Laba Selisih Kurs</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_pend[0]->laba_selisih_kurs); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left"><b>TOTAL PENDAPATAN</b></th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"></td>
                                                     <?php
-                                                    function hargabeban($angka)
-                                                    {
-                                                        $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
-                                                        return $hasil_rupiah;
-                                                    }
-                                                    $no = 1;
-                                                    foreach ($id_beban as $id) {
-                                                        $totalbeban = $id->beban_proyek + $id->beban_gaji + $id->tunjangan_hari_raya + $id->beban_operasional + $id->beban_setoran_ui +
-                                                            $id->beban_penyusutan + $id->beban_bonus + $id->beban_perlengkapan_kantor + $id->beban_pengelolaan_rek + $id->beban_buku_cek +
-                                                            $id->beban_pajak + $id->beban_lainlain + $id->rugi_penjualan_aset + $id->rugi_selisih_kurs;
-                                                        $lababersih = $totalbeban + $totalpen;
+                                                    $totalpendapatan = $id_pend[0]->pendapatan_proyek + $id_pend[0]->pendapatan_giro + $id_pend[0]->bonus + $id_pend[0]->pendapatan_lainlain + $id_pend[0]->laba_selisih_kurs;
                                                     ?>
-                                                        <tr>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $no++ ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $id->tanggal_masuk ?></td>
-                                                            <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_proyek) ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_gaji) ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->tunjangan_hari_raya)  ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_operasional)  ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_setoran_ui)  ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_penyusutan)  ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_bonus) ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_perlengkapan_kantor) ?></td>
-                                                            <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_pengelolaan_rek)  ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_buku_cek)  ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_pajak) ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_lainlain) ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->rugi_penjualan_aset) ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->rugi_selisih_kurs)  ?></td>
-                                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($totalbeban) ?></td>
-                                                        </tr>
-                                                    <?php } ?>
-                                                </tbody>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"><b><?php echo format($totalpendapatan) ?></b></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th style="font-size:12pt;" scope="col" class="text" align="left"><b>BEBAN</b></th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Beban Proyek</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->beban_proyek); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Beban Gaji</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->beban_gaji); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Tunjangan Hari Raya</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->tunjangan_hari_raya); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Beban Operasional</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->beban_operasional); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Beban Setoran UI</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->beban_setoran_ui); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Beban Penyusutan</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->beban_penyusutan); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Beban Bonus</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->beban_bonus); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Beban Perlengkapan Kantor</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->beban_perlengkapan_kantor); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Beban Pengelolaan Rek.</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->beban_pengelolaan_rek); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Beban Buku Cek</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->beban_buku_cek); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Beban Pajak</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->beban_pajak); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Beban Lain-Lain</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->beban_lainlain); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Rugi Penjualan Aset</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->rugi_penjualan_aset); ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left">Rugi Selisih Kurs</th>
+                                                    <td style="font-size:9pt;" colspan="6" align="left"><?php echo format($id_beban[0]->rugi_selisih_kurs) ?></td>
+                                                    <td style="font-size:9pt;" colspan="1" align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9pt;" colspan="1" align="left"><b>TOTAL BEBAN</b></th>
+                                                    <td style="font-size:9pt;" colspan="1" align="left"></td>
+                                                    <?php
+                                                    $totalbeban = $id_beban[0]->beban_proyek + $id_beban[0]->beban_gaji + $id_beban[0]->tunjangan_hari_raya + $id_beban[0]->beban_operasional + $id_beban[0]->beban_setoran_ui +
+                                                        $id_beban[0]->beban_penyusutan + $id_beban[0]->beban_bonus + $id_beban[0]->beban_perlengkapan_kantor + $id_beban[0]->beban_pengelolaan_rek + $id_beban[0]->beban_buku_cek +
+                                                        $id_beban[0]->beban_pajak + $id_beban[0]->beban_lainlain + $id_beban[0]->rugi_penjualan_aset + $id_beban[0]->rugi_selisih_kurs;
+                                                    ?>
+                                                    <td style="font-size:9pt;" colspan="12" align="right"><b><?php echo format($totalbeban); ?></b></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:10pt;" colspan="1" align="left"><b>LABA BERSIH</b></th>
+                                                    <td style="font-size:10pt;" colspan="1" align="left"></td>
+                                                    <?php
+                                                    $lababersih = $totalpendapatan - $totalbeban;
+                                                    ?>
+                                                    <td style="font-size:10pt;" colspan="12" align="right"><b><?php echo format($lababersih); ?></b></td>
+                                                </tr>
+                                                <!-- <tr>
+                <th style="font-size:11pt;" colspan="1" align="left">MODAL AWAL</th>
+                <td style="font-size:11pt;" colspan="1" align="center"></td>
+                <?php
+                $modal = $id_arus
+
+                ?>
+                <td style="font-size:11pt;" colspan="12" align="right"><?php echo format(699305923 + $lababersih); ?></td>
+            </tr> -->
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
