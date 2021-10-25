@@ -127,7 +127,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th style="font-size:9pt;" colspan="1" align="left"><b>TOTAL PENDAPATAN</b></th>
-                                                    <td style="font-size:9pt;" colspan="" align="center"></td>
+                                                    <td style="font-size:9pt;" colspan="6" align="center"></td>
                                                     <td style="font-size:9pt;" colspan="12" align="right"></td>
                                                 </tr>
 
@@ -136,7 +136,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th style="font-size:9pt;" colspan="1" align="left">Beban Proyek</th>
-                                                    <td style="font-size:9pt;" colspan="" align="center"></td>
+                                                    <td style="font-size:9pt;" colspan="6" align="center"></td>
                                                     <td style="font-size:9pt;" colspan="1" align="right"></td>
                                                 </tr>
                                                 <tr>
