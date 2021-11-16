@@ -49,6 +49,232 @@
             </div>
         </nav>
         <!-- End Navbar -->
+        <div class="container-fluid">
+            <div class="page-header min-height-250 border-radius-xl mt-4" style="background-image: url('../assets/img/background.png'); background-position-y: 50%;">
+                <span class="mask bg-gradient-primary opacity-6"></span>
+            </div>
+            <div class="card card-body blur shadow-blur mx-4 mt-n10 overflow-hidden">
+                <div class="row gx-4">
+                    <div class="row">
+                        <div class="col-md-12 mt-4">
+                            <div class="card">
+                                <div class="card-header pb-0 px-3 text-center">
+                                    <h5 class="mb-2 text-center text-dark text-l font-weight-bolder opacity-8">AKTIVA</h5>
+                                </div>
+                                <div class="card-body pt-4 p-3">
+                                    <ul class="list-group">
+                                        <div class="card-body px-0 pt-0 pb-2">
+                                            <div class="table-responsive p-0">
+                                                <div class=" col-12 mb-3">
+                                                    <!-- <a type="button" href="<?= base_url('transaksi/tambah_aktiva'); ?>" class="btn btn-primary btn-sm">
+                                                        Tambah Aktiva
+                                                    </a> -->
+                                                </div>
+                                                <!-- <a type="button" href="<?= base_url('transaksi/modal'); ?>" class="btn btn-primary btn-sm">
+                                                    mdoal
+                                                </a> -->
+
+                                                <table class="table table-bordered align-items-center mb-5">
+                                                    <tr>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">No.</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Tanggal Masuk</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Kas Kecil</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Kas Pada Bank</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Jaminan Bank</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Piutang Operasional</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Piutang Daya Makara</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Piutang Proyek</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Piutang TVUI</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Piutang Solar Car</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Komputer</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny. Komputer</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Fax</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Fax</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">AC</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.AC</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Furniture</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Furniture</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Notebook</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Notebook</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Kamera Digital</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Digital</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Printer</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Printer</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Kamera Video</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Akum.Peny.Kamera Video</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Total Aktiva</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Aksi</th>
+                                                    </tr>
+                                                    <tbody>
+                                                        <?php
+                                                        function harga($angka)
+                                                        {
+                                                            $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                                            return $hasil_rupiah;
+                                                        }
+                                                        $no = 1;
+                                                        foreach ($id_akt as $id) {
+                                                            $totalakt = $id->kas_kecil + $id->kas_pada_bank + $id->jaminan_bank + $id->piutang_operasional + $id->piutang_daya_makara + $id->piutang_proyek + $id->piutang_tvui +
+                                                                $id->piutang_solar_car + ($id->komputer - $id->akum_peny_komputer) + ($id->fax - $id->akum_peny_fax) + ($id->ac - $id->akum_peny_ac) +
+                                                                ($id->furniture - $id->akum_peny_furniture) + ($id->notebook - $id->akum_peny_notebook) + ($id->printer - $id->akum_peny_printer) +
+                                                                ($id->kamera_digital - $id->akum_peny_kamera) + ($id->video_kamera - $id->akum_peny_video);
+                                                        ?>
+                                                            <tr>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo $no++ ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo $id->tanggal_masuk ?></td>
+                                                                <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->kas_kecil) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->kas_pada_bank) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->jaminan_bank) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_operasional) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_daya_makara) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_proyek)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_tvui) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->piutang_solar_car)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->komputer)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_komputer) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->fax) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_fax)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->ac) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_ac)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->furniture)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_furniture) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->notebook)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_notebook) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->printer)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_printer) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->kamera_digital) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_kamera)  ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->video_kamera) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($id->akum_peny_video) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"> <?php echo harga($totalakt) ?></td>
+                                                                <td class=" text-center" width="160px">
+                                                                <a onclick="return confirm('apakah Anda yakin?')" href="<?= site_url('verifikasi/verifikasi_aktiva/' . $id->id_aktiva) ?>" class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-check"></i> Verifikasi
+                                                                </a>
+                                                                <a onclick="return confirm('apakah Anda yakin?')" href="<?= site_url('verifikasi/tolak_aktiva/' . $id->id_aktiva) ?>" class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-check"></i> Tolak
+                                                                </a>
+                                                                </td>
+                                                            </tr>
+                                                        <?php } ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination mb-3 mt-3 justify-content-end">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="javascript:;" aria-label="Previous">
+                                                            <i class="fa fa-angle-left"></i>
+                                                            <span aria-hidden="True"> &laquo;</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="javascript:;" aria-label="Next">
+                                                            <i class="fa fa-angle-right"></i>
+                                                            <span aria-hidden="True"> &raquo;</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mt-4">
+                            <div class="card">
+                                <div class="card-header pb-0 px-3 text-center">
+                                    <h5 class="mb-2 text-center text-dark text-l font-weight-bolder opacity-8">PASIVA</h5>
+                                </div>
+                                <div class="card-body pt-4 p-3">
+                                    <ul class="list-group">
+                                        <div class="card-body px-0 pt-0 pb-2">
+                                            <div class="table-responsive p-0">
+                                                <div class=" col-12 mb-3">
+                                                    <!-- <a type="button" href="<?= base_url('transaksi/tambah_pasiva'); ?>" class="btn btn-primary btn-sm">
+                                                        Tambah Pasiva
+                                                    </a> -->
+                                                </div>
+                                                <div class="text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
+                                                    Kewajiban
+                                                </div>
+
+                                                <table class="table table-bordered align-items-center mb-5">
+                                                    <tr>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">No.</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Tanggal Masuk</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Hutang Operasional</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Hutang Gaji</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Hutang Proyek</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Hutang Pada RTV</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Total Kewajiban</th>
+                                                        <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Aksi</th>
+                                                    </tr>
+                                                    <tbody>
+                                                        <?php
+                                                        function hargapas($angka)
+                                                        {
+                                                            $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                                            return $hasil_rupiah;
+                                                        }
+                                                        $no = 1;
+                                                        foreach ($id_pas as $id) {
+                                                            $totalpas = $id->hutang_operasional + $id->hutang_gaji + $id->hutang_proyek + $id->hutang_pada_rtv;                                                        ?>
+                                                            <tr>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $no++ ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $id->tanggal_masuk ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_operasional) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_gaji) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_proyek) ?></td>
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($id->hutang_pada_rtv) ?></td>
+                                                                <!-- total kewajiban-->
+                                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapas($totalpas) ?></td>
+                                                                <td class=" text-center" width="160px">
+                                                                    <a onclick="return confirm('apakah Anda yakin?')" href="<?= site_url('verifikasi/verifikasi_pasiva/' . $id->id_pasiva) ?>" class="btn btn-primary btn-xs">
+                                                                        <i class="fa fa-check"></i> Verifikasi
+                                                                    </a>
+                                                                    <a onclick="return confirm('apakah Anda yakin?')" href="<?= site_url('verifikasi/tolak_pasiva/' . $id->id_pasiva) ?>" class="btn btn-danger btn-xs">
+                                                                        <i class="fa fa-check"></i> Tolak
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        <?php } ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination mb-3 mt-3 justify-content-end">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="javascript:;" aria-label="Previous">
+                                                            <i class="fa fa-angle-left"></i>
+                                                            <span aria-hidden="True"> &laquo;</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="javascript:;" aria-label="Next">
+                                                            <i class="fa fa-angle-right"></i>
+                                                            <span aria-hidden="True"> &raquo;</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Navbar -->
         <!-- <div class="container-fluid">
             <div class="page-header min-height-250 border-radius-xl mt-4" style="background-image: url('../assets/img/background.png'); background-position-y: 50%;">
                 <span class="mask bg-gradient-primary opacity-6"></span>

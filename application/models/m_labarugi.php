@@ -15,14 +15,14 @@ class M_labarugi extends CI_Model
     public function tampil_pendapatan()
     {
         $query = $this->db->query('SELECT id_pendapatan,tanggal_masuk,pendapatan_proyek,pendapatan_giro,bonus,
-        pendapatan_lainlain,laba_selisih_kurs FROM pendapatan');
+        pendapatan_lainlain,laba_selisih_kurs FROM pendapatan WHERE STATUS_PENDAPATAN = 1');
         return $query->result();
     }
 
     public function tampil_pendapatan_filter_by_date($tgl_awal, $tgl_akhir)
     {
         $query = $this->db->query("SELECT id_pendapatan,tanggal_masuk,pendapatan_proyek,pendapatan_giro,bonus,
-        pendapatan_lainlain,laba_selisih_kurs FROM pendapatan WHERE tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir'");
+        pendapatan_lainlain,laba_selisih_kurs FROM pendapatan WHERE (tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir') AND STATUS_PENDAPATAN = 1 ");
         return $query->result();
     }
 
@@ -45,7 +45,7 @@ class M_labarugi extends CI_Model
     {
         $query = $this->db->query('SELECT id_beban,tanggal_masuk,beban_proyek,beban_gaji,tunjangan_hari_raya,beban_operasional,
         beban_setoran_ui,beban_penyusutan,beban_bonus,beban_perlengkapan_kantor,beban_pengelolaan_rek,beban_buku_cek,beban_pajak,
-        rugi_penjualan_aset,beban_lainlain,rugi_selisih_kurs FROM beban');
+        rugi_penjualan_aset,beban_lainlain,rugi_selisih_kurs FROM beban WHERE STATUS_BEBAN = 1');
         return $query->result();
     }
 
@@ -53,7 +53,7 @@ class M_labarugi extends CI_Model
     {
         $query = $this->db->query("SELECT id_beban,tanggal_masuk,beban_proyek,beban_gaji,tunjangan_hari_raya,beban_operasional,
         beban_setoran_ui,beban_penyusutan,beban_bonus,beban_perlengkapan_kantor,beban_pengelolaan_rek,beban_buku_cek,beban_pajak,
-        rugi_penjualan_aset,beban_lainlain,rugi_selisih_kurs FROM beban WHERE tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir'");
+        rugi_penjualan_aset,beban_lainlain,rugi_selisih_kurs FROM beban WHERE (tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir') AND STATUS_BEBAN = 1");
         return $query->result();
     }
 

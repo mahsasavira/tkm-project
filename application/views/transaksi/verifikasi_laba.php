@@ -54,7 +54,200 @@
                 <span class="mask bg-gradient-primary opacity-6"></span>
             </div>
         </div> -->
+        <div class="container-fluid">
+            <!-- <div class="page-header min-height-250 border-radius-xl mt-4" style="background-image: url('../assets/img/background.png'); background-position-y: 50%;">
+                <span class="mask bg-gradient-primary opacity-6"></span>
+            </div> -->
+            <!-- <div class="row"> -->
+            <div class="col-md-12 mt-4">
+                <div class="card">
+                    <div class="card-header pb-0 px-3">
+                        <div class="card-header pb-0 px-3 text-center">
+                            <h5 class="mb-2 text-center text-dark text-l font-weight-bolder opacity-8">PENDAPATAN</h5>
+                        </div>
+                        <div class="table-responsive p-0">
+                            <div class=" col-12 mb-5 mt-3">
+                                <!-- <a type="button" href="<?php echo base_url() ?>transaksi/tambah_pendapatan" class="btn btn-primary btn-sm">
+                                    Tambah Pendapatan
+                                </a> -->
+                            </div>
+                            <!-- PENDAPATAN -->
+                            <div>
+                                <h6 class="mr-5 text-dark text-l font-weight-bolder opacity-8">PENDAPATAN</h6>
+                            </div>
+                            <table class="table table-bordered align-items-center mb-5">
+                                <tr>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">No.</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Tanggal Masuk</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Pendapatan Proyek</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Pendapatan Giro</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Bonus</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Pendapatan Lain-Lain</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Laba Selisih Kurs</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Total Pendapatan</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Aksi</th>
+                                </tr>
+                                <tbody>
+                                    <?php
+                                    function hargapen($angka)
+                                    {
+                                        $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                        return $hasil_rupiah;
+                                    }
+                                    $no = 1;
+                                    foreach ($id_pend as $id) {
+                                        $totalpen = $id->pendapatan_proyek + $id->pendapatan_giro + $id->bonus + $id->pendapatan_lainlain + $id->laba_selisih_kurs;
+                                    ?>
+                                        <tr>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $no++ ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $id->tanggal_masuk ?></td>
+                                            <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->pendapatan_proyek) ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->pendapatan_giro) ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->bonus) ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->pendapatan_lainlain) ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($id->laba_selisih_kurs) ?></td>
+                                            <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargapen($totalpen) ?></td>
+                                            <td class=" text-center" width="160px">
+                                                <a onclick="return confirm('apakah Anda yakin?')" href="<?= site_url('verifikasi/verifikasi_pendapatan/' . $id->id_pendapatan) ?>" class="btn btn-primary btn-xs">
+                                                    <i class="fa fa-check"></i> Verifikasi
+                                                </a>
+                                                <a onclick="return confirm('apakah Anda yakin?')" href="<?= site_url('verifikasi/tolak_pendapatan/' . $id->id_pendapatan) ?>" class="btn btn-danger btn-xs">
+                                                    <i class="fa fa-check"></i> Tolak
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination mb-4 mt-2 justify-content-end">
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:;" aria-label="Previous">
+                                            <i class="fa fa-angle-left"></i>
+                                            <span aria-hidden="True"> &laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="javascript:;">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:;" aria-label="Next">
+                                            <i class="fa fa-angle-right"></i>
+                                            <span aria-hidden="True"> &raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-12 mt-4">
+                <div class="card">
+                    <div class="card-header pb-0 px-3">
+                        <div class="card-header pb-0 px-3 text-center">
+                            <h5 class="mb-2 text-center text-dark text-l font-weight-bolder opacity-8">BEBAN</h5>
+                        </div>
+                        <div class="table-responsive p-0">
+                            <div class=" col-12 mb-5 mt-3">
+                                <!-- <a type="button" href="<?php echo base_url() ?>transaksi/tambah_beban" class="btn btn-primary btn-sm">
+                                    Tambah Beban
+                                </a> -->
+                            </div>
+                            <!-- BEBAN -->
+                            <div>
+                                <h6 class="mr-5 text-dark text-l font-weight-bolder opacity-8">BEBAN</h6>
+                            </div>
+                            <table class="table table-bordered align-items-center mb-5">
+                                <tr>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">No.</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Tanggal Masuk</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Beban Proyek</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Gaji</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Tunjangan Hari Raya</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Operasional</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Setoran UI</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Beban Penyusutan</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Beban Bonus</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Perlengkapan Kantor</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Beban Pengelolaan Rek.</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Buku Cek</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Beban Pajak</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Beban Lain-Lain</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">Rugi Penjualan Aset</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Rugi Selisih Kurs</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Total Beban</th>
+                                    <th class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Aksi</th>
+                                    <tbody>
+                                        <?php
+                                        function hargabeban($angka)
+                                        {
+                                            $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+                                            return $hasil_rupiah;
+                                        }
+                                        $no = 1;
+                                        foreach ($id_beban as $id) {
+                                            $totalbeban = $id->beban_proyek + $id->beban_gaji + $id->tunjangan_hari_raya + $id->beban_operasional + $id->beban_setoran_ui +
+                                                $id->beban_penyusutan + $id->beban_bonus + $id->beban_perlengkapan_kantor + $id->beban_pengelolaan_rek + $id->beban_buku_cek +
+                                                $id->beban_pajak + $id->beban_lainlain + $id->rugi_penjualan_aset + $id->rugi_selisih_kurs;
+                                            $lababersih = $totalbeban + $totalpen;
+                                        ?>
+                                            <tr>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $no++ ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo $id->tanggal_masuk ?></td>
+                                                <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_proyek) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_gaji) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->tunjangan_hari_raya)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_operasional)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_setoran_ui)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_penyusutan)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_bonus) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_perlengkapan_kantor) ?></td>
+                                                <td class=" text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_pengelolaan_rek)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_buku_cek)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_pajak) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->beban_lainlain) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->rugi_penjualan_aset) ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($id->rugi_selisih_kurs)  ?></td>
+                                                <td class="text-center text-dark text-sm font-weight-bolder opacity-8"><?php echo hargabeban($totalbeban) ?></td>
+                                                <td class=" text-center" width="160px">
+                                                    <a onclick="return confirm('apakah Anda yakin?')" href="<?= site_url('verifikasi/verifikasi_beban/' . $id->id_beban) ?>" class="btn btn-primary btn-xs">
+                                                        <i class="fa fa-check"></i> Verifikasi
+                                                    </a>
+                                                    <a onclick="return confirm('apakah Anda yakin?')" href="<?= site_url('verifikasi/tolak_beban/' . $id->id_beban) ?>" class="btn btn-danger btn-xs">
+                                                        <i class="fa fa-check"></i> Tolak
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+                            </table>
 
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination mb-4 mt-4 justify-content-end">
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:;" aria-label="Previous">
+                                        <i class="fa fa-angle-left"></i>
+                                        <span aria-hidden="True"> &laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="javascript:;">1</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:;" aria-label="Next">
+                                        <i class="fa fa-angle-right"></i>
+                                        <span aria-hidden="True"> &raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 

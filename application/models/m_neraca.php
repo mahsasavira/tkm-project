@@ -16,7 +16,7 @@ class M_neraca extends CI_Model
         $query = $this->db->query('SELECT id_aktiva,tanggal_masuk,kas_kecil,kas_pada_bank,jaminan_bank,piutang_operasional,piutang_daya_makara,
         piutang_proyek,piutang_tvui,piutang_solar_car,komputer,akum_peny_komputer,fax,akum_peny_fax,
         ac,akum_peny_ac,furniture,akum_peny_furniture,notebook,akum_peny_notebook,kamera_digital,
-        akum_peny_kamera,printer,akum_peny_printer,video_kamera,akum_peny_video FROM aktiva');
+        akum_peny_kamera,printer,akum_peny_printer,video_kamera,akum_peny_video FROM aktiva WHERE STATUS_AKTIVA = 1');
         return $query->result();
     }
 
@@ -25,7 +25,7 @@ class M_neraca extends CI_Model
         $query = $this->db->query("SELECT id_aktiva,tanggal_masuk,kas_kecil,kas_pada_bank,jaminan_bank,piutang_operasional,piutang_daya_makara,
         piutang_proyek,piutang_tvui,piutang_solar_car,komputer,akum_peny_komputer,fax,akum_peny_fax,
         ac,akum_peny_ac,furniture,akum_peny_furniture,notebook,akum_peny_notebook,kamera_digital,
-        akum_peny_kamera,printer,akum_peny_printer,video_kamera,akum_peny_video FROM aktiva WHERE tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir'");
+        akum_peny_kamera,printer,akum_peny_printer,video_kamera,akum_peny_video FROM aktiva WHERE (tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir') AND STATUS_AKTIVA = 1");
         return $query->result();
     }
 
@@ -58,13 +58,13 @@ class M_neraca extends CI_Model
     //menampilkan pasiva
     public function tampil_pasiva()
     {
-        $query = $this->db->query('SELECT id_pasiva,tanggal_masuk,hutang_operasional,hutang_gaji,hutang_proyek,hutang_pada_rtv FROM pasiva');
+        $query = $this->db->query('SELECT id_pasiva,tanggal_masuk,hutang_operasional,hutang_gaji,hutang_proyek,hutang_pada_rtv FROM pasiva WHERE STATUS_PASIVA = 1');
         return $query->result();
     }
 
     public function tampil_pasiva_filter_by_date($tgl_awal, $tgl_akhir)
     {
-        $query = $this->db->query("SELECT id_pasiva,tanggal_masuk,hutang_operasional,hutang_gaji,hutang_proyek,hutang_pada_rtv FROM pasiva WHERE tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir'");
+        $query = $this->db->query("SELECT id_pasiva,tanggal_masuk,hutang_operasional,hutang_gaji,hutang_proyek,hutang_pada_rtv FROM pasiva WHERE (tanggal_masuk BETWEEN '$tgl_awal' AND '$tgl_akhir') AND STATUS_PASIVA = 1");
         return $query->result();
     }
 
