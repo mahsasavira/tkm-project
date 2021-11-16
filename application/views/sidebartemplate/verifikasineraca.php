@@ -83,7 +83,7 @@
                     <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Verifikasi</h6>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="<?php echo base_url() ?>verifikasi/verifikasi_neraca">
+                    <a class="nav-link active " href="<?php echo base_url() ?>verifikasi/verifikasi_neraca">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>box-3d-50</title>
@@ -135,7 +135,7 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Laporan</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url() ?>laporan/set_laba">
+                <a class="nav-link  " href="<?php echo base_url() ?>laporan/set_laba">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>box-3d-50</title>
@@ -159,7 +159,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="<?php echo base_url() ?>laporan/set_neraca">
+                <a class="nav-link  " href="<?php echo base_url() ?>laporan/set_neraca">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>box-3d-50</title>
@@ -211,7 +211,7 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="<?php echo base_url() ?>user/profile">
+                <a class="nav-link" href="<?php echo base_url() ?>user/profile">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>customer-support</title>
